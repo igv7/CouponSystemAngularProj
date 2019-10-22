@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +14,10 @@ export class HomeComponent implements OnInit {
   public isWinter: boolean;
   public coupons = ["Food", "Restaurants", "Traveling"];
 
-  constructor() { }
+  public constructor(private title: Title) { }
 
   public ngOnInit(): void {
+    this.title.setTitle("Home Page");
     this.currentDiscount = 10;
     this.currentDate = new Date();
     this.imageWidth = 800;

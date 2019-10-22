@@ -1,1 +1,30 @@
-<p>coupons works!</p>
+<!-- <p>coupons works!</p> -->
+
+<img *ngIf="!coupons" src="/assets/images/loadingGifTransparant1.gif">
+
+<div *ngIf="coupons">
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>StartDate</th>
+            <th>EndDate</th>
+            <th>Amount</th>
+            <th>Type</th>
+            <th>Message</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+        <tr *ngFor="let c of coupons">
+            <td>{{c.id}}</td>
+            <td>{{c.title}}</td>
+            <td>{{c.startDate}}</td>
+            <td>{{c.endDate}}</td>
+            <td>{{c.amount}}</td>
+            <td>{{c.type}}</td>
+            <td>{{c.message}}</td>
+            <td>{{c.price}}</td>
+            <td>{{c.image}}</td>
+        </tr>
+    </table>
+</div>

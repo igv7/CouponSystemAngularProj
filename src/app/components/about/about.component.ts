@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about',
@@ -11,9 +12,10 @@ export class AboutComponent implements OnInit {
     alert("User clicked on image... Image source: " + imageSource);
   }
 
-  constructor() { }
+  public constructor(private title: Title) { }
 
-  ngOnInit() {
+  public ngOnInit(): void {
+    this.title.setTitle("About");
   }
 
 }
