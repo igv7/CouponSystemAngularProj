@@ -13,3 +13,9 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
     background-color: plum;
 }
+
+div {
+    height: 85%;
+    /* width: 100%; */
+    overflow: auto;
+}

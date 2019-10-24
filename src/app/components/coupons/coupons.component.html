@@ -24,7 +24,9 @@
             <td>{{c.type}}</td>
             <td>{{c.message}}</td>
             <td>{{c.price}}</td>
-            <td>{{c.image}}</td>
+            <td>
+                <app-thumbnail imageSource="/assets/images/coupons/{{c.title}}.jpg"></app-thumbnail>
+            </td>
         </tr>
     </table>
 </div>

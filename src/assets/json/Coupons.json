@@ -1,0 +1,97 @@
+[
+	{
+		"id": "1",
+		"title": "sport",
+		"startDate": "2019-09-29",
+		"endDate": "2020-09-29",
+		"amount": "50",
+		"type": "SPORTS",
+		"price": "99.90",
+		"message": "Sport Coupon",
+		"image": "https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwjZiPD5yfTkAhXBy6QKHXNdDb8QjRx6BAgBEAQ&url=http%3A%2F%2Fwww.laurleesports.com%2Fcoupon.html&psig=AOvVaw2zPut2bTY7-AaaU5C2J_qE&ust=1569796538684516"
+	},
+	
+	{
+		"id": "2",
+		"title": "drink",
+		"startDate": "2019-09-29",
+		"endDate": "2020-09-29",
+		"amount": "50",
+		"type": "DRINKS",
+		"price": "55.90",
+		"message": "Drink Coupon",
+		"image": "https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwjt68ed1fTkAhWLr6QKHd-_Bk4QjRx6BAgBEAQ&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F323344448219437778%2F&psig=AOvVaw2rKLO_nKQcc2UULgMpUEGO&ust=1569799566296985"
+	},
+	
+	{
+		"id": "3",
+		"title": "health",
+		"startDate": "2019-09-29",
+		"endDate": "2020-09-29",
+		"amount": "50",
+		"type": "HEALTH",
+		"price": "100.50",
+		"message": "Health Coupon",
+		"image": "https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwj9ldTcyPTkAhVObFAKHZr6ByEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.phillipsdigestive.com%2Fcoupons%2F&psig=AOvVaw2CS-Yo3pnVHLFzk7LEUrM8&ust=1569796208959685"
+	},
+	
+	{
+		"id": "4",
+		"title": "food",
+		"startDate": "2019-09-29",
+		"endDate": "2020-09-29",
+		"amount": "50",
+		"type": "FOOD",
+		"price": "30.80",
+		"message": "Food Coupon",
+		"image": "https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwiizuLsx_TkAhUB6aQKHUEPDksQjRx6BAgBEAQ&url=https%3A%2F%2Fall-free-download.com%2Ffree-vector%2Fdownload%2Ffast-food-coupon-templates-horizontal-modern-design_6835520.html&psig=AOvVaw1s1rVsRa4Lsnk656OpnlV3&ust=1569795973819788"
+	},
+	
+	{
+		"id": "5",
+		"title": "camping",
+		"startDate": "2019-09-29",
+		"endDate": "2020-09-29",
+		"amount": "50",
+		"type": "CAMPING",
+		"price": "249.90",
+		"message": "Camping Coupon",
+		"image": "https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwi7pc7TyvTkAhUCzKQKHbirC1IQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.upto75.com%2Fpawana-lakeside-camping-near-lonavala-discount-offers&psig=AOvVaw0czEQHr5qV1HyxxKbEFF_T&ust=1569796726791146"
+	},
+	
+	{
+		"id": "6",
+		"title": "electricity",
+		"startDate": "2019-09-29",
+		"endDate": "2020-09-29",
+		"amount": "50",
+		"type": "ELECTRICITY",
+		"price": "120.50",
+		"message": "Electricity Coupon",
+		"image": "https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwjL5cCPxvTkAhXOLlAKHcbVBT8QjRx6BAgBEAQ&url=https%3A%2F%2Fwww.3ghackerz.com%2F2016%2F03%2Fpaytm-electricity-bill-payment-offer.html&psig=AOvVaw3LE1h3F4WO1eUQx-wcBDdL&ust=1569795510283102"
+	},
+	
+	{
+		"id": "7",
+		"title": "restaurant",
+		"startDate": "2019-09-29",
+		"endDate": "2020-09-29",
+		"amount": "50",
+		"type": "RESTAURANTS",
+		"price": "79.90",
+		"message": "Restaurant Coupon",
+		"image": "https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwjzz_yqxPTkAhWBqaQKHXDMCGkQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.template.net%2Fdesign-templates%2Fcoupons%2Frestaurant-discount-coupon%2F&psig=AOvVaw0OUUo-oK7o6Ib_nwjgfo3v&ust=1569795030813914"
+	},
+	
+	{
+		"id": "8",
+		"title": "traveling",
+		"startDate": "2019-09-29",
+		"endDate": "2020-09-29",
+		"amount": "50",
+		"type": "TRAVELING",
+		"price": "299.90",
+		"message": "Traveling Coupon",
+		"image": "https://www.google.com/url?sa=i&source=imgres&cd=&ved=2ahUKEwisluWNz_TkAhXpsaQKHWqaBYUQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.makemytrip.com%2Fdaily-deals%2F&psig=AOvVaw1KASQ4LpiWSV0SbHPy3GDk&ust=1569797922595171"
+	}
+]
