@@ -45,3 +45,7 @@ img {
     -webkit-animation: pulsate 1.2s linear infinite;
     animation: pulsate 1.2s linear infinite;
 }
+
+marquee {
+    font-size: 20px;
+}
