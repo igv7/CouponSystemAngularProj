@@ -4,7 +4,8 @@
 }
 
 img {
-    margin: 50px;
+    margin: 40px;
+    /* margin-bottom: 10px; */
 }
 
 .buttons {
@@ -37,7 +38,7 @@ img {
 }
 #blink7 {
     position: absolute;
-    margin-top: 10;
+    margin-top: 10px;
     margin-left: 350px;
     color: rgb(245,245,245);
     text-shadow: 0 -1px rgba(0,0,0,.1);
