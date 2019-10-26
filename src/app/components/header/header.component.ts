@@ -7,9 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public currentDate: Date;
 
-  ngOnInit() {
+  public constructor() {
+    setInterval(() => {
+      this.currentDate = new Date();
+    }, 1000);
   }
+
+  public ngOnInit(): void {
+    this.currentDate = new Date();
+  }
+
+  // public printTime() {
+  //   var currentDate = new Date();
+    // var year = currentDate.getFullYear();
+    // var month = currentDate.getMonth();
+    // var date = currentDate.getDate();
+    // var hours = currentDate.getHours();
+    // var minutes = currentDate.getMinutes();
+    // var seconds = currentDate.getSeconds();
+    // console.log(hours +":"+ minutes +":"+ seconds);
+  // }
 
 }

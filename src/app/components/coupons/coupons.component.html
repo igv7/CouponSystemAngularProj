@@ -17,7 +17,11 @@
         </tr>
         <tr *ngFor="let c of coupons">
             <td>{{c.id}}</td>
-            <td>{{c.title}}</td>
+            <td>
+                <a routerLink="/coupon-details/{{c.id}}">
+                    {{c.title}}
+                </a>
+            </td>
             <td>{{c.startDate}}</td>
             <td>{{c.endDate}}</td>
             <td>{{c.amount}}</td>

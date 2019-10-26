@@ -7,11 +7,15 @@ import { CompanyComponent } from './components/company/company.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AboutComponent } from './components/about/about.component';
 import { Page404Component } from './components/page404/page404.component';
+import { CouponDetailsComponent } from './components/coupon-details/coupon-details.component';
+import { AddCouponComponent } from './components/add-coupon/add-coupon.component';
 
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "coupons", component: CouponsComponent },
+  { path: "coupon-details/:id", component: CouponDetailsComponent },
+  { path: "add-coupon", component: AddCouponComponent },
   { path: "customer", component: CustomerComponent },
   { path: "company", component: CompanyComponent },
   { path: "admin", component: AdminComponent },

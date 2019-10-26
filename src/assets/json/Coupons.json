@@ -1,7 +1,7 @@
 [
 	{
 		"id": "1",
-		"title": "sport",
+		"title": "Sport",
 		"startDate": "2019-09-29",
 		"endDate": "2020-09-29",
 		"amount": "50",
@@ -13,7 +13,7 @@
 	
 	{
 		"id": "2",
-		"title": "drink",
+		"title": "Drink",
 		"startDate": "2019-09-29",
 		"endDate": "2020-09-29",
 		"amount": "50",
@@ -25,7 +25,7 @@
 	
 	{
 		"id": "3",
-		"title": "health",
+		"title": "Health",
 		"startDate": "2019-09-29",
 		"endDate": "2020-09-29",
 		"amount": "50",
@@ -37,7 +37,7 @@
 	
 	{
 		"id": "4",
-		"title": "food",
+		"title": "Food",
 		"startDate": "2019-09-29",
 		"endDate": "2020-09-29",
 		"amount": "50",
@@ -49,7 +49,7 @@
 	
 	{
 		"id": "5",
-		"title": "camping",
+		"title": "Camping",
 		"startDate": "2019-09-29",
 		"endDate": "2020-09-29",
 		"amount": "50",
@@ -61,7 +61,7 @@
 	
 	{
 		"id": "6",
-		"title": "electricity",
+		"title": "Electricity",
 		"startDate": "2019-09-29",
 		"endDate": "2020-09-29",
 		"amount": "50",
@@ -73,7 +73,7 @@
 	
 	{
 		"id": "7",
-		"title": "restaurant",
+		"title": "Restaurant",
 		"startDate": "2019-09-29",
 		"endDate": "2020-09-29",
 		"amount": "50",
@@ -85,7 +85,7 @@
 	
 	{
 		"id": "8",
-		"title": "traveling",
+		"title": "Traveling",
 		"startDate": "2019-09-29",
 		"endDate": "2020-09-29",
 		"amount": "50",

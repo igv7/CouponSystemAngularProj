@@ -73,4 +73,9 @@ export class CouponService {
     // return this.httpClient.get<Coupon[]>("http://localhost:8080/CouponSystemSpringProj/getAllCoupons", {withCredentials: true});
     return this.httpClient.get<Coupon[]>("/assets/json/Coupons.json");
   }
+
+  public addCoupon(coupon: Coupon): Observable<Coupon> {
+    // return this.httpClient.post<Coupon>("http://localhost:8080/CouponSystemSpringProj/addCoupon", coupon, {withCredentials: true});
+    return this.httpClient.post<Coupon>("/assets/json/Coupons.json", coupon);
+  }
 }

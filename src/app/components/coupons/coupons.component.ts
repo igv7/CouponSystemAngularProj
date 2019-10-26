@@ -44,7 +44,7 @@ export class CouponsComponent implements OnInit {
 
     //GetAllCoupons from service
     this.couponService.getAllCouponsAsync().subscribe(coupons => {
-      setTimeout(() => this.coupons = coupons, 3000);
+      setTimeout(() => this.coupons = coupons, 500);
     }, err => {
       alert("Error: " + err.message);
     });

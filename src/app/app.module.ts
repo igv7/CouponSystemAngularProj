@@ -15,9 +15,11 @@ import { AboutComponent } from './components/about/about.component';
 import { Page404Component } from './components/page404/page404.component';
 import { ThumbnailComponent } from './components/thumbnail/thumbnail.component';
 import { HttpClientModule } from "@angular/common/http";
+import { CouponDetailsComponent } from './components/coupon-details/coupon-details.component';
+import { AddCouponComponent } from './components/add-coupon/add-coupon.component';
 
 @NgModule({
-  declarations: [LayoutComponent, HeaderComponent, FooterComponent, MenuComponent, HomeComponent, CouponsComponent, CustomerComponent, CompanyComponent, AdminComponent, AboutComponent, Page404Component, ThumbnailComponent],
+  declarations: [LayoutComponent, HeaderComponent, FooterComponent, MenuComponent, HomeComponent, CouponsComponent, CustomerComponent, CompanyComponent, AdminComponent, AboutComponent, Page404Component, ThumbnailComponent, CouponDetailsComponent, AddCouponComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [LayoutComponent]

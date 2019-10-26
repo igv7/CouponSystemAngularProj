@@ -2,10 +2,23 @@
 
 <!-- Structural Directive (do not insert into the DOM *ngIf *ngFor) -->
 <!-- Interpolation Binding -->
-<h3 *ngIf="currentDiscount > 0">Only now, at {{currentDate | date: 'dd/MM/yyyy HH:MM:ss'}} - {{currentDiscount}}% discount on all coupons!</h3>
+<h3 id="blink7" *ngIf="currentDiscount > 0">
+    <span>&nbsp;ONLY NOW </span>, at {{currentDate | date: 'MMMM dd, yyyy'}} - {{currentDiscount}}% discount on all coupons!&nbsp;
+</h3>
 
 <!-- Property Binding -->
 <img #homeImage src="/assets/images/myCouponSystem.jpg" [width]="imageWidth">
+
+<marquee behavior="slide" direction="down" scrollamount="2" style="text-align: center; color: purple" bgcolor="lightgrey"> <!--bgcolor="silver"-->
+    <span style='padding-left:10px;'>SPORTS</span>
+    <span style='padding-left:50px;'>DRINKS</span>
+    <span style='padding-left:50px;'>HEALTH</span>
+    <span style='padding-left:50px;'>FOOD</span>
+    <span style='padding-left:50px;'>CAMPING</span>
+    <span style='padding-left:50px;'>ELECTRICITY</span>
+    <span style='padding-left:50px;'>RESTAURANTS</span>
+    <span style='padding-left:50px;'>TRAVELING</span>
+</marquee>
 
 <div class="buttons">
     <!-- Event Binding -->
