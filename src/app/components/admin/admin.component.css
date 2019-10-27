@@ -1,0 +1,44 @@
+.operations {
+    height: 100%;
+    overflow: auto;
+    position: relative;
+    width:100%;
+    /* text-align: left; */
+    /* margin-right: 1000px; */
+}
+
+.comp-op {
+    border: 1px solid black;
+    float:left;
+    width:20%;
+    margin-left: 25%;
+    /* margin-bottom: 10%; */
+}
+
+.cust-op {
+    border: 1px solid black;
+    float:right;
+    width:20%;
+    margin-right: 25%;
+    /* margin-bottom: 10%; */
+}
+
+.com-op {
+    border: 1px solid black;
+    width:20%;
+    margin-left: 40%;
+    margin-top: 25%;
+}
+
+a {
+    font-size: large;
+    color: green;
+    margin: 10px;
+    display: block;
+    /* text-align: left; */
+}
+
+.active-link {
+    color: indigo;
+    font-weight: bold;
+}

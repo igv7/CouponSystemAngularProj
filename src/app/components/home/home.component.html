@@ -3,43 +3,43 @@
 <!-- Structural Directive (do not insert into the DOM *ngIf *ngFor) -->
 <!-- Interpolation Binding -->
 <div class="home">
-<h3 id="blink7" *ngIf="currentDiscount > 0">
-    <span>&nbsp;ONLY NOW </span>, at {{currentDate | date: 'MMMM dd, yyyy'}} - {{currentDiscount}}% discount on all coupons!&nbsp;
-</h3>
+    <h3 id="blink7" *ngIf="currentDiscount > 0">
+        <span>&nbsp;ONLY NOW </span>, at {{currentDate | date: 'MMMM dd, yyyy'}} - {{currentDiscount}}% discount on all coupons!&nbsp;
+    </h3>
 
-<!-- Property Binding -->
-<img #homeImage src="/assets/images/myCouponSystem.jpg" [width]="imageWidth">
+    <!-- Property Binding -->
+    <img #homeImage src="/assets/images/myCouponSystem.jpg" [width]="imageWidth">
 
-<marquee behavior="slide" direction="down" scrollamount="2" style="text-align: center; color: purple" bgcolor="lightgrey"> <!--bgcolor="silver"--><!--height="150"-->
-    <span style='padding-left:10px;'>SPORTS</span>
-    <span style='padding-left:50px;'>DRINKS</span>
-    <span style='padding-left:50px;'>HEALTH</span>
-    <span style='padding-left:50px;'>FOOD</span>
-    <span style='padding-left:50px;'>CAMPING</span>
-    <span style='padding-left:50px;'>ELECTRICITY</span>
-    <span style='padding-left:50px;'>RESTAURANTS</span>
-    <span style='padding-left:50px;'>TRAVELING</span>
-</marquee>
+    <marquee behavior="slide" direction="down" scrollamount="2" style="text-align: center; color: purple" bgcolor="lightgrey"> <!--bgcolor="silver"--><!--height="150"-->
+        <span style='padding-left:10px;'>SPORTS</span>
+        <span style='padding-left:50px;'>DRINKS</span>
+        <span style='padding-left:50px;'>HEALTH</span>
+        <span style='padding-left:50px;'>FOOD</span>
+        <span style='padding-left:50px;'>CAMPING</span>
+        <span style='padding-left:50px;'>ELECTRICITY</span>
+        <span style='padding-left:50px;'>RESTAURANTS</span>
+        <span style='padding-left:50px;'>TRAVELING</span>
+    </marquee>
 
-<div class="buttons">
-    <!-- Event Binding -->
-    <button (click)="decreaseWidth()">-</button>
-    <button (click)="resetWidth()">Reset</button>
-    <button (click)="increaseWidth()">+</button>
-    <br>
-    <!-- Two Way Binding -->
-    <input type="range" min="0" max="1600" value="800" step="10"  [(ngModel)]="imageWidth">
-    <br>
-    <!-- Template Reference Variable -->
-    <span>Width: {{homeImage.width}}</span>
-</div>
+    <div class="buttons">
+        <!-- Event Binding -->
+        <button (click)="decreaseWidth()">-</button>
+        <button (click)="resetWidth()">Reset</button>
+        <button (click)="increaseWidth()">+</button>
+        <br>
+        <!-- Two Way Binding -->
+        <input type="range" min="0" max="1600" value="800" step="10"  [(ngModel)]="imageWidth">
+        <br>
+        <!-- Template Reference Variable -->
+        <span>Width: {{homeImage.width}}</span>
+    </div>
 
-<div class="coupons">
-    <h5>Our Coupons</h5>
-    <!-- Attribute Directive (DOM Document Object Model) -->
-    <p ngClass="greenish">Drinks</p>
-    <!-- Structural Directive (do not insert into the DOM *ngIf *ngFor) -->
-    <p *ngIf="isWinter">Sports</p>
-    <p *ngFor="let c of coupons">{{c}}</p>
-</div>
+    <div class="coupons">
+        <h5>Our Coupons</h5>
+        <!-- Attribute Directive (DOM Document Object Model) -->
+        <p ngClass="greenish">Drinks</p>
+        <!-- Structural Directive (do not insert into the DOM *ngIf *ngFor) -->
+        <p *ngIf="isWinter">Sports</p>
+        <p *ngFor="let c of coupons">{{c}}</p>
+    </div>
 </div>
