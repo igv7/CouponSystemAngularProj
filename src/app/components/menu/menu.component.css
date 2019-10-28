@@ -1,8 +1,27 @@
+div {
+    height: 100%;
+    overflow: auto;
+    position: relative;
+    width:100%;
+}
+
+.menu {
+    margin-top: 30%;
+    border: 1px solid black;
+    width:60%;
+    height: 70%;
+    /* overflow: auto; */
+    /* position: relative; */
+    display: inline-block;
+}
+
 a {
     font-size: x-large;
     color: blue;
     margin: 10px;
     display: block;
+    text-decoration: none;
+    /* display: inline-block; */
 }
 
 .active-link {

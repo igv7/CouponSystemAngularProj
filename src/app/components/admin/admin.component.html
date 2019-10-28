@@ -2,14 +2,17 @@
 
 <div class="operations">
     <h2>Operation List</h2>
+
     <div class="comp-op">
         <h3>Company Operations</h3>
-        <a routerLink="/add-company" routerLinkActive="active-link">Add Company</a>
-        <a routerLink="/update-company" routerLinkActive="active-link">Update Company</a>
-        <a routerLink="/delete-company" routerLinkActive="active-link">Delete Company</a>
-        <a routerLink="/view-company" routerLinkActive="active-link">View Company</a>
-        <a routerLink="/view-all-companies" routerLinkActive="active-link">View All Companies</a>
-        <a routerLink="/view-income-by-company" routerLinkActive="active-link">View Income By Company</a>
+        <nav>
+            <a [routerLink]="['add-company']" routerLinkActive="active-link">Add Company</a>
+            <a routerLink="/update-company" routerLinkActive="active-link">Update Company</a>
+            <a routerLink="/delete-company" routerLinkActive="active-link">Delete Company</a>
+            <a routerLink="/view-company" routerLinkActive="active-link">View Company</a>
+            <a routerLink="/view-all-companies" routerLinkActive="active-link">View All Companies</a>
+            <a routerLink="/view-income-by-company" routerLinkActive="active-link">View Income By Company</a>
+        </nav>
     </div>
     
     <div class="cust-op">
@@ -28,3 +31,5 @@
     </div>
     
 </div>
+
+<router-outlet></router-outlet>
