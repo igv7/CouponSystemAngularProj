@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Company } from 'src/app/models/company';
+import { CompanyService } from 'src/app/services/company.service';
 
 @Component({
   selector: 'app-add-company',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCompanyComponent implements OnInit {
 
-  constructor() { }
+  public company = new Company();
+
+  public constructor(private companyService: CompanyService) { }
 
   ngOnInit() {
+  }
+
+  public addCompany():void {
+    alert(`
+    Id: ${this.company.id}
+    Name: ${this.company.name}
+    Password: ${this.company.password}
+    Email: ${this.company.email}
+    `);
+
+    this.companyService.addCompany(this.company).subscribe(c => {
+      alert("Company has been succesfully added! Name: " + c.name);
+    }, err => {
+      alert("Error on add Company!" + err);
+    });
   }
 
 }

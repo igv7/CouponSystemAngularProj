@@ -1,0 +1,57 @@
+[
+	{
+		"id": "1",
+		"name": "adidas",
+		"password": "123",
+		"email": "adidas@gmail.com"
+	},
+	
+	{
+		"id": "2",
+		"name": "pepsi",
+		"password": "234",
+		"email": "pepsi@gmail.com"
+	},
+	
+	{
+		"id": "3",
+		"name": "teva",
+		"password": "345",
+		"email": "teva@gmail.com"
+	},
+	
+	{
+		"id": "4",
+		"name": "mcdonalds",
+		"password": "456",
+		"email": "mcdonalds@gmail.com"
+	},
+	
+	{
+		"id": "5",
+		"name": "hagor",
+		"password": "567",
+		"email": "hagor@gmail.com"
+	},
+	
+	{
+		"id": "6",
+		"name": "hashmal",
+		"password": "678",
+		"email": "hashmal@gmail.com"
+	},
+	
+	{
+		"id": "7",
+		"name": "tayo",
+		"password": "789",
+		"email": "tayo@gmail.com"
+	},
+	
+	{
+		"id": "8",
+		"name": "isratours",
+		"password": "890",
+		"email": "isratours@gmail.com"
+	}
+]

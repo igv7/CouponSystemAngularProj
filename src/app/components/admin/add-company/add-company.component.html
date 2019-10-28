@@ -1,1 +1,30 @@
-<p>add-company works!</p>
+<!-- <p>add-company works!</p> -->
+
+<form #formInfo="ngForm">
+    <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="company.id" name="id">
+    <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+    <br><br>
+
+    <input #nameInfo="ngModel" required pattern="^[A-Z].*[a-z]$" type="text" placeholder="Name" [(ngModel)]="company.name" name="name">
+    <span *ngIf="nameInfo.errors?.required && nameInfo.touched">Missing Name</span>
+    <span *ngIf="nameInfo.errors?.pattern && nameInfo.touched">Name must start with a capital letter and contain at least two letters!</span>
+    <br><br>
+
+    <input #passwordInfo="ngModel" minlength="1" required type="password" placeholder="Password" [(ngModel)]="company.password" name="password">
+    <span *ngIf="passwordInfo.invalid && passwordInfo.touched">Missing Password</span>
+    <br><br>
+
+    <input #emailInfo="ngModel" required pattern="^[a-z].*[a-z].@.*[a-z]..*[a-z]$" type="text" placeholder="Email" [(ngModel)]="company.email" name="email">
+    <span *ngIf="emailInfo.errors?.required && emailInfo.touched">Missing Email</span>
+    <span *ngIf="emailInfo.errors?.pattern && emailInfo.touched">Email must start with a small letter and contain at least two letters and "@"!</span>
+    <br><br>
+
+    <button [disabled]="!formInfo.form.valid" (click)="addCompany()">Add Company</button>
+
+    <!-- <p>Id valid? {{idInfo.valid}}</p>
+    <p>Name valid? {{nameInfo.valid}}</p>
+    <p>Password valid? {{passwordInfo.valid}}</p>
+    <p>Email valid? {{emailInfo.valid}}</p>
+    <p>Form valid? {{formInfo.form.valid}}</p> -->
+    
+</form>

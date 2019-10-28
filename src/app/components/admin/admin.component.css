@@ -3,6 +3,7 @@
     overflow: auto;
     position: relative;
     width:100%;
+
     /* text-align: left; */
     /* margin-right: 1000px; */
 }
@@ -12,6 +13,7 @@
     float:left;
     width:20%;
     margin-left: 25%;
+
     /* margin-bottom: 10%; */
 }
 
@@ -20,6 +22,7 @@
     float:right;
     width:20%;
     margin-right: 25%;
+
     /* margin-bottom: 10%; */
 }
 
@@ -37,8 +40,17 @@ a {
     display: block;
     text-decoration: none;
     display: inline-block;
+    
     /* text-align: left; */
 }
+
+a:visited {
+    color: #800080; /* Цвет посещённой ссылки */
+   } 
+a:hover {
+    color: blue; /* Цвет ссылки при наведении на нее курсора мыши */  
+    text-decoration: underline; /* Добавляем подчеркивание */
+   }
 
 .active-link {
     color: indigo;
