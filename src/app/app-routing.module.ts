@@ -8,7 +8,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AboutComponent } from './components/about/about.component';
 import { Page404Component } from './components/page404/page404.component';
 import { CouponDetailsComponent } from './components/coupon-details/coupon-details.component';
-import { AddCouponComponent } from './components/add-coupon/add-coupon.component';
+import { AddCouponTestComponent } from './components/add-coupon-test/add-coupon-test.component';
 import { AddCompanyComponent } from './components/admin/add-company/add-company.component';
 import { UpdateCompanyComponent } from './components/admin/update-company/update-company.component';
 import { DeleteCompanyComponent } from './components/admin/delete-company/delete-company.component';
@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "coupons", component: CouponsComponent },
   { path: "coupon-details/:id", component: CouponDetailsComponent },
-  { path: "add-coupon", component: AddCouponComponent },
+  { path: "add-coupon-test", component: AddCouponTestComponent },
   { path: "customer", component: CustomerComponent },
   { path: "company", component: CompanyComponent },
   { path: "admin", component: AdminComponent, children: [

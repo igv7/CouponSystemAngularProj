@@ -3,11 +3,11 @@ import { Coupon } from 'src/app/models/coupon';
 import { CouponService } from 'src/app/services/coupon.service';
 
 @Component({
-  selector: 'app-add-coupon',
-  templateUrl: './add-coupon.component.html',
-  styleUrls: ['./add-coupon.component.css']
+  selector: 'app-add-coupon-test',
+  templateUrl: './add-coupon-test.component.html',
+  styleUrls: ['./add-coupon-test.component.css']
 })
-export class AddCouponComponent implements OnInit {
+export class AddCouponTestComponent implements OnInit {
 
   public coupon = new Coupon();
 

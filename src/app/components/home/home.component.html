@@ -7,9 +7,6 @@
         <span>&nbsp;ONLY NOW </span>, at {{currentDate | date: 'MMMM dd, yyyy'}} - {{currentDiscount}}% discount on all coupons!&nbsp;
     </h3>
 
-    <!-- Property Binding -->
-    <img #homeImage src="/assets/images/myCouponSystem.jpg" [width]="imageWidth">
-
     <marquee behavior="slide" direction="down" scrollamount="2" style="text-align: center; color: purple" bgcolor="lightgrey"> <!--bgcolor="silver"--><!--height="150"-->
         <span style='padding-left:10px;'>SPORTS</span>
         <span style='padding-left:50px;'>DRINKS</span>
@@ -20,6 +17,9 @@
         <span style='padding-left:50px;'>RESTAURANTS</span>
         <span style='padding-left:50px;'>TRAVELING</span>
     </marquee>
+
+    <!-- Property Binding -->
+    <img #homeImage src="/assets/images/myCouponSystem.jpg" [width]="imageWidth">
 
     <div class="buttons">
         <!-- Event Binding -->

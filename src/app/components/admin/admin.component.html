@@ -1,6 +1,39 @@
 <!-- <p>admin works!</p> -->
 
-<div class="operations">
+<div>
+    <table>
+        <tr>
+            <th>Company Operations</th>
+        </tr>
+        <tr><td><a [routerLink]="['add-company']" routerLinkActive="active-link">Add Company</a></td></tr>
+        <tr><td><a [routerLink]="['update-company']" routerLinkActive="active-link">Update Company</a></td></tr>
+        <tr><td><a [routerLink]="['delete-company']" routerLinkActive="active-link">Delete Company</a></td></tr>
+        <tr><td><a [routerLink]="['view-company']" routerLinkActive="active-link">View Company</a></td></tr>
+        <tr><td><a [routerLink]="['view-all-companies']" routerLinkActive="active-link">View All Companies</a></td></tr>
+        <tr><td><a [routerLink]="['view-income-by-company']" routerLinkActive="active-link">View Income By Company</a></td></tr>
+        <tr>
+            <th>Customer Operations</th>
+        </tr>
+        <tr><td><a [routerLink]="['add-customer']" routerLinkActive="active-link">Add Customer</a></td></tr>
+        <tr><td><a [routerLink]="['update-customer']" routerLinkActive="active-link">Update Customer</a></td></tr>
+        <tr><td><a [routerLink]="['delete-customer']" routerLinkActive="active-link">Delete Customer</a></td></tr>
+        <tr><td><a [routerLink]="['view-customer']" routerLinkActive="active-link">View Customer</a></td></tr>
+        <tr><td><a [routerLink]="['view-all-customers']" routerLinkActive="active-link">View All Customers</a></td></tr>
+        <tr><td><a [routerLink]="['view-income-by-customer']" routerLinkActive="active-link">View Income By Customer</a></td></tr>
+        <tr>
+            <th>Common Operations</th>
+        </tr>
+        <tr><td><a [routerLink]="['view-all-income']" routerLinkActive="active-link">View All Income</a></td></tr>
+    </table>
+</div>
+<router-outlet></router-outlet>
+
+
+
+
+
+
+<!-- <div class="operations">
     <h2>Operation List</h2>
 
     <div class="comp-op">
@@ -36,4 +69,5 @@
     
 </div>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+
