@@ -1,1 +1,15 @@
-<p>customer works!</p>
+<!-- <p>customer works!</p> -->
+
+<div>
+    <table>
+        <tr>
+            <th>Customer Operations</th>
+        </tr>
+        <tr><td><a [routerLink]="['purchase-coupon']" routerLinkActive="active-link">Purchase Coupon</a></td></tr>
+        <tr><td><a [routerLink]="['view-all-purchased-coupons']" routerLinkActive="active-link">View All Purchased Coupons</a></td></tr>
+        <tr><td><a [routerLink]="['view-all-purchased-coupons-by-type']" routerLinkActive="active-link">View All Purchased Coupons By Type</a></td></tr>
+        <tr><td><a [routerLink]="['view-all-purchased-coupons-by-price']" routerLinkActive="active-link">View All Purchased Coupons By Price</a></td></tr>
+        <tr><td><a [routerLink]="['view-customer-income']" routerLinkActive="active-link">View Customer Income</a></td></tr>
+    </table>
+</div>
+<router-outlet></router-outlet>

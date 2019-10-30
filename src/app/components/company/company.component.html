@@ -1,1 +1,19 @@
-<p>company works!</p>
+<!-- <p>company works!</p> -->
+
+<div>
+    <table>
+        <tr>
+            <th>Company Operations</th>
+        </tr>
+        <tr><td><a [routerLink]="['add-coupon']" routerLinkActive="active-link">Add Coupon</a></td></tr>
+        <tr><td><a [routerLink]="['update-coupon']" routerLinkActive="active-link">Update Coupon</a></td></tr>
+        <tr><td><a [routerLink]="['delete-coupon']" routerLinkActive="active-link">Delete Coupon</a></td></tr>
+        <tr><td><a [routerLink]="['view-coupon']" routerLinkActive="active-link">View Coupon</a></td></tr>
+        <tr><td><a [routerLink]="['view-all-coupons']" routerLinkActive="active-link">View All Coupons</a></td></tr>
+        <tr><td><a [routerLink]="['view-all-coupons-by-type']" routerLinkActive="active-link">View All Coupons By Type</a></td></tr>
+        <tr><td><a [routerLink]="['view-all-coupons-by-price']" routerLinkActive="active-link">View All Coupons By Price</a></td></tr>
+        <tr><td><a [routerLink]="['view-all-coupons-by-date']" routerLinkActive="active-link">View All Coupons By Date</a></td></tr>
+        <tr><td><a [routerLink]="['view-company-income']" routerLinkActive="active-link">View Company Income</a></td></tr>
+    </table>
+</div>
+<router-outlet></router-outlet>

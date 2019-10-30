@@ -21,25 +21,25 @@
     <!-- Property Binding -->
     <img #homeImage src="/assets/images/myCouponSystem.jpg" [width]="imageWidth">
 
-    <div class="buttons">
+    <!-- <div class="buttons"> -->
         <!-- Event Binding -->
-        <button (click)="decreaseWidth()">-</button>
+        <!-- <button (click)="decreaseWidth()">-</button>
         <button (click)="resetWidth()">Reset</button>
         <button (click)="increaseWidth()">+</button>
-        <br>
+        <br> -->
         <!-- Two Way Binding -->
-        <input type="range" min="0" max="1600" value="800" step="10"  [(ngModel)]="imageWidth">
-        <br>
+        <!-- <input type="range" min="0" max="1600" value="800" step="10"  [(ngModel)]="imageWidth">
+        <br> -->
         <!-- Template Reference Variable -->
-        <span>Width: {{homeImage.width}}</span>
-    </div>
+        <!-- <span>Width: {{homeImage.width}}</span>
+    </div> -->
 
-    <div class="coupons">
-        <h5>Our Coupons</h5>
+    <!-- <div class="coupons">
+        <h5>Our Coupons</h5> -->
         <!-- Attribute Directive (DOM Document Object Model) -->
-        <p ngClass="greenish">Drinks</p>
+        <!-- <p ngClass="greenish">Drinks</p> -->
         <!-- Structural Directive (do not insert into the DOM *ngIf *ngFor) -->
-        <p *ngIf="isWinter">Sports</p>
+        <!-- <p *ngIf="isWinter">Sports</p>
         <p *ngFor="let c of coupons">{{c}}</p>
-    </div>
+    </div> -->
 </div>

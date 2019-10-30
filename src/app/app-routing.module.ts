@@ -22,6 +22,20 @@ import { ViewCustomerComponent } from './components/admin/view-customer/view-cus
 import { ViewAllCustomersComponent } from './components/admin/view-all-customers/view-all-customers.component';
 import { ViewIncomeByCustomerComponent } from './components/admin/view-income-by-customer/view-income-by-customer.component';
 import { ViewAllIncomeComponent } from './components/admin/view-all-income/view-all-income.component';
+import { AddCouponComponent } from './components/company/add-coupon/add-coupon.component';
+import { UpdateCouponComponent } from './components/company/update-coupon/update-coupon.component';
+import { DeleteCouponComponent } from './components/company/delete-coupon/delete-coupon.component';
+import { ViewCouponComponent } from './components/company/view-coupon/view-coupon.component';
+import { ViewAllCouponsComponent } from './components/company/view-all-coupons/view-all-coupons.component';
+import { ViewAllCouponsByTypeComponent } from './components/company/view-all-coupons-by-type/view-all-coupons-by-type.component';
+import { ViewAllCouponsByPriceComponent } from './components/company/view-all-coupons-by-price/view-all-coupons-by-price.component';
+import { ViewAllCouponsByDateComponent } from './components/company/view-all-coupons-by-date/view-all-coupons-by-date.component';
+import { ViewCompanyIncomeComponent } from './components/company/view-company-income/view-company-income.component';
+import { PurchaseCouponComponent } from './components/customer/purchase-coupon/purchase-coupon.component';
+import { ViewAllPurchasedCouponsComponent } from './components/customer/view-all-purchased-coupons/view-all-purchased-coupons.component';
+import { ViewAllPurchasedCouponsByTypeComponent } from './components/customer/view-all-purchased-coupons-by-type/view-all-purchased-coupons-by-type.component';
+import { ViewAllPurchasedCouponsByPriceComponent } from './components/customer/view-all-purchased-coupons-by-price/view-all-purchased-coupons-by-price.component';
+import { ViewCustomerIncomeComponent } from './components/customer/view-customer-income/view-customer-income.component';
 
 
 const routes: Routes = [
@@ -29,8 +43,24 @@ const routes: Routes = [
   { path: "coupons", component: CouponsComponent },
   { path: "coupon-details/:id", component: CouponDetailsComponent },
   { path: "add-coupon-test", component: AddCouponTestComponent },
-  { path: "customer", component: CustomerComponent },
-  { path: "company", component: CompanyComponent },
+  { path: "customer", component: CustomerComponent, children: [
+    { path: "purchase-coupon", component: PurchaseCouponComponent },
+    { path: "view-all-purchased-coupons", component: ViewAllPurchasedCouponsComponent },
+    { path: "view-all-purchased-coupons-by-type", component: ViewAllPurchasedCouponsByTypeComponent },
+    { path: "view-all-purchased-coupons-by-price", component: ViewAllPurchasedCouponsByPriceComponent },
+    { path: "view-customer-income", component: ViewCustomerIncomeComponent }
+  ]},
+  { path: "company", component: CompanyComponent, children: [
+      { path: "add-coupon", component: AddCouponComponent },
+      { path: "update-coupon", component: UpdateCouponComponent },
+      { path: "delete-coupon", component: DeleteCouponComponent },
+      { path: "view-coupon", component: ViewCouponComponent },
+      { path: "view-all-coupons", component: ViewAllCouponsComponent },
+      { path: "view-all-coupons-by-type", component: ViewAllCouponsByTypeComponent },
+      { path: "view-all-coupons-by-price", component: ViewAllCouponsByPriceComponent },
+      { path: "view-all-coupons-by-date", component: ViewAllCouponsByDateComponent },
+      { path: "view-company-income", component: ViewCompanyIncomeComponent }
+  ]},
   { path: "admin", component: AdminComponent, children: [
       { path: "add-company", component: AddCompanyComponent },
       { path: "update-company", component: UpdateCompanyComponent },
