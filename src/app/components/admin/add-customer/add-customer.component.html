@@ -1,1 +1,20 @@
-<p>add-customer works!</p>
+<!-- <p>add-customer works!</p> -->
+
+<div>
+    <form #formInfo="ngForm">
+        <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="customer.id" name="id">
+        <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+        <br><br>
+
+        <input #nameInfo="ngModel" required pattern="^[A-Z].*[a-z]$" type="text" placeholder="Name" [(ngModel)]="customer.name" name="name">
+        <span *ngIf="nameInfo.errors?.required && nameInfo.touched">Missing Name</span>
+        <span *ngIf="nameInfo.errors?.pattern && nameInfo.touched">Name must start with a capital letter and contain at least two letters!</span>
+        <br><br>
+
+        <input #passwordInfo="ngModel" minlength="1" required type="password" placeholder="Password" [(ngModel)]="customer.password" name="password">
+        <span *ngIf="passwordInfo.invalid && passwordInfo.touched">Missing Password</span>
+        <br><br>
+
+        <button [disabled]="!formInfo.form.valid" (click)="addCustomer()">Add Customer</button>
+    </form>
+</div>

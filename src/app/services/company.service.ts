@@ -16,4 +16,10 @@ export class CompanyService {
     // return this.httpClient.post<Company>("http://localhost:8080/CouponSystemSpringProj/addCompany", company, {withCredentials: true});
     return this.httpClient.post<Company>("/assets/json/Companies.json", company);
   }
+
+  public deleteCompany(company: Company): Observable<Company> {
+    // return this.httpClient.delete<Company>("http://localhost:8080/CouponSystemSpringProj/deleteCompany/${id}", company, {withCredentials: true});
+    return this.httpClient.delete<Company>("/assets/json/Companies.json"); //, company
+  }
+
 }
