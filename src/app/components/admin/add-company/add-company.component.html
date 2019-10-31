@@ -2,6 +2,8 @@
 
 <div>
     <form #formInfo="ngForm">
+        Enter Company details
+        <br>
         <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="company.id" name="id">
         <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
         <br><br>

@@ -1,1 +1,19 @@
-<p>update-customer works!</p>
+<!-- <p>update-customer works!</p> -->
+
+<div>
+    <form #formInfo="ngForm">
+        Enter Customer ID to update the Customer
+        <br>
+        <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="customer.id" name="id">
+        <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+        <br><br>
+
+        Enter new Customer password
+        <br>
+        <input #passwordInfo="ngModel" minlength="1" required type="password" placeholder="Password" [(ngModel)]="customer.password" name="password">
+        <span *ngIf="passwordInfo.invalid && passwordInfo.touched">Missing Password</span>
+        <br><br>
+
+        <button [disabled]="!formInfo.form.valid" (click)="updateCustomer()">Update Customer</button>
+    </form>
+</div>

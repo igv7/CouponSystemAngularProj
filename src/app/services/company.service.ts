@@ -22,4 +22,9 @@ export class CompanyService {
     return this.httpClient.delete<Company>("/assets/json/Companies.json"); //, company
   }
 
+  public updateCompany(company: Company): Observable<Company> {
+    // return this.httpClient.update<Company>("http://localhost:8080/CouponSystemSpringProj/updateCompany/${id}", company, {withCredentials: true});
+    return this.httpClient.put<Company>("/assets/json/Companies.json", company); //, company
+  }
+
 }

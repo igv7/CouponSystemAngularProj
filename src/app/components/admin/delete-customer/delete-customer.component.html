@@ -1,1 +1,13 @@
-<p>delete-customer works!</p>
+<!-- <p>delete-customer works!</p> -->
+
+<div>
+    <form #formInfo="ngForm">
+        Enter Customer ID to delete the Customer
+        <br>
+        <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="customer.id" name="id">
+        <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+        <br><br>
+
+        <button [disabled]="!formInfo.form.valid" (click)="deleteCustomer()">Delete Customer</button>
+    </form>
+</div>
