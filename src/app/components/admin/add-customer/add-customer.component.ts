@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/models/customer';
 import { CustomerService } from 'src/app/services/customer.service';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-add-customer',
@@ -11,7 +12,7 @@ export class AddCustomerComponent implements OnInit {
 
   public customer = new Customer();
 
-  public constructor(private customerService: CustomerService) { }
+  public constructor(private adminService: AdminService) { }
 
   ngOnInit() {
   }
@@ -23,7 +24,7 @@ export class AddCustomerComponent implements OnInit {
     Password: ${this.customer.password}
     `);
 
-    this.customerService.addCustomer(this.customer).subscribe(c => {
+    this.adminService.addCustomer(this.customer).subscribe(c => {
       alert("Customer has been succesfully added! Name: " + c.name);
     }, err => {
       alert("Error on add Customer!" + err);

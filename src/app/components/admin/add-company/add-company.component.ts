@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Company } from 'src/app/models/company';
-import { CompanyService } from 'src/app/services/company.service';
+import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-add-company',
@@ -11,7 +12,7 @@ export class AddCompanyComponent implements OnInit {
 
   public company = new Company();
 
-  public constructor(private companyService: CompanyService) { }
+  public constructor(private adminService: AdminService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -24,8 +25,13 @@ export class AddCompanyComponent implements OnInit {
     Email: ${this.company.email}
     `);
 
-    this.companyService.addCompany(this.company).subscribe(c => {
-      alert("Company has been succesfully added! Name: " + c.name);
+    this.adminService.addCompany(this.company).subscribe(company => {
+      alert("Company has been succesfully added! " + 
+      "\nId: " + company.id +
+      "\nName: " + company.name +
+      "\nPassword: " + company.password +
+      "\nEmail: " + company.email);
+      this.router.navigate(["/admin/view-all-companies"])
     }, err => {
       alert("Error on add Company!" + err);
     });

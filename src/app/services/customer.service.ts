@@ -8,27 +8,29 @@ import { Observable } from 'rxjs';
 })
 export class CustomerService {
 
-  public constructor(private httpClient: HttpClient) { }
+  constructor() {}
 
-  // private BASE_URL = "http://localhost:8080/CouponSystemSpringProj/admin"; //'' ``
+  // public constructor(private httpClient: HttpClient) { }
 
-  public addCustomer(customer: Customer): Observable<Customer> {
-    // return this.httpClient.post<Customer>("http://localhost:8080/CouponSystemSpringProj/addCustomer", customer, {withCredentials: true});
-    return this.httpClient.post<Customer>("/assets/json/Customers.json", customer);
-  }
+  // // private BASE_URL = "http://localhost:8080/CouponSystemSpringProj/admin"; //'' ``
 
-  public deleteCustomer(customer: Customer): Observable<Customer> {
-    // return this.httpClient.delete<Customer>("http://localhost:8080/CouponSystemSpringProj/deleteCustomer/${id}", customer, {withCredentials: true});
-    return this.httpClient.delete<Customer>("/assets/json/Customers.json"); //, customer
-  }
+  // public addCustomer(customer: Customer): Observable<Customer> {
+  //   // return this.httpClient.post<Customer>("http://localhost:8080/CouponSystemSpringProj/addCustomer", customer, {withCredentials: true});
+  //   return this.httpClient.post<Customer>("/assets/json/Customers.json", customer);
+  // }
 
-  public updateCustomer(customer: Customer): Observable<Customer> {
-    // return this.httpClient.update<Customer>("http://localhost:8080/CouponSystemSpringProj/updateCustomer/${id}", customer, {withCredentials: true});
-    return this.httpClient.put<Customer>("/assets/json/Customers.json", customer); //, customer
-  }
+  // public deleteCustomer(customer: Customer): Observable<Customer> {
+  //   // return this.httpClient.delete<Customer>("http://localhost:8080/CouponSystemSpringProj/deleteCustomer/${id}", customer, {withCredentials: true});
+  //   return this.httpClient.delete<Customer>("/assets/json/Customers.json"); //, customer
+  // }
 
-  public getAllCustomers(): Observable<Customer[]> {
-    // return this.httpClient.get<Customer[]>("http://localhost:8080/CouponSystemSpringProj/getAllCustomers", {withCredentials: true});
-    return this.httpClient.get<Customer[]>("/assets/json/Customers.json");
-  }
+  // public updateCustomer(customer: Customer): Observable<Customer> {
+  //   // return this.httpClient.update<Customer>("http://localhost:8080/CouponSystemSpringProj/updateCustomer/${id}", customer, {withCredentials: true});
+  //   return this.httpClient.put<Customer>("/assets/json/Customers.json", customer); //, customer
+  // }
+
+  // public getAllCustomers(): Observable<Customer[]> {
+  //   // return this.httpClient.get<Customer[]>("http://localhost:8080/CouponSystemSpringProj/getAllCustomers", {withCredentials: true});
+  //   return this.httpClient.get<Customer[]>("/assets/json/Customers.json");
+  // }
 }

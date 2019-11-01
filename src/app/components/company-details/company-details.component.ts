@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Company } from 'src/app/models/company';
 import { ActivatedRoute } from '@angular/router';
 import { CompanyService } from 'src/app/services/company.service';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-company-details',
@@ -12,10 +13,10 @@ export class CompanyDetailsComponent implements OnInit {
 
   public company: Company;
 
-  public constructor(private activatedRoute: ActivatedRoute, private companyService: CompanyService) { }
+  public constructor(private activatedRoute: ActivatedRoute, private adminService: AdminService) { }
 
   public ngOnInit(): void {
-    this.companyService.getAllCompanies().subscribe((companies) => {
+    this.adminService.getAllCompanies().subscribe((companies) => {
       const id = +this.activatedRoute.snapshot.params.id;
       this.company = companies.find(c => c.id == id);
     }, err => {

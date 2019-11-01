@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/models/customer';
 import { CustomerService } from 'src/app/services/customer.service';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-update-customer',
@@ -11,7 +12,7 @@ export class UpdateCustomerComponent implements OnInit {
 
   public customer = new Customer();
 
-  public constructor(private customerServise: CustomerService) { }
+  public constructor(private adminServise: AdminService) { }
 
   ngOnInit() {
   }
@@ -22,7 +23,7 @@ export class UpdateCustomerComponent implements OnInit {
     Password: ${this.customer.password}
     `);
 
-    this.customerServise.updateCustomer(this.customer).subscribe(c => {
+    this.adminServise.updateCustomer(this.customer).subscribe(c => {
       alert("Customer has been succesfully updated! Name: " + c.name);
     }, err => {
       alert("Error on update Customer!" + err);
