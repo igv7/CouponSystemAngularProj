@@ -10,7 +10,7 @@ export class CompanyService {
 
   public constructor(private httpClient: HttpClient) { }
 
-  // private BASE_URL = "http://localhost:8080/CouponSystemSpringProj/admin"; //'' ``
+  private BASE_URL = "http://localhost:8080/CouponSystemSpringProj/admin"; //'' ``
 
   public addCompany(company: Company): Observable<Company> {
     // return this.httpClient.post<Company>("http://localhost:8080/CouponSystemSpringProj/addCompany", company, {withCredentials: true});
@@ -25,6 +25,16 @@ export class CompanyService {
   public updateCompany(company: Company): Observable<Company> {
     // return this.httpClient.update<Company>("http://localhost:8080/CouponSystemSpringProj/updateCompany/${id}", company, {withCredentials: true});
     return this.httpClient.put<Company>("/assets/json/Companies.json", company); //, company
+  }
+
+  public getAllCompanies(): Observable<Company[]> {
+    // return this.httpClient.get<Company[]>("http://localhost:8080/CouponSystemSpringProj/getAllCompanies", {withCredentials: true});
+    return this.httpClient.get<Company[]>("/assets/json/Companies.json");
+  }
+
+  public getCompany(company: Company): Observable<Company> {
+    // return this.httpClient.get<Company>("http://localhost:8080/CouponSystemSpringProj/getCompany/${id}", company, {withCredentials: true});
+    return this.httpClient.get<Company>("/assets/json/Companies.json"); //, company
   }
 
 }

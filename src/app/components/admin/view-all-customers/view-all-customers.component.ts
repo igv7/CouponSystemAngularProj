@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Customer } from 'src/app/models/customer';
+import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
   selector: 'app-view-all-customers',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewAllCustomersComponent implements OnInit {
 
-  constructor() { }
+  public customers: Customer[];
 
-  ngOnInit() {
+  public constructor(private customerService: CustomerService) { }
+
+  public ngOnInit(): void {
+    this.customerService.getAllCustomers().subscribe((customers) => {
+      setTimeout(() => this.customers = customers, 500);
+    }, err => {
+      alert("Error: " + err.message);
+    });
   }
 
 }

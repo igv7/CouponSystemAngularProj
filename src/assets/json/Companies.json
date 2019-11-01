@@ -1,56 +1,56 @@
 [
 	{
 		"id": "1",
-		"name": "adidas",
+		"name": "Adidas",
 		"password": "123",
 		"email": "adidas@gmail.com"
 	},
 	
 	{
 		"id": "2",
-		"name": "pepsi",
+		"name": "Pepsi",
 		"password": "234",
 		"email": "pepsi@gmail.com"
 	},
 	
 	{
 		"id": "3",
-		"name": "teva",
+		"name": "Teva",
 		"password": "345",
 		"email": "teva@gmail.com"
 	},
 	
 	{
 		"id": "4",
-		"name": "mcdonalds",
+		"name": "Mcdonalds",
 		"password": "456",
 		"email": "mcdonalds@gmail.com"
 	},
 	
 	{
 		"id": "5",
-		"name": "hagor",
+		"name": "Hagor",
 		"password": "567",
 		"email": "hagor@gmail.com"
 	},
 	
 	{
 		"id": "6",
-		"name": "hashmal",
+		"name": "Hashmal",
 		"password": "678",
 		"email": "hashmal@gmail.com"
 	},
 	
 	{
 		"id": "7",
-		"name": "tayo",
+		"name": "Tayo",
 		"password": "789",
 		"email": "tayo@gmail.com"
 	},
 	
 	{
 		"id": "8",
-		"name": "isratours",
+		"name": "Isratours",
 		"password": "890",
 		"email": "isratours@gmail.com"
 	}

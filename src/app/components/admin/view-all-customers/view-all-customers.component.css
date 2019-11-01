@@ -1,0 +1,42 @@
+table {
+    margin: 30px auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: lightskyblue;
+}
+
+tr:nth-child(odd) {
+    background-color: plum;
+}
+
+div {
+    height: 100%;
+    /* width: 100%; */
+    overflow: auto;
+}
+
+.mainDiv{
+    margin-top: 20px;
+    border: 1px solid black;
+    background-color: lightsteelblue;
+    height: 70%;
+    position: absolute;
+    overflow: auto;
+    top: 15%;
+    left: 35%;
+    width: 50%;
+}
+
+a {
+    font-size: large;
+}
+
+.active-link {
+    color: indigo;
+    font-weight: bold;
+}

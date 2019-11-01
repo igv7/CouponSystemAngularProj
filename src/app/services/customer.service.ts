@@ -26,4 +26,9 @@ export class CustomerService {
     // return this.httpClient.update<Customer>("http://localhost:8080/CouponSystemSpringProj/updateCustomer/${id}", customer, {withCredentials: true});
     return this.httpClient.put<Customer>("/assets/json/Customers.json", customer); //, customer
   }
+
+  public getAllCustomers(): Observable<Customer[]> {
+    // return this.httpClient.get<Customer[]>("http://localhost:8080/CouponSystemSpringProj/getAllCustomers", {withCredentials: true});
+    return this.httpClient.get<Customer[]>("/assets/json/Customers.json");
+  }
 }

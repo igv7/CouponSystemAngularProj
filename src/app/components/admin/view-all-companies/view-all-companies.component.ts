@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Company } from 'src/app/models/company';
+import { CompanyService } from 'src/app/services/company.service';
 
 @Component({
   selector: 'app-view-all-companies',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewAllCompaniesComponent implements OnInit {
 
-  constructor() { }
+  public companies: Company[];
 
-  ngOnInit() {
+  public constructor(private companyService: CompanyService) { }
+
+  public ngOnInit(): void {
+    this.companyService.getAllCompanies().subscribe((companies) => {
+      setTimeout(() => this.companies = companies, 500);
+    }, err => {
+      alert("Error: " + err.message);
+    });
   }
 
 }

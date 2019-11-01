@@ -36,6 +36,8 @@ import { ViewAllPurchasedCouponsComponent } from './components/customer/view-all
 import { ViewAllPurchasedCouponsByTypeComponent } from './components/customer/view-all-purchased-coupons-by-type/view-all-purchased-coupons-by-type.component';
 import { ViewAllPurchasedCouponsByPriceComponent } from './components/customer/view-all-purchased-coupons-by-price/view-all-purchased-coupons-by-price.component';
 import { ViewCustomerIncomeComponent } from './components/customer/view-customer-income/view-customer-income.component';
+import { CompanyDetailsComponent } from './components/company-details/company-details.component';
+import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
 
 
 const routes: Routes = [
@@ -66,13 +68,17 @@ const routes: Routes = [
       { path: "update-company", component: UpdateCompanyComponent },
       { path: "delete-company", component: DeleteCompanyComponent },
       { path: "view-company", component: ViewCompanyComponent },
-      { path: "view-all-companies", component: ViewAllCompaniesComponent },
+      { path: "view-all-companies", component: ViewAllCompaniesComponent, children: [
+          { path: "company-details/:id", component: CompanyDetailsComponent }
+      ]},
       { path: "view-income-by-company", component: ViewIncomeByCompanyComponent },
       { path: "add-customer", component: AddCustomerComponent },
       { path: "update-customer", component: UpdateCustomerComponent },
       { path: "delete-customer", component: DeleteCustomerComponent },
       { path: "view-customer", component: ViewCustomerComponent },
-      { path: "view-all-customers", component: ViewAllCustomersComponent },
+      { path: "view-all-customers", component: ViewAllCustomersComponent, children: [
+        { path: "customer-details/:id", component: CustomerDetailsComponent }
+      ]},
       { path: "view-income-by-customer", component: ViewIncomeByCustomerComponent },
       { path: "view-all-income", component: ViewAllIncomeComponent }
   ]},
