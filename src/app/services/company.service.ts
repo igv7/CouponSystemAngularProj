@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Company } from '../models/company';
 import { Observable } from 'rxjs';
+import { Coupon } from '../models/coupon';
 
 
 @Injectable({
@@ -9,16 +10,16 @@ import { Observable } from 'rxjs';
 })
 export class CompanyService {
 
-  constructor() {}
+  // constructor() {}
 
-  // public constructor(private httpClient: HttpClient) { }
+  public constructor(private httpClient: HttpClient) { }
 
-  // private BASE_URL = "http://localhost:8080/CouponSystemSpringProj/admin"; //'' ``
+  // private BASE_URL = "http://localhost:8080/CouponSystemSpringProj/company"; //'' ``
 
-  // public addCompany(company: Company): Observable<Company> {
-  //   // return this.httpClient.post<Company>("http://localhost:8080/CouponSystemSpringProj/addCompany", company, {withCredentials: true});
-  //   return this.httpClient.post<Company>("/assets/json/Companies.json", company);
-  // }
+  public addCoupon(coupon: Coupon): Observable<Coupon> {
+    // return this.httpClient.post<Coupon>("http://localhost:8080/CouponSystemSpringProj/addCoupon", coupon, {withCredentials: true});
+    return this.httpClient.post<Coupon>("/assets/json/Coupons.json", coupon);
+  }
 
   // public deleteCompany(id: number): Observable<Company> {
   //   // return this.httpClient.delete<Company>("http://localhost:8080/CouponSystemSpringProj/deleteCompany/${id}", company, {withCredentials: true});//+id

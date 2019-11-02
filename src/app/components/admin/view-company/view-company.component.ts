@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Company } from 'src/app/models/company';
-import { CompanyService } from 'src/app/services/company.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
@@ -11,10 +10,10 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class ViewCompanyComponent implements OnInit {
 
-  // public company = new Company();
-  public company: Company;
+  public company = new Company();
+  // public company: Company;
 
-  public constructor(private adminService: AdminService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  public constructor(private adminService: AdminService) { } //, private activatedRoute: ActivatedRoute, private router: Router
 
   ngOnInit() {
   }

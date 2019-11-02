@@ -1,1 +1,18 @@
-<p>view-customer works!</p>
+<!-- <p>view-customer works!</p> -->
+
+<div>
+    <form #formInfo="ngForm">
+        Enter Customer ID to view the Customer
+        <br>
+        <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="customer.id" name="id">
+        <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+        <br><br>
+
+        <button [disabled]="!formInfo.form.valid" (click)="getCustomer()">View Customer</button>
+    </form>
+    <p class="details">
+        <h3>Id: {{customer.id}}</h3>
+        <h3>Name: {{customer.name}}</h3>
+        <h3>Password: {{customer.password}}</h3>
+        <!-- <h3><a routerLink="/admin">Back to Admin</a></h3> -->
+</div>

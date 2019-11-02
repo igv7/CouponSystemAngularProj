@@ -1,1 +1,57 @@
-<p>add-coupon works!</p>
+<!-- <p>add-coupon works!</p> -->
+
+<div>
+    <form #formInfo="ngForm">
+        <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="coupon.id" name="id">
+        <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+        <br><br>
+    
+        <input #titleInfo="ngModel" required pattern="^[A-Z].*$" type="text" placeholder="Title" [(ngModel)]="coupon.title" name="title">
+        <span *ngIf="titleInfo.errors?.required && titleInfo.touched">Missing Title</span>
+        <span *ngIf="titleInfo.errors?.pattern && titleInfo.touched">Title must start with a capital letter!</span>
+        <br><br>
+    
+        <input #startDateInfo="ngModel" required type="text" placeholder="StartDate" [(ngModel)]="coupon.startDate" name="startDate">
+        <span *ngIf="startDateInfo.invalid && startDateInfo.touched">Missing StartDate</span>
+        <br><br>
+    
+        <input #endDateInfo="ngModel" required type="text" placeholder="EndDate" [(ngModel)]="coupon.endDate" name="endDate">
+        <span *ngIf="endDateInfo.invalid && endDateInfo.touched">Missing EndDate</span>
+        <br><br>
+    
+        <input #amountInfo="ngModel" minlength="1" required type="number" placeholder="Amount" [(ngModel)]="coupon.amount" name="amount">
+        <span *ngIf="amountInfo.invalid && amountInfo.touched">Missing Amount</span>
+        <br><br>
+    
+        <input #typeInfo="ngModel" required pattern="^[A-Z].*[A-Z]$" type="text" placeholder="Type" [(ngModel)]="coupon.type" name="type">
+        <span *ngIf="typeInfo.errors?.required && typeInfo.touched">Missing Type</span>
+        <span *ngIf="typeInfo.errors?.pattern && typeInfo.touched">Type must have minimum two capital letters!</span>
+        <br><br>
+    
+        <input #messageInfo="ngModel" required type="text" placeholder="Message" [(ngModel)]="coupon.message" name="message">
+        <span *ngIf="messageInfo.invalid && messageInfo.touched">Missing Message</span>
+        <br><br>
+    
+        <input #priceInfo="ngModel" required min="0" max="1000" type="number" placeholder="Price" [(ngModel)]="coupon.price" name="price">
+        <span *ngIf="priceInfo.invalid && priceInfo.touched">Missing Price</span>
+        <br><br>
+    
+        <input #imageInfo="ngModel" required type="text" placeholder="Image" [(ngModel)]="coupon.image" name="image">
+        <span *ngIf="imageInfo.invalid && imageInfo.touched">Missing Image</span>
+        <br><br>
+    
+        <button [disabled]="!formInfo.form.valid" (click)="addCoupon()">Add Coupon</button>
+    
+        <!-- <p>Id valid? {{idInfo.valid}}</p>
+        <p>Title valid? {{titleInfo.valid}}</p>
+        <p>StartDate valid? {{startDateInfo.valid}}</p>
+        <p>EndDate valid? {{endDateInfo.valid}}</p>
+        <p>Amount valid? {{amountInfo.valid}}</p>
+        <p>Type valid? {{typeInfo.valid}}</p>
+        <p>Message valid? {{messageInfo.valid}}</p>
+        <p>Price valid? {{priceInfo.valid}}</p>
+        <p>Image valid? {{imageInfo.valid}}</p>
+        <p>Form valid? {{formInfo.form.valid}}</p> -->
+        
+    </form>
+</div>
