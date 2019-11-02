@@ -1,9 +1,15 @@
 <!-- <p>view-all-companies works!</p> -->
 
 <div class="mainDiv">
-    <img *ngIf="!companies" src="/assets/images/loadingGifTransparant1.gif">
-
+        <img *ngIf="!companies" src="/assets/images/loadingGifTransparant1.gif">
+        <!-- <p>Filter by name:</p>
+        <input type='text' [(ngModel)] = 'listFilter'>
+        <h3>Filtered by: {{listFilter}}</h3>
+        <input type="submit"> -->
     <div *ngIf="companies">
+            <p>Filter by name:</p>
+            <input type='text' [(ngModel)] = 'listFilter'>
+            <h3>Filtered by: {{listFilter}}</h3>
         <table>
             <tr>
                 <th>Id</th>
@@ -11,7 +17,7 @@
                 <th>Password</th>
                 <th>Email</th>
             </tr>
-            <tr *ngFor="let c of companies">
+            <tr *ngFor="let c of companies | companyFilter: listFilter">
                 <td>{{c.id}}</td>
                 <td>
                     <a routerLink="../view-all-companies/company-details/{{c.id}}" routerLinkActive="active-link">

@@ -1,1 +1,19 @@
-<p>update-coupon works!</p>
+<!-- <p>update-coupon works!</p> -->
+
+<div>
+    <form #formInfo="ngForm">
+        <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="coupon.id" name="id">
+        <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+        <br><br>
+
+        <input #endDateInfo="ngModel" required type="text" placeholder="EndDate" [(ngModel)]="coupon.endDate" name="endDate">
+        <span *ngIf="endDateInfo.invalid && endDateInfo.touched">Missing EndDate</span>
+        <br><br>
+
+        <input #priceInfo="ngModel" required min="0" max="1000" type="number" placeholder="Price" [(ngModel)]="coupon.price" name="price">
+        <span *ngIf="priceInfo.invalid && priceInfo.touched">Missing Price</span>
+        <br><br>
+
+        <button [disabled]="!formInfo.form.valid" (click)="updateCoupon()">Update Coupon</button>
+    </form>
+</div>

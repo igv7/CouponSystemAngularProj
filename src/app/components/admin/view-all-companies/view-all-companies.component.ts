@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Company } from 'src/app/models/company';
-import { CompanyService } from 'src/app/services/company.service';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -11,6 +10,8 @@ import { AdminService } from 'src/app/services/admin.service';
 export class ViewAllCompaniesComponent implements OnInit {
 
   public companies: Company[];
+
+  listFilter: string = "";
 
   public constructor(private adminService: AdminService) { }
 

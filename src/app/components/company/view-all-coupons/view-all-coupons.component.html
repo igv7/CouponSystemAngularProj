@@ -1,1 +1,49 @@
-<p>view-all-coupons works!</p>
+<!-- <p>view-all-coupons works!</p> -->
+
+<div class="mainDiv">
+    <img *ngIf="!coupons" src="/assets/images/loadingGifTransparant1.gif">
+
+    <div *ngIf="coupons">
+            <p>Filter by type:</p>
+            <input type='text' [(ngModel)] = 'listFilter'>
+            <h3>Filtered by: {{listFilter}}</h3>
+            <!-- <button class='btn btn-primary' (click) = "toggleImage()" >
+                {{showImage ? 'Hide': 'Show'}} image
+            </button> -->
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Message</th>
+                <th>Price</th>
+                <!-- <th>Image</th> -->
+                <th>
+                    <button class='btn btn-primary' (click) = "toggleImage()" >
+                        <h4>{{showImage ? 'Hide': 'Show'}} Image</h4>
+                    </button>
+                </th>
+            </tr>
+            <tr *ngFor="let c of coupons | couponTypeFilter: listFilter">
+                <td>{{c.id}}</td>
+                <td>
+                    <a routerLink="/coupon-details/{{c.id}}">
+                        {{c.title}}
+                    </a>
+                </td>
+                <td>{{c.startDate}}</td>
+                <td>{{c.endDate}}</td>
+                <td>{{c.amount}}</td>
+                <td>{{c.type}}</td>
+                <td>{{c.message}}</td>
+                <td>{{c.price}}</td>
+                <td>
+                    <app-thumbnail imageSource="/assets/images/coupons/{{c.title}}.jpg"></app-thumbnail>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

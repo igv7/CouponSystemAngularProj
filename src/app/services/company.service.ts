@@ -21,24 +21,24 @@ export class CompanyService {
     return this.httpClient.post<Coupon>("/assets/json/Coupons.json", coupon);
   }
 
-  // public deleteCompany(id: number): Observable<Company> {
-  //   // return this.httpClient.delete<Company>("http://localhost:8080/CouponSystemSpringProj/deleteCompany/${id}", company, {withCredentials: true});//+id
-  //   return this.httpClient.delete<Company>("/assets/json/Companies.json"); //, company
-  // }
+  public deleteCoupon(id: number): Observable<Coupon> {
+    // return this.httpClient.delete<Coupon>("http://localhost:8080/CouponSystemSpringProj/deleteCoupon/${id}", coupon, {withCredentials: true});//+id
+    return this.httpClient.delete<Coupon>("/assets/json/Coupons.json"); //, coupon
+  }
 
-  // public updateCompany(company: Company): Observable<Company> {
-  //   // return this.httpClient.update<Company>("http://localhost:8080/CouponSystemSpringProj/updateCompany/${id}", company, {withCredentials: true});//+company.id, company
-  //   return this.httpClient.put<Company>("/assets/json/Companies.json", company); //, company
-  // }
+  public updateCoupon(coupon: Coupon): Observable<Coupon> {
+    // return this.httpClient.update<Coupon>("http://localhost:8080/CouponSystemSpringProj/updateCoupon/${id}", coupon, {withCredentials: true});//+coupon.id, coupon
+    return this.httpClient.put<Coupon>("/assets/json/Coupons.json", coupon); //, coupon
+  }
 
-  // public getAllCompanies(): Observable<Company[]> {
-  //   // return this.httpClient.get<Company[]>("http://localhost:8080/CouponSystemSpringProj/getAllCompanies", {withCredentials: true});
-  //   return this.httpClient.get<Company[]>("/assets/json/Companies.json");
-  // }
+  public getAllCoupons(): Observable<Coupon[]> {
+    // return this.httpClient.get<Coupon[]>("http://localhost:8080/CouponSystemSpringProj/viewAllCoupons", {withCredentials: true});
+    return this.httpClient.get<Coupon[]>("/assets/json/Coupons.json");
+  }
 
-  // public getCompany(id: number): Observable<Company> {
-  //   // return this.httpClient.get<Company>("http://localhost:8080/CouponSystemSpringProj/getCompany/${id}", company, {withCredentials: true});//+id
-  //   return this.httpClient.get<Company>("/assets/json/company.json"); //, company
-  // }
+  public getCoupon(id: number): Observable<Coupon> {
+    // return this.httpClient.get<Coupon>("http://localhost:8080/CouponSystemSpringProj/viewCoupon/${id}", coupon, {withCredentials: true});//+id
+    return this.httpClient.get<Coupon>("/assets/json/Coupons.json"); //, coupon
+  }
 
 }

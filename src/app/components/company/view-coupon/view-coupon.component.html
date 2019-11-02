@@ -1,1 +1,24 @@
-<p>view-coupon works!</p>
+<!-- <p>view-coupon works!</p> -->
+
+<div>
+    <form #formInfo="ngForm">
+        Enter Coupon ID to view the Coupon
+        <br>
+        <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="coupon.id" name="id">
+        <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+        <br><br>
+
+        <button [disabled]="!formInfo.form.valid" (click)="getCoupon()">View Coupon</button>
+    </form>
+    <p class="details">
+        <h3>Id: {{coupon.id}}</h3>
+        <h3>Title: {{coupon.title}}</h3>
+        <h3>StartDate: {{coupon.startDate}}</h3>
+        <h3>EndDate: {{coupon.endDate}}</h3>
+        <h3>Amount: {{coupon.amount}}</h3>
+        <h3>Type: {{coupon.type}}</h3>
+        <h3>Message: {{coupon.message}}</h3>
+        <h3>Price: {{coupon.price}}</h3>
+        <h3>Image: {{coupon.image}}</h3>
+        <!-- <h3><a routerLink="/admin">Back to Admin</a></h3> -->
+</div>

@@ -46,11 +46,14 @@ import { ViewAllPurchasedCouponsByPriceComponent } from './components/customer/v
 import { ViewCustomerIncomeComponent } from './components/customer/view-customer-income/view-customer-income.component';
 import { CompanyDetailsComponent } from './components/company-details/company-details.component';
 import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
+import { CompanyFilterPipe } from './components/pipes/company-filter.pipe';
+import { CustomerFilterPipe } from './components/pipes/customer-filter.pipe';
+import { CouponFilterPipe } from './components/pipes/coupon-filter.pipe';
 
 
 
 @NgModule({
-  declarations: [LayoutComponent, HeaderComponent, FooterComponent, MenuComponent, HomeComponent, CouponsComponent, CustomerComponent, CompanyComponent, AdminComponent, AboutComponent, Page404Component, ThumbnailComponent, CouponDetailsComponent, AddCouponTestComponent, AddCouponComponent, AddCompanyComponent, UpdateCompanyComponent, DeleteCompanyComponent, ViewCompanyComponent, ViewAllCompaniesComponent, ViewIncomeByCompanyComponent, AddCustomerComponent, UpdateCustomerComponent, DeleteCustomerComponent, ViewCustomerComponent, ViewAllCustomersComponent, ViewIncomeByCustomerComponent, ViewAllIncomeComponent, UpdateCouponComponent, DeleteCouponComponent, ViewCouponComponent, ViewAllCouponsComponent, ViewAllCouponsByTypeComponent, ViewAllCouponsByPriceComponent, ViewAllCouponsByDateComponent, PurchaseCouponComponent, ViewAllPurchasedCouponsComponent, ViewAllPurchasedCouponsByTypeComponent, ViewAllPurchasedCouponsByPriceComponent, ViewCompanyIncomeComponent, ViewCustomerIncomeComponent, CompanyDetailsComponent, CustomerDetailsComponent],
+  declarations: [LayoutComponent, HeaderComponent, FooterComponent, MenuComponent, HomeComponent, CouponsComponent, CustomerComponent, CompanyComponent, AdminComponent, AboutComponent, Page404Component, ThumbnailComponent, CouponDetailsComponent, AddCouponTestComponent, AddCouponComponent, AddCompanyComponent, UpdateCompanyComponent, DeleteCompanyComponent, ViewCompanyComponent, ViewAllCompaniesComponent, ViewIncomeByCompanyComponent, AddCustomerComponent, UpdateCustomerComponent, DeleteCustomerComponent, ViewCustomerComponent, ViewAllCustomersComponent, ViewIncomeByCustomerComponent, ViewAllIncomeComponent, UpdateCouponComponent, DeleteCouponComponent, ViewCouponComponent, ViewAllCouponsComponent, ViewAllCouponsByTypeComponent, ViewAllCouponsByPriceComponent, ViewAllCouponsByDateComponent, PurchaseCouponComponent, ViewAllPurchasedCouponsComponent, ViewAllPurchasedCouponsByTypeComponent, ViewAllPurchasedCouponsByPriceComponent, ViewCompanyIncomeComponent, ViewCustomerIncomeComponent, CompanyDetailsComponent, CustomerDetailsComponent, CompanyFilterPipe, CustomerFilterPipe, CouponFilterPipe],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [LayoutComponent]

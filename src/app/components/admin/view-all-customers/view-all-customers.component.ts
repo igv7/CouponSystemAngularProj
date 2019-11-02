@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/models/customer';
-import { CustomerService } from 'src/app/services/customer.service';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -11,6 +10,8 @@ import { AdminService } from 'src/app/services/admin.service';
 export class ViewAllCustomersComponent implements OnInit {
 
   public customers: Customer[];
+
+  listFilter: string = "";
 
   public constructor(private adminService: AdminService) { }
 

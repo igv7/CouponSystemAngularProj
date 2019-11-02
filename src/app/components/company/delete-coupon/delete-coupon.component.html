@@ -1,1 +1,15 @@
-<p>delete-coupon works!</p>
+<!-- <p>delete-coupon works!</p> -->
+
+<div>
+    <form #formInfo="ngForm">
+        Enter Coupon ID to delete the Coupon
+        <br>
+        <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="coupon.id" name="id">
+        <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+        <br><br>
+
+        <button [disabled]="!formInfo.form.valid" (click)="deleteCoupon()">Delete Coupon</button>
+        <br><br>
+        <button [disabled]="!formInfo.form.valid" (click)="cancelDelete()">Cancel! Back to Company</button>
+    </form>
+</div>
