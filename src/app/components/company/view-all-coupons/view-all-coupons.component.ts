@@ -18,6 +18,8 @@ export class ViewAllCouponsComponent implements OnInit {
 
   listFilter: string = "";
   showImage: boolean = false;
+  // public show: boolean = false;
+  // public showImage: any = "Show"
 
   public constructor(private companyService: CompanyService) { }
 

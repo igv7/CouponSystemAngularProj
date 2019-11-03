@@ -7,9 +7,9 @@
             <p>Filter by type:</p>
             <input type='text' [(ngModel)] = 'listFilter'>
             <h3>Filtered by: {{listFilter}}</h3>
-            <!-- <button class='btn btn-primary' (click) = "toggleImage()" >
-                {{showImage ? 'Hide': 'Show'}} image
-            </button> -->
+            <button class='btn' (click) = "toggleImage()" >
+                {{showImage ? 'Hide': 'Show'}} Image
+            </button>
         <table>
             <tr>
                 <th>Id</th>
@@ -20,12 +20,12 @@
                 <th>Type</th>
                 <th>Message</th>
                 <th>Price</th>
-                <!-- <th>Image</th> -->
-                <th>
+                <th *ngIf="showImage">Image</th>
+                <!-- <th>
                     <button class='btn btn-primary' (click) = "toggleImage()" >
                         <h4>{{showImage ? 'Hide': 'Show'}} Image</h4>
                     </button>
-                </th>
+                </th> -->
             </tr>
             <tr *ngFor="let c of coupons | couponTypeFilter: listFilter">
                 <td>{{c.id}}</td>
@@ -40,7 +40,7 @@
                 <td>{{c.type}}</td>
                 <td>{{c.message}}</td>
                 <td>{{c.price}}</td>
-                <td>
+                <td *ngIf="showImage">
                     <app-thumbnail imageSource="/assets/images/coupons/{{c.title}}.jpg"></app-thumbnail>
                 </td>
             </tr>

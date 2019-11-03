@@ -40,3 +40,7 @@ a {
     color: indigo;
     font-weight: bold;
 }
+
+.btn {
+    font-size: large;
+}
