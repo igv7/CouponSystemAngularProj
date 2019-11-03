@@ -38,6 +38,7 @@ import { ViewAllPurchasedCouponsByPriceComponent } from './components/customer/v
 import { ViewCustomerIncomeComponent } from './components/customer/view-customer-income/view-customer-income.component';
 import { CompanyDetailsComponent } from './components/company-details/company-details.component';
 import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
+import { CouponIdComponent } from './components/coupon-id/coupon-id.component';
 
 
 const routes: Routes = [
@@ -56,7 +57,9 @@ const routes: Routes = [
       { path: "add-coupon", component: AddCouponComponent },
       { path: "update-coupon", component: UpdateCouponComponent },
       { path: "delete-coupon", component: DeleteCouponComponent },
-      { path: "view-coupon", component: ViewCouponComponent },
+      { path: "view-coupon", component: ViewCouponComponent, children: [
+        {path: "coupon-id/:id", component: CouponIdComponent}
+      ]},
       { path: "view-all-coupons", component: ViewAllCouponsComponent },
       { path: "view-all-coupons-by-type", component: ViewAllCouponsByTypeComponent },
       { path: "view-all-coupons-by-price", component: ViewAllCouponsByPriceComponent },

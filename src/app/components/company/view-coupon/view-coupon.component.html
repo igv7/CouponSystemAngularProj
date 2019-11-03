@@ -11,15 +11,15 @@
         <button [disabled]="!formInfo.form.valid" (click)="getCoupon()">View Coupon</button>
     </form>
     <p class="details">
-        <h3>Id: {{coupon?.id}}</h3>
-        <h3>Title: {{coupon?.title}}</h3>
-        <h3>StartDate: {{coupon?.startDate}}</h3>
-        <h3>EndDate: {{coupon?.endDate}}</h3>
-        <h3>Amount: {{coupon?.amount}}</h3>
-        <h3>Type: {{coupon?.type}}</h3>
-        <h3>Message: {{coupon?.message}}</h3>
-        <h3>Price: {{coupon?.price | currency:'ILS':'symbol':'1.1-2'}}</h3>
+        <h3>Id: {{coupon.id}}</h3>
+        <h3>Title: {{coupon.title}}</h3>
+        <h3>StartDate: {{coupon.startDate}}</h3>
+        <h3>EndDate: {{coupon.endDate}}</h3>
+        <h3>Amount: {{coupon.amount}}</h3>
+        <h3>Type: {{coupon.type}}</h3>
+        <h3>Message: {{coupon.message}}</h3>
+        <h3>Price: {{coupon.price | currency:'ILS':'symbol':'1.1-2'}}</h3>
         <h3>Image:</h3>
-        <app-thumbnail imageSource="/assets/images/coupons/{{coupon?.title}}.jpg"></app-thumbnail>
+        <app-thumbnail imageSource="/assets/images/coupons/{{coupon.title}}.jpg"></app-thumbnail>
         <!-- <h3><a routerLink="/admin">Back to Admin</a></h3> -->
 </div>

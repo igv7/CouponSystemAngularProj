@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Coupon } from 'src/app/models/coupon';
 import { CompanyService } from 'src/app/services/company.service';
-import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-coupon',
@@ -17,7 +17,7 @@ export class ViewCouponComponent implements OnInit {
   // coupon: Coupon;
   // viewCouponForm: NgForm;
 
-  public constructor(private companyService: CompanyService) { } //, private activatedRoute: ActivatedRoute, private router: Router
+  public constructor(private companyService: CompanyService, private router: Router) { } //, private activatedRoute: ActivatedRoute, private router: Router
 
   ngOnInit() {
   }
@@ -43,6 +43,7 @@ export class ViewCouponComponent implements OnInit {
   
 
     this.companyService.getCoupon(this.coupon.id).subscribe(coupon=> {
+      this.router.navigate(["/company/view-coupon/coupon-id"]);
       alert("Success on get Coupon! Name: " + coupon.title);
     }, err => {
       alert("Error on get Coupon!" + err);
