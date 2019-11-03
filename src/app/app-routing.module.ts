@@ -45,6 +45,7 @@ const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "coupons", component: CouponsComponent },
   { path: "coupon-details/:id", component: CouponDetailsComponent },
+  { path: "coupon-id/:id", component: CouponIdComponent },
   { path: "add-coupon-test", component: AddCouponTestComponent },
   { path: "customer", component: CustomerComponent, children: [
     { path: "purchase-coupon", component: PurchaseCouponComponent },
@@ -57,9 +58,7 @@ const routes: Routes = [
       { path: "add-coupon", component: AddCouponComponent },
       { path: "update-coupon", component: UpdateCouponComponent },
       { path: "delete-coupon", component: DeleteCouponComponent },
-      { path: "view-coupon", component: ViewCouponComponent, children: [
-        {path: "coupon-id/:id", component: CouponIdComponent}
-      ]},
+      { path: "view-coupon", component: ViewCouponComponent },
       { path: "view-all-coupons", component: ViewAllCouponsComponent },
       { path: "view-all-coupons-by-type", component: ViewAllCouponsByTypeComponent },
       { path: "view-all-coupons-by-price", component: ViewAllCouponsByPriceComponent },

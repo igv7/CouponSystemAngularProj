@@ -16,8 +16,8 @@ public constructor(private httpClient: HttpClient) { }
 private BASE_URL = "http://localhost:8080/CouponSystemSpringProj/admin"; //'' ``
 
 public addCompany(company: Company): Observable<Company> {
-  // return this.httpClient.post<Company>("http://localhost:8080/CouponSystemSpringProj/admin/addCompany", company);//, {withCredentials: true}
-  return this.httpClient.post<Company>("/assets/json/Companies.json", company);
+  return this.httpClient.post<Company>("http://localhost:8080/admin/addCompany", company, {withCredentials: true});//, {withCredentials: true}
+  // return this.httpClient.post<Company>("/assets/json/Companies.json", company);
 }
 
 public deleteCompany(id: number): Observable<Company> {
@@ -31,8 +31,8 @@ public updateCompany(company: Company): Observable<Company> {
 }
 
 public getAllCompanies(): Observable<Company[]> {
-  // return this.httpClient.get<Company[]>("http://localhost:8080/CouponSystemSpringProj/admin/viewAllCompanies");//, {withCredentials: true}
-  return this.httpClient.get<Company[]>("/assets/json/Companies.json");
+  return this.httpClient.get<Company[]>("http://localhost:8080/admin/viewAllCompanies", {withCredentials: true});//, {withCredentials: true}
+  // return this.httpClient.get<Company[]>("/assets/json/Companies.json");
 }
 
 public getCompany(id: number): Observable<Company> {

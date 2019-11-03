@@ -11,13 +11,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ViewCouponComponent implements OnInit {
 
   public coupon = new Coupon();
+  // coupons: Coupon[];
   // public coupon: Coupon;
   // @ViewChild ('formInfo') viewCouponForm : NgForm;
   // couponId: number;
   // coupon: Coupon;
   // viewCouponForm: NgForm;
 
-  public constructor(private companyService: CompanyService, private router: Router) { } //, private activatedRoute: ActivatedRoute, private router: Router
+  public constructor(private companyService: CompanyService, private router: Router, private activatedRoute: ActivatedRoute) { } //, private activatedRoute: ActivatedRoute, private router: Router
 
   ngOnInit() {
   }
@@ -43,11 +44,20 @@ export class ViewCouponComponent implements OnInit {
   
 
     this.companyService.getCoupon(this.coupon.id).subscribe(coupon=> {
-      this.router.navigate(["/company/view-coupon/coupon-id"]);
+      // this.router.navigate(["/company/view-coupon/coupon-id/:id"]);
       alert("Success on get Coupon! Name: " + coupon.title);
     }, err => {
       alert("Error on get Coupon!" + err);
     });
   }
+
+  // onSubmit() {
+  //   this.companyService.getAllCoupons().subscribe(coupons => {
+  //     const id = +this.activatedRoute.snapshot.params.id;
+  //     this.coupon = coupons.find(c => c.id == id);
+  //   }, err => {
+  //     alert("Error: " + err.message);
+  //   });
+  // }
 
 }

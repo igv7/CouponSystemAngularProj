@@ -14,6 +14,9 @@ export class CouponIdComponent implements OnInit {
 
   public constructor(private activatedRoute: ActivatedRoute, private companyService: CompanyService) { }
 
+  // ngOnInit() {
+  // }
+
   public ngOnInit(): void {
     this.companyService.getAllCoupons().subscribe(coupons => {
       const id = +this.activatedRoute.snapshot.params.id;
@@ -23,5 +26,7 @@ export class CouponIdComponent implements OnInit {
     });
     
   }
+
+  
 
 }

@@ -8,11 +8,12 @@
         <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
         <br><br>
 
-        <button [disabled]="!formInfo.form.valid" (click)="getCoupon()">View Coupon</button>
+        <!-- <button [disabled]="!formInfo.form.valid" (click)="getCoupon()">View Coupon</button> -->
+        <!-- <input type="submit" [disabled]="!formInfo.valid" /> -->
     </form>
     <p class="details">
-        <h3>Id: {{coupon.id}}</h3>
-        <h3>Title: {{coupon.title}}</h3>
+        <h3><a routerLink="/coupon-id/{{coupon.id}}">Id: {{coupon.id}}</a></h3>
+        <!-- <h3>Title: {{coupon.title}}</h3>
         <h3>StartDate: {{coupon.startDate}}</h3>
         <h3>EndDate: {{coupon.endDate}}</h3>
         <h3>Amount: {{coupon.amount}}</h3>
@@ -20,6 +21,7 @@
         <h3>Message: {{coupon.message}}</h3>
         <h3>Price: {{coupon.price | currency:'ILS':'symbol':'1.1-2'}}</h3>
         <h3>Image:</h3>
-        <app-thumbnail imageSource="/assets/images/coupons/{{coupon.title}}.jpg"></app-thumbnail>
+        <img src="/assets/images/coupons/{{coupon.title}}.jpg"> -->
+        <!--<app-thumbnail imageSource="/assets/images/coupons/{{coupon.title}}.jpg"></app-thumbnail> -->
         <!-- <h3><a routerLink="/admin">Back to Admin</a></h3> -->
 </div>
