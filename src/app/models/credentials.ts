@@ -1,5 +1,5 @@
 export class Credentials {
-    public constructor(public username?: string, public password?: string, public type?: string) {
+    public constructor(public userName?: string, public password?: string, public type?: string) {
 
     }
 }

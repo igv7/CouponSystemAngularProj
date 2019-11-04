@@ -22,7 +22,7 @@ export class LoginService {
 
   // public isExist(credentials: Credentials): Observable<LoginResult> {//(Very impotent!)
     //Real Server:
-    // return this.httpClient.post<LoginResult>("http://localhost/8080/CouponSystemSpringProj/login", credentials, {withCredentials: true});
+    // return this.httpClient.post<LoginResult>("http://localhost:8080/login", credentials, {withCredentials: true});
 
     //Demo Server:
     // return this.httpClient.post<LoginResult>("/assets/json/server-demo.json", credentials, {withCredentials: true});
@@ -34,21 +34,21 @@ export class LoginService {
 
   public isExist(credentials: Credentials): Observable<LoginResult> {//public isExistDemo//boolean
 
-    if(credentials.type === "ADMIN" && credentials.username === "admin" && credentials.password === "1234") {
+    if(credentials.type === "ADMIN" && credentials.userName === "admin" && credentials.password === "1234") {
       this.isLoggedIn = true;
       this.type = credentials.type;
       // return this.httpClient.get<LoginResult>("/assets/json/server-demo-admin.json");//return true;
-      return this.httpClient.post<LoginResult>("http://localhost:8080/login", credentials, {withCredentials: true});//return true;
+      return this.httpClient.post<LoginResult>("http://localhost:8080/login?userName=admin&password=1234&type=ADMIN", credentials, {withCredentials: true});//return true;  //?userName=admin&password=1234&type=ADMIN
     }
 
-    if(credentials.type === "COMPANY" && credentials.username === "adidas" && credentials.password === "123") {
+    if(credentials.type === "COMPANY" && credentials.userName === "Adidas" && credentials.password === "123") {
       this.isLoggedIn = true;
       this.type = credentials.type;
       // return this.httpClient.get<LoginResult>("/assets/json/server-demo-company.json");//return true;
       return this.httpClient.post<LoginResult>("http://localhost:8080/login", credentials, {withCredentials: true});//return true;
     }
 
-    if(credentials.type === "CUSTOMER" && credentials.username === "Kobi" && credentials.password === "kobi123") {
+    if(credentials.type === "CUSTOMER" && credentials.userName === "Kobi" && credentials.password === "kobi123") {
       this.isLoggedIn = true;
       this.type = credentials.type;
       // return this.httpClient.get<LoginResult>("/assets/json/server-demo-customer.json");//return true;

@@ -3,15 +3,15 @@
 <div class="login">
     <form class="wow animated zoomIn">
         <p>Please Enter Your Details</p>
-      <label class="wow">Username: </label><br>
-      <input type="text" name="username" [(ngModel)]="credentials.username">
+      <!-- <label class="wow">Username: </label><br> -->
+      <input type="text" name="userName" placeholder="Username" [(ngModel)]="credentials.userName">
       <br><br>
     
-      <label class="wow">Password: </label><br>
-      <input type="password" name="password" [(ngModel)]="credentials.password">
+      <!-- <label class="wow">Password: </label><br> -->
+      <input type="password" name="password" placeholder="Password" [(ngModel)]="credentials.password">
       <br><br>
     
-      <label class="wow">Client Type: </label><br>
+      <label class="wow">Select Your Client Type: </label><br>
       <select name="type" [(ngModel)]="credentials.type">
         <option selected disabled>Select Your Type</option>
         <option value="ADMIN">ADMIN</option>
@@ -25,4 +25,6 @@
     
     </form>
     </div>
+
+    <!-- <router-outlet></router-outlet> -->
     

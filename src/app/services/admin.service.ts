@@ -31,8 +31,8 @@ public updateCompany(company: Company): Observable<Company> {
 }
 
 public getAllCompanies(): Observable<Company[]> {
-  // return this.httpClient.get<Company[]>("http://localhost:8080/admin/viewAllCompanies", {withCredentials: true});//, {withCredentials: true}
-  return this.httpClient.get<Company[]>("/assets/json/Companies.json");
+  return this.httpClient.get<Company[]>("http://localhost:8080/admin/viewAllCompanies", {withCredentials: true});//, {withCredentials: true}
+  // return this.httpClient.get<Company[]>("/assets/json/Companies.json");
 }
 
 public getCompany(id: number): Observable<Company> {

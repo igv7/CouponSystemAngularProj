@@ -51,14 +51,14 @@ const routes: Routes = [
   { path: "coupon-details/:id", component: CouponDetailsComponent },
   { path: "coupon-id/:id", component: CouponIdComponent },
   { path: "add-coupon-test", component: AddCouponTestComponent },
-  { path: "customer", canActivate: [CustomerGuardService], component: CustomerComponent, children: [
+  { path: "customer", canActivate: [CustomerGuardService], component: CustomerComponent, children: [//, canActivate: [CustomerGuardService]
     { path: "purchase-coupon", component: PurchaseCouponComponent },
     { path: "view-all-purchased-coupons", component: ViewAllPurchasedCouponsComponent },
     { path: "view-all-purchased-coupons-by-type", component: ViewAllPurchasedCouponsByTypeComponent },
     { path: "view-all-purchased-coupons-by-price", component: ViewAllPurchasedCouponsByPriceComponent },
     { path: "view-customer-income", component: ViewCustomerIncomeComponent }
   ]},
-  { path: "company", canActivate: [CompanyGuardService], component: CompanyComponent, children: [
+  { path: "company", canActivate: [CompanyGuardService], component: CompanyComponent, children: [//, canActivate: [CompanyGuardService]
       { path: "add-coupon", component: AddCouponComponent },
       { path: "update-coupon", component: UpdateCouponComponent },
       { path: "delete-coupon", component: DeleteCouponComponent },
@@ -69,7 +69,7 @@ const routes: Routes = [
       { path: "view-all-coupons-by-date", component: ViewAllCouponsByDateComponent },
       { path: "view-company-income", component: ViewCompanyIncomeComponent }
   ]},
-  { path: "admin", canActivate: [AdminGuardService], component: AdminComponent, children: [
+  { path: "admin", canActivate: [AdminGuardService], component: AdminComponent, children: [//, canActivate: [AdminGuardService]
       { path: "add-company", component: AddCompanyComponent },
       { path: "update-company", component: UpdateCompanyComponent },
       { path: "delete-company", component: DeleteCompanyComponent },

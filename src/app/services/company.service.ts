@@ -22,8 +22,8 @@ export class CompanyService {
   }
 
   public deleteCoupon(id: number): Observable<Coupon> {
-    // return this.httpClient.delete<Coupon>("http://localhost:8080/CouponSystemSpringProj/deleteCoupon/${id}", coupon, {withCredentials: true});//+id
-    return this.httpClient.delete<Coupon>("/assets/json/Coupons.json"); //, coupon
+    return this.httpClient.delete<Coupon>("http://localhost:8080/deleteCoupon/"+id, {withCredentials: true});//+id
+    // return this.httpClient.delete<Coupon>("/assets/json/Coupons.json"); //, coupon
   }
 
   public updateCoupon(coupon: Coupon): Observable<Coupon> {
