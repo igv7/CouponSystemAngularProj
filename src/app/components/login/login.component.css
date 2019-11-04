@@ -1,0 +1,60 @@
+/* div {
+    margin: 150px;
+    padding: 100px;
+    text-align: center;
+} */
+
+.login {
+    height: 100%;
+    overflow: auto;
+    text-align: center;
+    /* width: 20%;
+	height: 210px; */
+    /* background-color: green; */
+    /* border: 1px solid black; */
+    /* padding: 10px; */
+    /* margin-top: 70px;
+    margin-left: 600px; */
+    /* margin-right: 20px; */
+	/* float: bottom; */
+}
+
+button[class="buttonLogin"]:hover {
+    background-color:greenyellow;
+	height: 30px;
+    /* width: 60px; */
+    width: 250px;
+	border: 1px solid;
+	border-radius: 3px;
+	font-size: 16px;
+}
+
+button[type="reset"]:hover {
+    background-color:rosybrown;
+	height: 30px;
+    /* width: 60px; */
+    width: 250px;
+	border: 1px solid;
+	border-radius: 3px;
+	font-size: 16px;
+}
+
+
+/* .wow animated zoomIn {
+	data-wow-delay="0.3s";
+} */
+
+
+input, button, select {
+    width: 250px;
+    font-size: x-large;
+    /* margin: 10px; */
+}
+
+form {
+    margin-top: 5%;
+    margin-left: 20%;
+    border: 1px solid black;
+    width: 60%;
+    background-color: lightsteelblue;
+}

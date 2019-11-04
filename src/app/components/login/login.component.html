@@ -1,0 +1,28 @@
+<!-- <p>login works!</p> -->
+
+<div class="login">
+    <form class="wow animated zoomIn">
+        <p>Please Enter Your Details</p>
+      <label class="wow">Username: </label><br>
+      <input type="text" name="username" [(ngModel)]="credentials.username">
+      <br><br>
+    
+      <label class="wow">Password: </label><br>
+      <input type="password" name="password" [(ngModel)]="credentials.password">
+      <br><br>
+    
+      <label class="wow">Client Type: </label><br>
+      <select name="type" [(ngModel)]="credentials.type">
+        <option selected disabled>Select Your Type</option>
+        <option value="ADMIN">ADMIN</option>
+        <option value="COMPANY">COMPANY</option>
+        <option value="CUSTOMER">CUSTOMER</option>
+      </select>
+      <br><br><br><br><br><br><br><br>
+    
+      <button (click)="login()" class="buttonLogin">Login</button>&nbsp; &nbsp;
+      <button type="reset" class="button">Reset</button><br><br><br>
+    
+    </form>
+    </div>
+    
