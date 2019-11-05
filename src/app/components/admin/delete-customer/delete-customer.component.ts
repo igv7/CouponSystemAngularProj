@@ -22,7 +22,7 @@ export class DeleteCustomerComponent implements OnInit {
     Id: ${this.customer.id}
     `);
 
-    this.adminService.deleteCustomer(this.customer).subscribe(c => {
+    this.adminService.deleteCustomer(this.customer.id).subscribe(c => {
       alert("Customer has been succesfully deleted! Name: " + c.name);
     }, err => {
       alert("Error on delete Customer!" + err);

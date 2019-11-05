@@ -1,36 +1,38 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Customer } from '../models/customer';
 import { Observable } from 'rxjs';
+import { Coupon } from '../models/coupon';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
 
-  constructor() {}
+  // constructor() {}
 
-  // public constructor(private httpClient: HttpClient) { }
+  public constructor(private httpClient: HttpClient) { }
 
-  // // private BASE_URL = "http://localhost:8080/CouponSystemSpringProj/admin"; //'' ``
+  // private BASE_URL = "http://localhost:8080/customer/"; //'' ``
 
-  // public addCustomer(customer: Customer): Observable<Customer> {
-  //   // return this.httpClient.post<Customer>("http://localhost:8080/CouponSystemSpringProj/addCustomer", customer, {withCredentials: true});
-  //   return this.httpClient.post<Customer>("/assets/json/Customers.json", customer);
-  // }
+  public purchaseCoupon(id: number): Observable<Coupon> {//(coupon: Coupon)          +coupon.id, coupon,
+    return this.httpClient.post<Coupon>("http://localhost:8080/customer/purchaseCoupon/"+id, {withCredentials: true});
+    // return this.httpClient.post<Coupon>("/assets/json/Coupons.json", id, coupon);
+  }
 
-  // public deleteCustomer(customer: Customer): Observable<Customer> {
-  //   // return this.httpClient.delete<Customer>("http://localhost:8080/CouponSystemSpringProj/deleteCustomer/${id}", customer, {withCredentials: true});
-  //   return this.httpClient.delete<Customer>("/assets/json/Customers.json"); //, customer
-  // }
+  public getAllPurchasedCoupons(): Observable<Coupon[]> {
+    return this.httpClient.get<Coupon[]>("http://localhost:8080/customer/viewAllPurchasedCoupons", {withCredentials: true});
+    // return this.httpClient.get<Coupon[]>("/assets/json/Coupons.json");
+  }
 
-  // public updateCustomer(customer: Customer): Observable<Customer> {
-  //   // return this.httpClient.update<Customer>("http://localhost:8080/CouponSystemSpringProj/updateCustomer/${id}", customer, {withCredentials: true});
-  //   return this.httpClient.put<Customer>("/assets/json/Customers.json", customer); //, customer
-  // }
+  public getAllPurchasedCouponsByType(): Observable<Coupon[]> {//(coupon: Coupon)            +coupon.type, coupon,
+    return this.httpClient.get<Coupon[]>("http://localhost:8080/customer/viewAllPurchasedCouponsByType", {withCredentials: true});
+    // return this.httpClient.get<Coupon[]>("/assets/json/Coupons.json");
+  }
 
-  // public getAllCustomers(): Observable<Customer[]> {
-  //   // return this.httpClient.get<Customer[]>("http://localhost:8080/CouponSystemSpringProj/getAllCustomers", {withCredentials: true});
-  //   return this.httpClient.get<Customer[]>("/assets/json/Customers.json");
-  // }
+  public getAllPurchasedCouponsByPrice(): Observable<Coupon[]> {//(coupon: Coupon)            +coupon.price, coupon,
+    return this.httpClient.get<Coupon[]>("http://localhost:8080/customer/viewAllPurchasedCouponsByPrice", {withCredentials: true});
+    // return this.httpClient.get<Coupon[]>("/assets/json/Coupons.json");
+  }
+
+  
 }

@@ -13,7 +13,7 @@ export class AdminService {
 
 public constructor(private httpClient: HttpClient) { }
 
-private BASE_URL = "http://localhost:8080/CouponSystemSpringProj/admin"; //'' ``
+private BASE_URL = "http://localhost:8080/admin"; //'' ``
 
 public addCompany(company: Company): Observable<Company> {
   return this.httpClient.post<Company>("http://localhost:8080/admin/addCompany", company, {withCredentials: true});//, {withCredentials: true}
@@ -21,13 +21,13 @@ public addCompany(company: Company): Observable<Company> {
 }
 
 public deleteCompany(id: number): Observable<Company> {
-  // return this.httpClient.delete<Company>("http://localhost:8080/CouponSystemSpringProj/deleteCompany/${id}", company, {withCredentials: true});//+id
-  return this.httpClient.delete<Company>("/assets/json/Companies.json"); //, company
+  return this.httpClient.delete<Company>("http://localhost:8080/admin/deleteCompany/"+id, {withCredentials: true});//+id
+  // return this.httpClient.delete<Company>("/assets/json/Companies.json"); //, company
 }
 
 public updateCompany(company: Company): Observable<Company> {
-  // return this.httpClient.put<Company>("http://localhost:8080/CouponSystemSpringProj/updateCompany/${id}", company, {withCredentials: true});//+company.id, company
-  return this.httpClient.put<Company>("/assets/json/Companies.json", company); //, company
+  return this.httpClient.put<Company>("http://localhost:8080/admin/updateCompany/"+company.id, company, {withCredentials: true});//+company.id, company
+  // return this.httpClient.put<Company>("/assets/json/Companies.json", company); //, company
 }
 
 public getAllCompanies(): Observable<Company[]> {
@@ -36,8 +36,8 @@ public getAllCompanies(): Observable<Company[]> {
 }
 
 public getCompany(id: number): Observable<Company> {
-  // return this.httpClient.get<Company>("http://localhost:8080/CouponSystemSpringProj/viewCompany/"+id, company, {withCredentials: true});//+id
-  return this.httpClient.get<Company>("/assets/json/Companies.json"+ id); //, company
+  return this.httpClient.get<Company>("http://localhost:8080/admin/viewCompany/"+id, {withCredentials: true});//+id
+  // return this.httpClient.get<Company>("/assets/json/Companies.json"+ id); //, company
 }
 
 
@@ -49,28 +49,28 @@ public getCompany(id: number): Observable<Company> {
 
 
 public addCustomer(customer: Customer): Observable<Customer> {
-    // return this.httpClient.post<Customer>("http://localhost:8080/CouponSystemSpringProj/addCustomer", customer, {withCredentials: true});
-    return this.httpClient.post<Customer>("/assets/json/Customers.json", customer);
+    return this.httpClient.post<Customer>("http://localhost:8080/admin/addCustomer", customer, {withCredentials: true});
+    // return this.httpClient.post<Customer>("/assets/json/Customers.json", customer);
   }
 
-  public deleteCustomer(customer: Customer): Observable<Customer> {
-    // return this.httpClient.delete<Customer>("http://localhost:8080/CouponSystemSpringProj/deleteCustomer/${id}", customer, {withCredentials: true});
-    return this.httpClient.delete<Customer>("/assets/json/Customers.json"); //, customer
+  public deleteCustomer(id: number): Observable<Customer> {
+    return this.httpClient.delete<Customer>("http://localhost:8080/admin/deleteCustomer/"+id, {withCredentials: true});
+    // return this.httpClient.delete<Customer>("/assets/json/Customers.json"); //, customer
   }
 
   public updateCustomer(customer: Customer): Observable<Customer> {
-    // return this.httpClient.put<Customer>("http://localhost:8080/CouponSystemSpringProj/updateCustomer/${id}", customer, {withCredentials: true});
-    return this.httpClient.put<Customer>("/assets/json/Customers.json", customer); //, customer
+    return this.httpClient.put<Customer>("http://localhost:8080/admin/updateCustomer/"+customer.id, customer, {withCredentials: true});
+    // return this.httpClient.put<Customer>("/assets/json/Customers.json", customer); //, customer
   }
 
   public getAllCustomers(): Observable<Customer[]> {
-    // return this.httpClient.get<Customer[]>("http://localhost:8080/CouponSystemSpringProj/viewAllCustomers", {withCredentials: true});
-    return this.httpClient.get<Customer[]>("/assets/json/Customers.json");
+    return this.httpClient.get<Customer[]>("http://localhost:8080/admin/viewAllCustomers", {withCredentials: true});
+    // return this.httpClient.get<Customer[]>("/assets/json/Customers.json");
   }
 
   public getCustomer(id: number): Observable<Customer> {
-    // return this.httpClient.get<Customer>("http://localhost:8080/CouponSystemSpringProj/viewCustomer", customer, {withCredentials: true});
-    return this.httpClient.get<Customer>("/assets/json/Customers.json"+ id);
+    return this.httpClient.get<Customer>("http://localhost:8080/admin/viewCustomer/"+id, {withCredentials: true});
+    // return this.httpClient.get<Customer>("/assets/json/Customers.json"+ id);
   }
 
 }

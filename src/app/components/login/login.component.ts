@@ -32,15 +32,15 @@ export class LoginComponent {//implements OnInit
           this.loginService.isLoggedIn = true;
           this.loginService.type = loginResult.type;
           if(loginResult.type === "ADMIN") {
-            this.router.navigate(["/admin"]);
+            this.router.navigate(["/admin"])//;
             // sessionStorage.setItem('clientType', this.result.comment)
         }
           if(loginResult.type === "COMPANY") {
-            this.router.navigate(["/company"]);
+            this.router.navigate(["/company"])//;
             // sessionStorage.setItem('clientType', this.result.comment)
         }
         if(loginResult.type === "CUSTOMER") {
-            this.router.navigate(["/customer"]);
+            this.router.navigate(["/customer"])//;
             // sessionStorage.setItem('clientType', this.result.comment)
         }
       }

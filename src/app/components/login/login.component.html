@@ -1,7 +1,7 @@
 <!-- <p>login works!</p> -->
 
 <div class="login">
-    <form class="wow animated zoomIn">
+    <form class="wow animated zoomIn" action="login" method="post"> <!-- (ngSubmit)="onSubmit()" #f="ngForm" action="login" method="post"-->
         <p>Please Enter Your Details</p>
       <!-- <label class="wow">Username: </label><br> -->
       <input type="text" name="userName" placeholder="Username" [(ngModel)]="credentials.userName">
@@ -21,6 +21,7 @@
       <br><br><br><br><br><br><br><br>
     
       <button (click)="login()" class="buttonLogin">Login</button>&nbsp; &nbsp;
+      <!-- <button type="submit" class="buttonLogin">Login</button>&nbsp; &nbsp; -->
       <button type="reset" class="button">Reset</button><br><br><br>
     
     </form>
