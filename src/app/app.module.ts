@@ -56,12 +56,13 @@ import { AuthService } from './services/auth.service';
 import { AdminGuardService } from './services/admin-guard.service';
 import { CompanyGuardService } from './services/company-guard.service';
 import { CustomerGuardService } from './services/customer-guard.service';
+import { LoginService } from './services/login.service';
 
 
 @NgModule({
   declarations: [LayoutComponent, HeaderComponent, FooterComponent, MenuComponent, HomeComponent, CouponsComponent, CustomerComponent, CompanyComponent, AdminComponent, AboutComponent, Page404Component, ThumbnailComponent, CouponDetailsComponent, AddCouponTestComponent, AddCouponComponent, AddCompanyComponent, UpdateCompanyComponent, DeleteCompanyComponent, ViewCompanyComponent, ViewAllCompaniesComponent, ViewIncomeByCompanyComponent, AddCustomerComponent, UpdateCustomerComponent, DeleteCustomerComponent, ViewCustomerComponent, ViewAllCustomersComponent, ViewIncomeByCustomerComponent, ViewAllIncomeComponent, UpdateCouponComponent, DeleteCouponComponent, ViewCouponComponent, ViewAllCouponsComponent, ViewAllCouponsByTypeComponent, ViewAllCouponsByPriceComponent, ViewAllCouponsByDateComponent, PurchaseCouponComponent, ViewAllPurchasedCouponsComponent, ViewAllPurchasedCouponsByTypeComponent, ViewAllPurchasedCouponsByPriceComponent, ViewCompanyIncomeComponent, ViewCustomerIncomeComponent, CompanyDetailsComponent, CustomerDetailsComponent, CompanyFilterPipe, CustomerFilterPipe, CouponFilterPipe, CouponIdComponent, LoginComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [AuthService, AdminGuardService, CompanyGuardService, CustomerGuardService, {
+  providers: [AuthService, AdminGuardService, CompanyGuardService, CustomerGuardService, LoginService, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true

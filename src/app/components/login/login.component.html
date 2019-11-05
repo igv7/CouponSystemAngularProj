@@ -1,13 +1,52 @@
 <!-- <p>login works!</p> -->
 
-<div class="login">
-    <form class="wow animated zoomIn" action="login" method="post"> <!-- (ngSubmit)="onSubmit()" #f="ngForm" action="login" method="post"-->
+
+<section class="wow animated zoomIn">
+  <div id="loginForm">
+    <form (ngSubmit)="onSubmit()" #f="ngForm" action="login" method="post">
+      <br>
+      <p id="pp">Please enter a username and password:</p>
+  
+      <div id="divcenter">
+        <div id="lableR">
+         
+          <label for id="name">Name: </label>
+          <input type="text" id="userName" ngModel name="userName" required  placeholder="Enter Your Name...">
+          <br>
+
+          <label for id="password">Password: </label>
+          <input type="password" id="password" ngModel name="password" password required placeholder="Enter Your password...">
+          <br>
+  
+          <label for id="type1">Choose your Client Type: </label>
+          <select id="type" name="type" ngModel>
+            <option selected disabled>Select Type</option>
+            <option value="ADMIN">ADMIN</option>
+            <option value="COMPANY">COMPANY</option>
+            <option value="CUSTOMER">CUSTOMER</option>
+          </select>
+        </div>
+      </div>
+  
+        <h3><button type="submit" class="button">LOGIN 	<i class="fa fa-user-circle-o" style="font-size:30px;"></i></button>
+        <button type="reset" class="button"	>RESET	<i class="fa fa-eraser" style="font-size:30px;"></i></button></h3>
+      
+    </form>
+  </div>
+</section>
+
+
+
+
+<!-- <div class="login">
+    <form class="wow animated zoomIn" action="login" method="post">
         <p>Please Enter Your Details</p>
-      <!-- <label class="wow">Username: </label><br> -->
+     
+
       <input type="text" name="userName" placeholder="Username" [(ngModel)]="credentials.userName">
       <br><br>
     
-      <!-- <label class="wow">Password: </label><br> -->
+      
       <input type="password" name="password" placeholder="Password" [(ngModel)]="credentials.password">
       <br><br>
     
@@ -21,11 +60,12 @@
       <br><br><br><br><br><br><br><br>
     
       <button (click)="login()" class="buttonLogin">Login</button>&nbsp; &nbsp;
-      <!-- <button type="submit" class="buttonLogin">Login</button>&nbsp; &nbsp; -->
       <button type="reset" class="button">Reset</button><br><br><br>
     
     </form>
-    </div>
+    </div> -->
 
-    <!-- <router-outlet></router-outlet> -->
-    
+   
+     <!-- <label class="wow">Username: </label><br> -->
+     <!-- <label class="wow">Password: </label><br> -->
+     <!-- <button type="submit" class="buttonLogin">Login</button>&nbsp; &nbsp; -->

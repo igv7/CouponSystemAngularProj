@@ -1,28 +1,68 @@
-/* div {
-    margin: 150px;
-    padding: 100px;
+section{
+    height: 100%;
+    box-sizing: border-box;
+    font-size:25px;
+}
+/* -------div center but text left--------- */
+#divcenter{
+    margin-left: 150px;
     text-align: center;
+}
+#lableR{
+  text-align: justify;
+}
+
+#name {
+    color: rgb(0, 0, 0);
+    font-family:aharoni;
+}
+#password{
+    color: rgb(0, 0, 0);
+    font-family:aharoni;
+}
+#type1{
+    color: rgb(0, 0, 0);
+    font-family:aharoni;
+}
+#pp{
+    font-family:  Arial, Helvetica, sans-serif ;
+    font-weight: bold;
+}
+img:hover{
+	filter: grayscale(50%);
+}
+
+div:nth-of-type(2){
+    position: absolute;
+    border: 0.5px solid black;
+    top: 120px;
+    right: 20px;
+    padding: 10px;
+}
+
+
+
+
+
+
+/* .wow animated zoomIn {
+	data-wow-delay="0.3s";
 } */
 
-.login {
+
+
+
+
+
+/* .login {
     height: 100%;
     overflow: auto;
     text-align: center;
-    /* width: 20%;
-	height: 210px; */
-    /* background-color: green; */
-    /* border: 1px solid black; */
-    /* padding: 10px; */
-    /* margin-top: 70px;
-    margin-left: 600px; */
-    /* margin-right: 20px; */
-	/* float: bottom; */
 }
 
 button[class="buttonLogin"]:hover {
     background-color:greenyellow;
 	height: 30px;
-    /* width: 60px; */
     width: 250px;
 	border: 1px solid;
 	border-radius: 3px;
@@ -32,7 +72,6 @@ button[class="buttonLogin"]:hover {
 button[type="reset"]:hover {
     background-color:rosybrown;
 	height: 30px;
-    /* width: 60px; */
     width: 250px;
 	border: 1px solid;
 	border-radius: 3px;
@@ -40,15 +79,9 @@ button[type="reset"]:hover {
 }
 
 
-/* .wow animated zoomIn {
-	data-wow-delay="0.3s";
-} */
-
-
 input, button, select {
     width: 250px;
     font-size: x-large;
-    /* margin: 10px; */
 }
 
 form {
@@ -57,4 +90,4 @@ form {
     border: 1px solid black;
     width: 60%;
     background-color: lightsteelblue;
-}
+} */
