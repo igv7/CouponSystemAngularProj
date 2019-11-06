@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
   ngOnDestroy(): void {
     if (this.obsSubscription != null) {
       this.obsSubscription.unsubscribe();
+      // this.loginService.token = null;
     }
   }
 //

@@ -16,8 +16,8 @@ public constructor(private httpClient: HttpClient, private loginService: LoginSe
 private BASE_URL = "http://localhost:8080/admin/"; //'' ``
 
 public addCompany(company: Company): Observable<Company> {
-  return this.httpClient.post<Company>(this.urlsService.getAdminUrl+"addCompany/"+this.loginService.token, company, {withCredentials: true});
-  // return this.httpClient.post<Company>(this.BASE_URL+"addCompany/"+this.loginService.token, company, {withCredentials: true});
+  // return this.httpClient.post<Company>(this.urlsService.getAdminUrl+"addCompany/"+this.loginService.token, company, {withCredentials: true});
+  return this.httpClient.post<Company>(this.BASE_URL+"addCompany/"+this.loginService.token, company, {withCredentials: true});
   // return this.httpClient.post<Company>("http://localhost:8080/admin/addCompany/"+this.loginService.token, company, {withCredentials: true});// , { observe: 'response', responseType: 'text' }
   // return this.httpClient.post<Company>("/assets/json/Companies.json", company);
 }
@@ -38,7 +38,7 @@ public getAllCompanies(): Observable<Company[]> {
 }
 
 public getCompany(id: number): Observable<Company> {
-  return this.httpClient.get<Company>("http://localhost:8080/admin/viewCompany/"+id, {withCredentials: true});//+id
+  return this.httpClient.get<Company>("http://localhost:8080/admin/viewCompany/"+this.loginService.token+"/"+id, {withCredentials: true});//+id
   // return this.httpClient.get<Company>("/assets/json/Companies.json"+ id); //, company
 }
 
