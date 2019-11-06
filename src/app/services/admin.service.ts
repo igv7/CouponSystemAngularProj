@@ -3,25 +3,27 @@ import { HttpClient } from '@angular/common/http';
 import { Company } from '../models/company';
 import { Observable } from 'rxjs';
 import { Customer } from '../models/customer';
+import { LoginService } from './login.service';
+import { UrlsService } from './urls.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
 
-//   constructor() { }
+public constructor(private httpClient: HttpClient, private loginService: LoginService, private urlsService: UrlsService) { }
 
-public constructor(private httpClient: HttpClient) { }
-
-private BASE_URL = "http://localhost:8080/admin"; //'' ``
+private BASE_URL = "http://localhost:8080/admin/"; //'' ``
 
 public addCompany(company: Company): Observable<Company> {
-  return this.httpClient.post<Company>("http://localhost:8080/admin/addCompany", company, {withCredentials: true});//, {withCredentials: true}
+  return this.httpClient.post<Company>(this.urlsService.getAdminUrl+"addCompany/"+this.loginService.token, company, {withCredentials: true});
+  // return this.httpClient.post<Company>(this.BASE_URL+"addCompany/"+this.loginService.token, company, {withCredentials: true});
+  // return this.httpClient.post<Company>("http://localhost:8080/admin/addCompany/"+this.loginService.token, company, {withCredentials: true});// , { observe: 'response', responseType: 'text' }
   // return this.httpClient.post<Company>("/assets/json/Companies.json", company);
 }
 
 public deleteCompany(id: number): Observable<Company> {
-  return this.httpClient.delete<Company>("http://localhost:8080/admin/deleteCompany/"+id, {withCredentials: true});//+id
+  return this.httpClient.delete<Company>("http://localhost:8080/admin/deleteCompany/"+this.loginService.token+"/"+id, {withCredentials: true});//+id
   // return this.httpClient.delete<Company>("/assets/json/Companies.json"); //, company
 }
 
@@ -31,7 +33,7 @@ public updateCompany(company: Company): Observable<Company> {
 }
 
 public getAllCompanies(): Observable<Company[]> {
-  return this.httpClient.get<Company[]>("http://localhost:8080/admin/viewAllCompanies", {withCredentials: true});//, {withCredentials: true}
+  return this.httpClient.get<Company[]>("http://localhost:8080/admin/viewAllCompanies/"+this.loginService.token, {withCredentials: true});//, {withCredentials: true}
   // return this.httpClient.get<Company[]>("/assets/json/Companies.json");
 }
 
