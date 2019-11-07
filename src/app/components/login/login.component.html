@@ -5,31 +5,35 @@
   <div id="loginForm">
     <form (ngSubmit)="onSubmit()" #f="ngForm" action="login" method="post">
       <br>
-      <p id="pp">Please enter a username and password:</p>
+      <!-- <p id="pp">Please enter a username and password:</p> -->
+      <h3>Please enter a username and password:</h3>
   
       <div id="divcenter">
         <div id="lableR">
          
-          <label for id="name">Name: </label>
-          <input type="text" id="userName" ngModel name="userName" required  placeholder="Enter Your Name...">
-          <br>
+          <!-- <label for id="name">Name: </label><br> -->
+          <input #nameInfo="ngModel" type="text" id="userName" ngModel name="userName" required  placeholder="Enter Your Name...">
+          <span *ngIf="nameInfo.errors?.required && nameInfo.touched">Missing Name</span>
+          <br><br>
 
-          <label for id="password">Password: </label>
-          <input type="password" id="password" ngModel name="password" password required placeholder="Enter Your password...">
+          <!-- <label for id="password">Password: </label><br> -->
+          <input #passwordInfo="ngModel" minlength="1" type="password" id="password" ngModel name="password" password required placeholder="Enter Your password...">
+          <span *ngIf="passwordInfo.invalid && passwordInfo.touched">Missing Password</span>
           <br>
   
-          <label for id="type1">Choose your Client Type: </label>
+          <h3><label for id="type1">Choose Your Client Type: </label></h3>
           <select id="type" name="type" ngModel>
-            <option selected disabled>Select Type</option>
+            <option selected disabled>Select Your Type</option>
             <option value="ADMIN">ADMIN</option>
             <option value="COMPANY">COMPANY</option>
             <option value="CUSTOMER">CUSTOMER</option>
           </select>
+          <br><br><br><br><br><br><br><br>
         </div>
       </div>
   
-        <h3><button type="submit" class="button">LOGIN 	<i class="fa fa-user-circle-o" style="font-size:30px;"></i></button>
-        <button type="reset" class="button"	>RESET	<i class="fa fa-eraser" style="font-size:30px;"></i></button></h3>
+        <h3><button type="submit" class="button">Login</button> <!-- 	<i class="fa fa-user-circle-o" style="font-size:30px;"></i>-->
+        <button type="reset" class="button"	>Reset</button></h3> <!--<i class="fa fa-eraser" style="font-size:30px;"></i>-->
       
     </form>
   </div>

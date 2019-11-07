@@ -11,7 +11,7 @@ import { UrlsService } from './urls.service';
 })
 export class LoginService {
 
-  public isLoggedIn: boolean;
+  public isLoggedIn: boolean =false;
   public type: string;
 
   public constructor(private httpClient: HttpClient, private router: Router, private urlsService: UrlsService) { }
