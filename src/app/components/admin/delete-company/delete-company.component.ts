@@ -28,18 +28,22 @@ export class DeleteCompanyComponent implements OnInit {
   //      err => alert(err.message));
   // }
 
-  public deleteCompany():void {
-    alert(`
-    Id: ${this.company.id}
-    `);
+  
+
+  public deleteCompany(): void {
+    // confirm(`Are You sure You want to remove this Company?
+    // Id: ${this.company.id}
+    // `);
 
     this.adminService.deleteCompany(this.company.id).subscribe((c) => {
-      alert("Company has been succesfully deleted! Name: " + c.name);
-      this.router.navigate(["/admin/view-all-companies"]);
+        // alert("Company ${this.company.id} has been succesfully deleted! Name: " + c.name);
+        alert(`Company Id: ${this.company.id} Name: `+c.name+ ` has been succesfully deleted!`);
+        this.router.navigate(["/admin/view-all-companies"]);  
     }, err => {
-      alert("Error on delete Company!" + err);
+      alert(`Error on delete Company! Wrong Id: ${this.company.id}` +` `+ `\n`+err.message);
     });
   }
+
 
   public cancelDelete(): void {
     this.router.navigate(["/admin"]);

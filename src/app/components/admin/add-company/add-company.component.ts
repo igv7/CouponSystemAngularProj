@@ -18,22 +18,22 @@ export class AddCompanyComponent implements OnInit {
   }
 
   public addCompany():void {
-    alert(`
-    Id: ${this.company.id}
-    Name: ${this.company.name}
-    Password: ${this.company.password}
-    Email: ${this.company.email}
-    `);
+    // confirm(`
+    // Id: ${this.company.id}
+    // Name: ${this.company.name}
+    // Password: ${this.company.password}
+    // Email: ${this.company.email}
+    // `);
 
     this.adminService.addCompany(this.company).subscribe(company => {
-      alert("Company has been succesfully added! " + 
-      "\nId: " + company.id +
-      "\nName: " + company.name +
+      alert(`Company Name: ${this.company.name} has been succesfully added! ` + 
+      // "\nId: " + company.id +
+      // "\nName: " + company.name +
       "\nPassword: " + company.password +
       "\nEmail: " + company.email);
       this.router.navigate(["/admin/view-all-companies"])
     }, err => {
-      alert("Error on add Company!" + err);
+      alert(`Error on add Company! This Company name: ${this.company.name}` +` `+ `already exists in the system!` +` `+ `\n`+err.message);
     });
   }
 

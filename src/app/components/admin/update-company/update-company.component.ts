@@ -29,11 +29,11 @@ export class UpdateCompanyComponent implements OnInit {
   // }
 
   public updateCompany():void {
-    alert(`
-    Id: ${this.company.id}
-    Name: ${this.company.name}
-    Password: ${this.company.password}
-    `);
+    // confirm(`
+    // Id: ${this.company.id}
+    // Password: ${this.company.password}
+    // Email: ${this.company.email}
+    // `);
 
     this.adminService.updateCompany(this.company).subscribe(company => { //this.company = company;
       alert("Company has been succesfully updated! " + 
@@ -43,7 +43,7 @@ export class UpdateCompanyComponent implements OnInit {
       "\nEmail: " + company.email);
       this.router.navigate(["/admin/view-all-companies"])
     }, err => {
-      alert("Error on update Company!" + err);
+      alert(`Error on update Company! Wrong Id: ${this.company.id}` +` `+ `\n`+err.message);
     });
   }
 

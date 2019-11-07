@@ -8,17 +8,24 @@
         <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
         <br><br>
 
-        Enter new Company name
+        <!-- Enter new Company name
         <br>
         <input #nameInfo="ngModel" required pattern="^[A-Z].*[a-z]$" type="text" placeholder="Name" [(ngModel)]="company.name" name="name">
         <span *ngIf="nameInfo.errors?.required && nameInfo.touched">Missing Name</span>
         <span *ngIf="nameInfo.errors?.pattern && nameInfo.touched">Name must start with a capital letter and contain at least two letters!</span>
-        <br><br>
+        <br><br> -->
 
         Enter new Company password
         <br>
         <input #passwordInfo="ngModel" minlength="1" required type="password" placeholder="Password" [(ngModel)]="company.password" name="password">
         <span *ngIf="passwordInfo.invalid && passwordInfo.touched">Missing Password</span>
+        <br><br>
+
+        Enter new Company Email
+        <br>
+        <input #emailInfo="ngModel" required email pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" type="text" placeholder="Email" [(ngModel)]="company.email" name="email">
+        <span *ngIf="emailInfo.errors?.required && emailInfo.touched">Missing Email</span>
+        <span *ngIf="emailInfo.errors?.pattern && emailInfo.touched">Email must contain at "@"!</span>
         <br><br>
 
         <button [disabled]="!formInfo.form.valid" (click)="updateCompany()">Update Company</button>
