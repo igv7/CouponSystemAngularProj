@@ -36,7 +36,7 @@ export class LoginService {
     this.setCompanyUserF(); 
     this.setCustomerUserF();
     this.isLoggedIn = false;
-    alert("Are You sure You want to exit?");
+    // alert("Are You sure You want to exit?");
   }
 
   // GET&SET token

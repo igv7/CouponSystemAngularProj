@@ -1,6 +1,9 @@
 section {
     height: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black;
+    border: 1px solid white; */
+    /* border: 1px solid lightgrey; */
+    border: 1px solid darkgray;
     background-color: lightgrey;
     text-align: center;
     box-sizing: border-box;
@@ -11,20 +14,32 @@ section {
 
 header {
     grid-column: span 12;
-    border: 1px solid black;
+    /* border: 1px solid black;
+    border: 1px solid white; */
+    /* border: 1px solid lightgrey; */
+    border: 1px solid darkgray;
 }
 
 aside {
     grid-column: span 2;
-    border: 1px solid black;
+    /* border: 1px solid black;
+    border: 1px solid white; */
+    /* border: 1px solid lightgrey; */
+    border: 1px solid darkgray;
 }
 
 main {
     grid-column: span 10;
-    border: 1px solid black;
+    /* border: 1px solid black;
+    border: 1px solid white; */
+    /* border: 1px solid lightgrey; */
+    border: 1px solid darkgray;
 }
 
 footer {
     grid-column: span 12;
-    border: 1px solid black;
+    /* border: 1px solid black;
+    border: 1px solid white; */
+    /* border: 1px solid lightgrey; */
+    border: 1px solid darkgray;
 }
