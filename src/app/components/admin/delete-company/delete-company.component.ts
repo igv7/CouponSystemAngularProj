@@ -17,18 +17,6 @@ export class DeleteCompanyComponent implements OnInit {
 
   ngOnInit() {
   }
-  // ngOnInit() {
-  //   const id = +this.activatedRoute.snapshot.params.id;
-  //   this.companyService.getCompany(this.company.id).subscribe(company => {this.company = company;
-  //     if(!company) {
-  //       alert("Company id " +id+ " doesn't exist!");
-  //       this.router.navigate(["/admin"]);
-  //     }
-  //   },
-  //      err => alert(err.message));
-  // }
-
-  
 
   public deleteCompany(): void {
     // confirm(`Are You sure You want to remove this Company?
@@ -38,7 +26,7 @@ export class DeleteCompanyComponent implements OnInit {
     this.adminService.deleteCompany(this.company.id).subscribe((c) => {
         // alert("Company ${this.company.id} has been succesfully deleted! Name: " + c.name);
         alert(`Company Id: ${this.company.id} Name: `+c.name+ ` has been succesfully deleted!`);
-        this.router.navigate(["/admin/view-all-companies"]);  
+        this.router.navigate(["/admin/view-all-companies"]);
     }, err => {
       alert(`Error on delete Company! Wrong Id: ${this.company.id}` +` `+ `\n`+err.message);
     });
@@ -50,3 +38,16 @@ export class DeleteCompanyComponent implements OnInit {
   }
 
 }
+
+
+
+ // ngOnInit() {
+  //   const id = +this.activatedRoute.snapshot.params.id;
+  //   this.companyService.getCompany(this.company.id).subscribe(company => {this.company = company;
+  //     if(!company) {
+  //       alert("Company id " +id+ " doesn't exist!");
+  //       this.router.navigate(["/admin"]);
+  //     }
+  //   },
+  //      err => alert(err.message));
+  // }

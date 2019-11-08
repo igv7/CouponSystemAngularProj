@@ -2,8 +2,8 @@
 
 <div>
     <form #formInfo="ngForm">
-        Enter Company ID to delete the Company
-        <br>
+        <h3>Enter Company ID to delete the Company</h3>
+        
         <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="company.id" name="id">
         <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
         <br><br>
@@ -12,4 +12,6 @@
         <br><br>
         <button [disabled]="!formInfo.form.valid" (click)="cancelDelete()">Cancel! Back to Admin</button>
     </form>
+    <br><br><br><br><br><br><br><br><br><br>
+    <h3><a routerLink="/admin">Close</a></h3>
 </div>

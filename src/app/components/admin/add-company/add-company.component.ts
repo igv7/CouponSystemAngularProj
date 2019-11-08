@@ -33,7 +33,8 @@ export class AddCompanyComponent implements OnInit {
       "\nEmail: " + company.email);
       this.router.navigate(["/admin/view-all-companies"])
     }, err => {
-      alert(`Error on add Company! This Company name: ${this.company.name}` +` `+ `already exists in the system!` +` `+ `\n`+err.message);
+      alert(`Error on add Company! This Company name: ${this.company.name}` +` `+ 
+      `already exists in the system!` +` `+ `\n`+err.message);
     });
   }
 

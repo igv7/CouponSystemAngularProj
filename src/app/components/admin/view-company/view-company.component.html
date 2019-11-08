@@ -2,18 +2,58 @@
 
 <div>
     <form #formInfo="ngForm">
-        Enter Company ID to view the Company
-        <br>
-        <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="company.id" name="id">
+        <h3>Enter Company ID to view this Company</h3>
+    
+        <input #idInfo="ngModel" required type="number" placeholder="Company ID" [(ngModel)]="company.id" name="id">
         <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
         <br><br>
 
         <button [disabled]="!formInfo.form.valid" (click)="getCompany()">View Company</button>
+        <br><br>
+        <button [disabled]="!formInfo.form.valid" type="reset" class="button">Reset Id</button>
     </form>
     <p class="details">
         <h3>Id: {{company.id}}</h3>
         <h3>Name: {{company.name}}</h3>
         <h3>Password: {{company.password}}</h3>
         <h3>Email: {{company.email}}</h3>
-        <!-- <h3><a routerLink="/admin">Back to Admin</a></h3> -->
+        <br>
+        <h3><a routerLink="/admin">Close</a></h3>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <button class="logout" (click)="logout()"> Logout </button> -->
+<!-- <a class="backTo" routerLink='/admin'> Back to Admin menu</a> -->
+<!-- <div>
+  <h2>View Company</h2>
+
+  
+    <input class="inputs" #id type="number" placeholder="Company ID" maxlength="20" min="0">
+    <br>
+    <br>
+    <button class="buttons" (click)="getCompany(id.value)">View Company</button>
+  
+
+  <br>
+  <br>
+  <div class="getInfoOne">
+    Company ID: <span>{{itemsService.company.id}}</span>
+    <br>
+    Company Name: <span>{{itemsService.company.name}}</span>
+    <br>
+    Company Password: <span>{{itemsService.company.password}}</span>
+    <br>
+    Company Email: <span>{{itemsService.company.email}}</span>
+    <br>
+  </div>
+  <br>
+</div> -->

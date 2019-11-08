@@ -46,13 +46,14 @@ import { CustomerGuardService } from './services/customer-guard.service';
 import { ExitAdminGuardService } from './services/exit-admin-guard.service';
 import { ExitCompanyGuardService } from './services/exit-company-guard.service';
 import { ExitCustomerGuardService } from './services/exit-customer-guard.service';
+import { CompanyIdComponent } from './components/company-id/company-id.component';
 
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "coupons", component: CouponsComponent },
-  { path: "coupon-details/:id", component: CouponDetailsComponent },
-  { path: "coupon-id/:id", component: CouponIdComponent },
+  { path: "coupon-details/:id", component: CouponDetailsComponent }, //?
+  { path: "coupon-id/:id", component: CouponIdComponent }, //?
   // { path: "add-coupon-test", component: AddCouponTestComponent },
   { path: "customer", canActivate: [CustomerGuardService], canDeactivate: [ExitCustomerGuardService], component: CustomerComponent, children: [//, canActivate: [CustomerGuardService]
     { path: "purchase-coupon", component: PurchaseCouponComponent },
@@ -76,9 +77,11 @@ const routes: Routes = [
       { path: "add-company", component: AddCompanyComponent },
       { path: "update-company", component: UpdateCompanyComponent },
       { path: "delete-company", component: DeleteCompanyComponent },
-      { path: "view-company", component: ViewCompanyComponent },
+      { path: "view-company", component: ViewCompanyComponent, children: [
+          { path: "company-id/:id", component: CompanyIdComponent }
+      ]},
       { path: "view-all-companies", component: ViewAllCompaniesComponent, children: [
-          { path: "company-details/:id", component: CompanyDetailsComponent }
+          { path: "company-details/:id", component: CompanyDetailsComponent } //?
       ]},
       { path: "view-income-by-company", component: ViewIncomeByCompanyComponent },
       { path: "add-customer", component: AddCustomerComponent },
@@ -86,7 +89,7 @@ const routes: Routes = [
       { path: "delete-customer", component: DeleteCustomerComponent },
       { path: "view-customer", component: ViewCustomerComponent },
       { path: "view-all-customers", component: ViewAllCustomersComponent, children: [
-        { path: "customer-details/:id", component: CustomerDetailsComponent }
+        { path: "customer-details/:id", component: CustomerDetailsComponent } //?
       ]},
       { path: "view-income-by-customer", component: ViewIncomeByCustomerComponent },
       { path: "view-all-income", component: ViewAllIncomeComponent }

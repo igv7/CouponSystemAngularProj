@@ -2,8 +2,8 @@
 
 <div>
     <form #formInfo="ngForm">
-        Enter Company details
-        <br>
+        <h3>Enter Company details</h3>
+        
         <!-- <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="company.id" name="id">
         <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
         <br><br> -->
@@ -23,6 +23,8 @@
         <br><br>
 
         <button [disabled]="!formInfo.form.valid" (click)="addCompany()">Add Company</button>
+        <br><br>
+        <button type="reset" class="button">Reset</button>
 
         <!-- <p>Id valid? {{idInfo.valid}}</p>
         <p>Name valid? {{nameInfo.valid}}</p>
@@ -31,4 +33,6 @@
         <p>Form valid? {{formInfo.form.valid}}</p> -->
         
     </form>
+    <br><br><br><br><br>
+    <h3><a routerLink="/admin">Close</a></h3>
 </div>
