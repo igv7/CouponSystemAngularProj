@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/models/customer';
 import { AdminService } from 'src/app/services/admin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-all-customers',
@@ -13,7 +14,7 @@ export class ViewAllCustomersComponent implements OnInit {
 
   listFilter: string = "";
 
-  public constructor(private adminService: AdminService) { }
+  public constructor(private adminService: AdminService, private router: Router) { }
 
   public ngOnInit(): void {
     this.adminService.getAllCustomers().subscribe((customers) => {
@@ -21,6 +22,10 @@ export class ViewAllCustomersComponent implements OnInit {
     }, err => {
       alert("Error: " + err.message);
     });
+  }
+
+  public closeList(): void {
+    this.router.navigate(["/admin"]);
   }
 
 }

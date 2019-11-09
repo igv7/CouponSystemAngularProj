@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Company } from 'src/app/models/company';
-import { CompanyService } from 'src/app/services/company.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
@@ -29,8 +28,9 @@ export class UpdateCompanyComponent implements OnInit {
   // }
 
   public updateCompany():void {
-    // confirm(`
+    // alert(`
     // Id: ${this.company.id}
+    // Name: ${this.company.name}
     // Password: ${this.company.password}
     // Email: ${this.company.email}
     // `);

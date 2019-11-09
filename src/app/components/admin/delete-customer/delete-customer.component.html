@@ -2,12 +2,16 @@
 
 <div>
     <form #formInfo="ngForm">
-        Enter Customer ID to delete the Customer
-        <br>
+        <h3>Enter Customer ID to delete this Customer</h3>
+        
         <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="customer.id" name="id">
         <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
         <br><br>
 
         <button [disabled]="!formInfo.form.valid" (click)="deleteCustomer()">Delete Customer</button>
+        <br><br>
+        <button [disabled]="!formInfo.form.valid" (click)="cancelDelete()">Cancel! Back to Admin</button>
     </form>
+    <br><br><br><br><br><br><br><br><br><br>
+    <h3><a routerLink="/admin">Close</a></h3>
 </div>

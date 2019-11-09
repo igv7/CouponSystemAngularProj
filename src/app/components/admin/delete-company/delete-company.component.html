@@ -2,7 +2,7 @@
 
 <div>
     <form #formInfo="ngForm">
-        <h3>Enter Company ID to delete the Company</h3>
+        <h3>Enter Company ID to delete this Company</h3>
         
         <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="company.id" name="id">
         <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>

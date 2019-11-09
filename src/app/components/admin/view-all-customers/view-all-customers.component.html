@@ -3,6 +3,7 @@
 <div class="mainDiv">
     <img *ngIf="!customers" src="/assets/images/loadingGifTransparant1.gif">
 
+    <button (click)="closeList()">^ Close List ^</button>
     <div *ngIf="customers">
             <p>Filter by name:</p>
             <input type='text' [(ngModel)] = 'listFilter'>

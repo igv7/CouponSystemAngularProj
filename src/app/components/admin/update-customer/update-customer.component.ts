@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/models/customer';
-import { CustomerService } from 'src/app/services/customer.service';
 import { AdminService } from 'src/app/services/admin.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-update-customer',
@@ -12,21 +12,26 @@ export class UpdateCustomerComponent implements OnInit {
 
   public customer = new Customer();
 
-  public constructor(private adminServise: AdminService) { }
+  public constructor(private adminServise: AdminService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
   }
 
   public updateCustomer():void {
-    alert(`
-    Id: ${this.customer.id}
-    Password: ${this.customer.password}
-    `);
+    // alert(`
+    // Id: ${this.customer.id}
+    // Name: ${this.customer.name}
+    // Password: ${this.customer.password}
+    // `);
 
-    this.adminServise.updateCustomer(this.customer).subscribe(c => {
-      alert("Customer has been succesfully updated! Name: " + c.name);
+    this.adminServise.updateCustomer(this.customer).subscribe(customer => {
+      alert("Customer has been succesfully updated! " + 
+      "\nId: " + customer.id +
+      "\nName: " + customer.name +
+      "\nPassword: " + customer.password);
+      this.router.navigate(["/admin/view-all-customers"])
     }, err => {
-      alert("Error on update Customer!" + err);
+      alert(`Error on update Customer! Wrong Id: ${this.customer.id}` +` `+ `\n`+err.message);
     });
   }
 

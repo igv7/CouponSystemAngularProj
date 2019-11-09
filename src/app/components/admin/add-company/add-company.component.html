@@ -4,9 +4,9 @@
     <form #formInfo="ngForm">
         <h3>Enter Company details</h3>
         
-        <!-- <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="company.id" name="id">
+        <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="company.id" name="id">
         <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
-        <br><br> -->
+        <br><br>
 
         <input #nameInfo="ngModel" required pattern="^[A-Z].*[a-z]$" type="text" placeholder="Name" [(ngModel)]="company.name" name="name">
         <span *ngIf="nameInfo.errors?.required && nameInfo.touched">Missing Name</span>
@@ -33,6 +33,6 @@
         <p>Form valid? {{formInfo.form.valid}}</p> -->
         
     </form>
-    <br><br><br><br><br>
+    <br><br><br>
     <h3><a routerLink="/admin">Close</a></h3>
 </div>

@@ -2,8 +2,8 @@
 
 <div>
     <form #formInfo="ngForm">
-        Enter Customer details
-        <br>
+        <h3>Enter Customer details</h3>
+        
         <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="customer.id" name="id">
         <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
         <br><br>
@@ -18,5 +18,9 @@
         <br><br>
 
         <button [disabled]="!formInfo.form.valid" (click)="addCustomer()">Add Customer</button>
+        <br><br>
+        <button type="reset" class="button">Reset</button>
     </form>
+    <br><br><br><br><br>
+    <h3><a routerLink="/admin">Close</a></h3>
 </div>

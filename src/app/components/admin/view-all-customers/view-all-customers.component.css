@@ -40,3 +40,12 @@ a {
     color: indigo;
     font-weight: bold;
 }
+
+button {
+    position: fixed;
+    /* right: 17%; */
+    left: 56%;
+    bottom: 8%;
+    font-size: large;
+    background-color: lightsteelblue;
+}

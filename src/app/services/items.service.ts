@@ -13,7 +13,7 @@ export class ItemsService {
 
   customer: any = {};
 
-  // income: any = {};
+  income: any = {};
 
   companies = [];
 

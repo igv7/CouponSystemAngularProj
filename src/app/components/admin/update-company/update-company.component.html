@@ -2,26 +2,25 @@
 
 <div>
     <form #formInfo="ngForm">
-        <h3>Enter Company ID to update the Company</h3>
+        <h3>Enter Company ID to update this Company</h3>
+
         <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="company.id" name="id">
         <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
-        <br><br>
 
-        <!-- Enter new Company name
-        <br>
+        <!--<h3> Enter new Company name</h3>
+        
         <input #nameInfo="ngModel" required pattern="^[A-Z].*[a-z]$" type="text" placeholder="Name" [(ngModel)]="company.name" name="name">
         <span *ngIf="nameInfo.errors?.required && nameInfo.touched">Missing Name</span>
         <span *ngIf="nameInfo.errors?.pattern && nameInfo.touched">Name must start with a capital letter and contain at least two letters!</span>
         <br><br> -->
 
-        Enter new Company password
-        <br>
+        <h3>Enter new Company password</h3>
+        
         <input #passwordInfo="ngModel" minlength="1" required type="password" placeholder="Password" [(ngModel)]="company.password" name="password">
         <span *ngIf="passwordInfo.invalid && passwordInfo.touched">Missing Password</span>
-        <br><br>
 
-        Enter new Company Email
-        <br>
+        <h3>Enter new Company Email</h3>
+        
         <input #emailInfo="ngModel" required email pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" type="text" placeholder="Email" [(ngModel)]="company.email" name="email">
         <span *ngIf="emailInfo.errors?.required && emailInfo.touched">Missing Email</span>
         <span *ngIf="emailInfo.errors?.pattern && emailInfo.touched">Email must contain at "@"!</span>
@@ -31,6 +30,6 @@
         <br><br>
         <button type="reset" class="button">Reset</button>
     </form>
-    <br><br><br><br>
+    <br><br>
     <h3><a routerLink="/admin">Close</a></h3>
 </div>
