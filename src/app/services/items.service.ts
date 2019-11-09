@@ -13,6 +13,8 @@ export class ItemsService {
 
   customer: any = {};
 
+  // income: any = {};
+
   companies = [];
 
   coupons = [];

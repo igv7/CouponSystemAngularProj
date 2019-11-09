@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/services/admin.service';
+import { ItemsService } from 'src/app/services/items.service';
+import { Router } from '@angular/router';
+import { Company } from 'src/app/models/company';
+import { Income } from 'src/app/models/income';
 
 @Component({
   selector: 'app-view-income-by-company',
@@ -7,9 +12,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewIncomeByCompanyComponent implements OnInit {
 
-  constructor() { }
+public company = new Company();
+public income = new Income();
+
+
+
+  constructor(private adminService: AdminService, private router: Router) { } //public itemsService: ItemsService,
 
   ngOnInit() {
+  }
+
+  public viewIncomeByCompany():void {
+    this.adminService.viewIncomeByCompany(this.company.id).subscribe(income => {
+      console.log(
+        this.income.incomeId = income.incomeId, 
+        this.income.clientId = income.clientId, 
+        this.income.clientName = income.clientName, 
+        this.income.operationDate = income.operationDate,
+        this.income.description = income.description,
+        this.income.amount = income.amount);
+
+        alert(
+        income.incomeId + " " +
+        income.clientId + " " +
+        income.clientName + " " +
+        income.operationDate + " " +
+        income.description + " " +
+        income.amount);
+
+      this.router.navigate(["/admin/view-income-by-company/income-company-id/"+this.company.id]); ///company-id
+    }, err => {
+      alert(`Error on get Income! Wrong Id: ${this.company.id}` +` `+ `\n`+err.message);
+    });
+    
+  }
+
+
+  public closeList(): void {
+    this.router.navigate(["/admin"]);
   }
 
 }

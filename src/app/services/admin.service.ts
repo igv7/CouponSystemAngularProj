@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Customer } from '../models/customer';
 import { LoginService } from './login.service';
 import { UrlsService } from './urls.service';
+import { Income } from '../models/income';
 
 @Injectable({
   providedIn: 'root'
@@ -55,8 +56,21 @@ public getCompany(id: number): Observable<Company> {
   // return this.httpClient.get<Company>("/assets/json/Companies.json"+ id); //, company
 }
 
+public viewIncomeByCompany(id: number): Observable<Income> {
+  return this.httpClient.get<Income>(this.urlsService.getAdminUrl()+"viewIncomeByCompany/"+this.loginService.token+"/"+id, {withCredentials: true});//+id
+  // return this.httpClient.get<Income>(this.BASE_URL+"viewIncomeByCompany/"+this.loginService.token+"/"+id, {withCredentials: true});
+  // return this.httpClient.get<Income>("http://localhost:8080/admin/viewIncomeByCompany/"+this.loginService.token+"/"+id, {withCredentials: true});
+}
 
 
+
+
+
+public viewAllIncome(): Observable<Income[]> {
+  return this.httpClient.get<Income[]>(this.urlsService.getAdminUrl()+"viewAllIncome/"+this.loginService.token, {withCredentials: true});//+id
+  // return this.httpClient.get<Income>(this.BASE_URL+"viewAllIncome/"+this.loginService.token+"/"+id, {withCredentials: true});
+  // return this.httpClient.get<Income>("http://localhost:8080/admin/viewAllIncome/"+this.loginService.token+"/"+id, {withCredentials: true});
+}
 
 
 

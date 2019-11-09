@@ -49,6 +49,7 @@ import { CustomerDetailsComponent } from './components/customer-details/customer
 import { CompanyFilterPipe } from './components/pipes/company-filter.pipe';
 import { CustomerFilterPipe } from './components/pipes/customer-filter.pipe';
 import { CouponFilterPipe } from './components/pipes/coupon-filter.pipe';
+import { IncomeFilterPipe } from './components/pipes/income-filter.pipe';
 import { CouponIdComponent } from './components/coupon-id/coupon-id.component';
 import { LoginComponent } from './components/login/login.component';
 import { TokenInterceptorService } from './token-interceptor.service';
@@ -61,10 +62,12 @@ import { ExitAdminGuardService } from './services/exit-admin-guard.service';
 import { ExitCompanyGuardService } from './services/exit-company-guard.service';
 import { ExitCustomerGuardService } from './services/exit-customer-guard.service';
 import { CompanyIdComponent } from './components/company-id/company-id.component';
+import { IncomeCompanyIdComponent } from './components/income-company-id/income-company-id.component';
+import { IncomeDetailsIdComponent } from './components/income-details-id/income-details-id.component';
 
 
 @NgModule({
-  declarations: [LayoutComponent, HeaderComponent, FooterComponent, MenuComponent, HomeComponent, CouponsComponent, CustomerComponent, CompanyComponent, AdminComponent, AboutComponent, Page404Component, ThumbnailComponent, CouponDetailsComponent, AddCouponTestComponent, AddCouponComponent, AddCompanyComponent, UpdateCompanyComponent, DeleteCompanyComponent, ViewCompanyComponent, ViewAllCompaniesComponent, ViewIncomeByCompanyComponent, AddCustomerComponent, UpdateCustomerComponent, DeleteCustomerComponent, ViewCustomerComponent, ViewAllCustomersComponent, ViewIncomeByCustomerComponent, ViewAllIncomeComponent, UpdateCouponComponent, DeleteCouponComponent, ViewCouponComponent, ViewAllCouponsComponent, ViewAllCouponsByTypeComponent, ViewAllCouponsByPriceComponent, ViewAllCouponsByDateComponent, PurchaseCouponComponent, ViewAllPurchasedCouponsComponent, ViewAllPurchasedCouponsByTypeComponent, ViewAllPurchasedCouponsByPriceComponent, ViewCompanyIncomeComponent, ViewCustomerIncomeComponent, CompanyDetailsComponent, CustomerDetailsComponent, CompanyFilterPipe, CustomerFilterPipe, CouponFilterPipe, CouponIdComponent, LoginComponent, CompanyIdComponent],
+  declarations: [LayoutComponent, HeaderComponent, FooterComponent, MenuComponent, HomeComponent, CouponsComponent, CustomerComponent, CompanyComponent, AdminComponent, AboutComponent, Page404Component, ThumbnailComponent, CouponDetailsComponent, AddCouponTestComponent, AddCouponComponent, AddCompanyComponent, UpdateCompanyComponent, DeleteCompanyComponent, ViewCompanyComponent, ViewAllCompaniesComponent, ViewIncomeByCompanyComponent, AddCustomerComponent, UpdateCustomerComponent, DeleteCustomerComponent, ViewCustomerComponent, ViewAllCustomersComponent, ViewIncomeByCustomerComponent, ViewAllIncomeComponent, UpdateCouponComponent, DeleteCouponComponent, ViewCouponComponent, ViewAllCouponsComponent, ViewAllCouponsByTypeComponent, ViewAllCouponsByPriceComponent, ViewAllCouponsByDateComponent, PurchaseCouponComponent, ViewAllPurchasedCouponsComponent, ViewAllPurchasedCouponsByTypeComponent, ViewAllPurchasedCouponsByPriceComponent, ViewCompanyIncomeComponent, ViewCustomerIncomeComponent, CompanyDetailsComponent, CustomerDetailsComponent, CompanyFilterPipe, CustomerFilterPipe, CouponFilterPipe, IncomeFilterPipe, CouponIdComponent, LoginComponent, CompanyIdComponent, IncomeCompanyIdComponent, IncomeDetailsIdComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [AuthService, AdminGuardService, ExitAdminGuardService, CompanyGuardService, ExitCompanyGuardService, CustomerGuardService, ExitCustomerGuardService, LoginService, {
     provide: HTTP_INTERCEPTORS,

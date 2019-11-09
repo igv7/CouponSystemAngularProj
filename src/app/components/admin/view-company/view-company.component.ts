@@ -22,7 +22,7 @@ export class ViewCompanyComponent implements OnInit {
   }
 
   public getCompany():void {
-    this.adminService.getCompany(this.company.id).subscribe(company=> {
+    this.adminService.getCompany(this.company.id).subscribe(company => {
       console.log(
         this.company.id = company.id, 
         this.company.name = company.name, 

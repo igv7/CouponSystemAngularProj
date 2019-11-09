@@ -47,6 +47,8 @@ import { ExitAdminGuardService } from './services/exit-admin-guard.service';
 import { ExitCompanyGuardService } from './services/exit-company-guard.service';
 import { ExitCustomerGuardService } from './services/exit-customer-guard.service';
 import { CompanyIdComponent } from './components/company-id/company-id.component';
+import { IncomeCompanyIdComponent } from './components/income-company-id/income-company-id.component';
+import { IncomeDetailsIdComponent } from './components/income-details-id/income-details-id.component';
 
 
 const routes: Routes = [
@@ -55,6 +57,8 @@ const routes: Routes = [
   { path: "coupon-details/:id", component: CouponDetailsComponent }, //?
   { path: "coupon-id/:id", component: CouponIdComponent }, //?
   // { path: "add-coupon-test", component: AddCouponTestComponent },
+
+  //Customer
   { path: "customer", canActivate: [CustomerGuardService], canDeactivate: [ExitCustomerGuardService], component: CustomerComponent, children: [//, canActivate: [CustomerGuardService]
     { path: "purchase-coupon", component: PurchaseCouponComponent },
     { path: "view-all-purchased-coupons", component: ViewAllPurchasedCouponsComponent },
@@ -62,6 +66,8 @@ const routes: Routes = [
     { path: "view-all-purchased-coupons-by-price", component: ViewAllPurchasedCouponsByPriceComponent },
     { path: "view-customer-income", component: ViewCustomerIncomeComponent }
   ]},
+
+  //Company
   { path: "company", canActivate: [CompanyGuardService], canDeactivate: [ExitCompanyGuardService], component: CompanyComponent, children: [//, canActivate: [CompanyGuardService]
       { path: "add-coupon", component: AddCouponComponent },
       { path: "update-coupon", component: UpdateCouponComponent },
@@ -73,6 +79,8 @@ const routes: Routes = [
       { path: "view-all-coupons-by-date", component: ViewAllCouponsByDateComponent },
       { path: "view-company-income", component: ViewCompanyIncomeComponent }
   ]},
+
+  //Admin
   { path: "admin", canActivate: [AdminGuardService], canDeactivate: [ExitAdminGuardService], component: AdminComponent, children: [//, canActivate: [AdminGuardService]
       { path: "add-company", component: AddCompanyComponent },
       { path: "update-company", component: UpdateCompanyComponent },
@@ -83,7 +91,9 @@ const routes: Routes = [
       { path: "view-all-companies", component: ViewAllCompaniesComponent, children: [
           { path: "company-details/:id", component: CompanyDetailsComponent } //?
       ]},
-      { path: "view-income-by-company", component: ViewIncomeByCompanyComponent },
+      { path: "view-income-by-company", component: ViewIncomeByCompanyComponent, children: [
+          { path: "income-company-id/:id", component: IncomeCompanyIdComponent } //?
+      ]}, 
       { path: "add-customer", component: AddCustomerComponent },
       { path: "update-customer", component: UpdateCustomerComponent },
       { path: "delete-customer", component: DeleteCustomerComponent },
@@ -92,7 +102,9 @@ const routes: Routes = [
         { path: "customer-details/:id", component: CustomerDetailsComponent } //?
       ]},
       { path: "view-income-by-customer", component: ViewIncomeByCustomerComponent },
-      { path: "view-all-income", component: ViewAllIncomeComponent }
+      { path: "view-all-income", component: ViewAllIncomeComponent, children: [
+        { path: "income-details-id/:id", component: IncomeDetailsIdComponent } //?
+      ]}
   ]},
   { path: "about", component: AboutComponent },
   { path: "login", component: LoginComponent },

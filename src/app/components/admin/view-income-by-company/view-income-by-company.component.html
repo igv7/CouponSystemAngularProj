@@ -1,1 +1,24 @@
-<p>view-income-by-company works!</p>
+<!-- <p>view-income-by-company works!</p> -->
+
+<div>
+    <form #formInfo="ngForm">
+        <h3>Enter Company ID to view Income by this Company</h3>
+    
+        <input #idInfo="ngModel" required type="number" placeholder="Company ID" [(ngModel)]="company.id" name="id">
+        <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+        <br><br>
+
+        <button [disabled]="!formInfo.form.valid" (click)="viewIncomeByCompany()">View Income By Company ID</button>
+        <br><br>
+        <button [disabled]="!formInfo.form.valid" type="reset" class="button">Reset ID</button>
+    </form>
+    <p class="details">
+        <h3>Income ID: {{income.incomeId}}</h3>
+        <h3>Client ID: {{income.clientId}}</h3> <!--company.id-->
+        <h3>Client Name: {{income.clientName}}</h3>
+        <h3>Operation Date: {{income.operationDate}}</h3>
+        <h3>Description: {{income.description}}</h3>
+        <h3>Amount: {{income.amount}}</h3>
+        <br>
+        <button class="close" (click)="closeList()">^ Close List ^</button>
+</div>
