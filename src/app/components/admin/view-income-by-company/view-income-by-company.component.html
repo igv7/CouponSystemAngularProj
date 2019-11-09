@@ -4,7 +4,7 @@
     <form #formInfo="ngForm">
         <h3>Enter Company ID to view Income by this Company</h3>
     
-        <input #idInfo="ngModel" required type="number" placeholder="Company ID" [(ngModel)]="company.id" name="id">
+        <input #idInfo="ngModel" required type="number" placeholder="Company ID" [(ngModel)]="income.clientId" name="clientId">
         <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
         <br><br>
 

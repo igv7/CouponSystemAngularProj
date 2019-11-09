@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Company } from '../models/company';
 import { Observable } from 'rxjs';
 import { Coupon } from '../models/coupon';
+import { LoginService } from './login.service';
+import { UrlsService } from './urls.service';
 
 
 @Injectable({
@@ -12,7 +14,7 @@ export class CompanyService {
 
   // constructor() {}
 
-  public constructor(private httpClient: HttpClient) { }
+  public constructor(private httpClient: HttpClient, private loginService: LoginService, private urlsService: UrlsService) { }
 
   // private BASE_URL = "http://localhost:8080/company"; //'' ``
 
@@ -32,7 +34,7 @@ export class CompanyService {
   }
 
   public getAllCoupons(): Observable<Coupon[]> {
-    return this.httpClient.get<Coupon[]>("http://localhost:8080/company/viewAllCoupons", {withCredentials: true});
+    return this.httpClient.get<Coupon[]>("http://localhost:8080/company/viewAllCoupons/"+this.loginService.token, {withCredentials: true});
     // return this.httpClient.get<Coupon[]>("/assets/json/Coupons.json");
   }
 

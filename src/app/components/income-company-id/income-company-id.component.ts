@@ -17,7 +17,7 @@ export class IncomeCompanyIdComponent implements OnInit {
   public ngOnInit(): void {
     this.adminService.viewAllIncome().subscribe(incomes => {
       const id = +this.activatedRoute.snapshot.params.id;
-      this.income = incomes.find(i => i.incomeId == id);
+      this.income = incomes.find(i => i.clientId == id);
     }, err => {
       alert("Error: " + err.message);
     });

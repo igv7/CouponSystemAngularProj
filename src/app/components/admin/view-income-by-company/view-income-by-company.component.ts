@@ -12,7 +12,7 @@ import { Income } from 'src/app/models/income';
 })
 export class ViewIncomeByCompanyComponent implements OnInit {
 
-public company = new Company();
+// public company = new Company();
 public income = new Income();
 
 
@@ -23,7 +23,7 @@ public income = new Income();
   }
 
   public viewIncomeByCompany():void {
-    this.adminService.viewIncomeByCompany(this.company.id).subscribe(income => {
+    this.adminService.viewIncomeByCompany(this.income.clientId).subscribe(income => { //this.company.id
       console.log(
         this.income.incomeId = income.incomeId, 
         this.income.clientId = income.clientId, 
@@ -40,9 +40,9 @@ public income = new Income();
         income.description + " " +
         income.amount);
 
-      this.router.navigate(["/admin/view-income-by-company/income-company-id/"+this.company.id]); ///company-id
+      this.router.navigate(["/admin/view-income-by-company/income-company-id/"+this.income.clientId]); //income.clientId
     }, err => {
-      alert(`Error on get Income! Wrong Id: ${this.company.id}` +` `+ `\n`+err.message);
+      alert(`Error on get Income! Wrong Id: ${this.income.clientId}` +` `+ `\n`+err.message);//income.clientId
     });
     
   }
