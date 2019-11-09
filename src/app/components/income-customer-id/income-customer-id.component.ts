@@ -4,11 +4,11 @@ import { ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
-  selector: 'app-income-company-id',
-  templateUrl: './income-company-id.component.html',
-  styleUrls: ['./income-company-id.component.css']
+  selector: 'app-income-customer-id',
+  templateUrl: './income-customer-id.component.html',
+  styleUrls: ['./income-customer-id.component.css']
 })
-export class IncomeCompanyIdComponent implements OnInit {
+export class IncomeCustomerIdComponent implements OnInit {
 
   public income: Income;
 

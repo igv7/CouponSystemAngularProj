@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/models/customer';
 import { AdminService } from 'src/app/services/admin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-customer',
@@ -11,22 +12,26 @@ export class ViewCustomerComponent implements OnInit {
 
   public customer = new Customer();
 
-  public constructor(private adminService: AdminService) { }
+  public constructor(private adminService: AdminService, private router: Router) { }
 
   ngOnInit() {
   }
 
   public getCustomer():void {
-    alert(`
-    Id: ${this.customer.id}
-    Name: ${this.customer.name}
-    Password: ${this.customer.password}
-    `);
+    // alert(`
+    // Id: ${this.customer.id}
+    // Name: ${this.customer.name}
+    // Password: ${this.customer.password}
+    // `);
 
-    this.adminService.getCustomer(this.customer.id).subscribe(c => {
-      alert("Success on get Customer! Name: " + c.name);
+    this.adminService.getCustomer(this.customer.id).subscribe(customer => {
+      console.log(
+        this.customer.id = customer.id, 
+        this.customer.name = customer.name, 
+        this.customer.password = customer.password);
+      this.router.navigate(["/admin/view-customer/customer-id/"+this.customer.id]);
     }, err => {
-      alert("Error on get Customer!" + err);
+      alert(`Error on get Customer! Wrong Id: ${this.customer.id}` +` `+ `\n`+err.message);
     });
   }
 

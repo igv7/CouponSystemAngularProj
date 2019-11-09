@@ -49,9 +49,12 @@ import { ExitCustomerGuardService } from './services/exit-customer-guard.service
 import { CompanyIdComponent } from './components/company-id/company-id.component';
 import { IncomeCompanyIdComponent } from './components/income-company-id/income-company-id.component';
 import { IncomeDetailsIdComponent } from './components/income-details-id/income-details-id.component';
+import { CustomerIdComponent } from './components/customer-id/customer-id.component';
+import { IncomeCustomerIdComponent } from './components/income-customer-id/income-customer-id.component';
 
 
 const routes: Routes = [
+  //Menu
   { path: "home", component: HomeComponent },
   { path: "coupons", component: CouponsComponent },
   { path: "coupon-details/:id", component: CouponDetailsComponent }, //?
@@ -80,7 +83,7 @@ const routes: Routes = [
       { path: "view-company-income", component: ViewCompanyIncomeComponent }
   ]},
 
-  //Admin
+  //Admin-Company
   { path: "admin", canActivate: [AdminGuardService], canDeactivate: [ExitAdminGuardService], component: AdminComponent, children: [//, canActivate: [AdminGuardService]
       { path: "add-company", component: AddCompanyComponent },
       { path: "update-company", component: UpdateCompanyComponent },
@@ -94,18 +97,28 @@ const routes: Routes = [
       { path: "view-income-by-company", component: ViewIncomeByCompanyComponent, children: [
           { path: "income-company-id/:id", component: IncomeCompanyIdComponent } //?
       ]}, 
+
+      //Admin-Customer
       { path: "add-customer", component: AddCustomerComponent },
       { path: "update-customer", component: UpdateCustomerComponent },
       { path: "delete-customer", component: DeleteCustomerComponent },
-      { path: "view-customer", component: ViewCustomerComponent },
+      { path: "view-customer", component: ViewCustomerComponent, children: [
+          { path: "customer-id/:id", component: CustomerIdComponent }
+      ]},
       { path: "view-all-customers", component: ViewAllCustomersComponent, children: [
         { path: "customer-details/:id", component: CustomerDetailsComponent } //?
       ]},
-      { path: "view-income-by-customer", component: ViewIncomeByCustomerComponent },
+      { path: "view-income-by-customer", component: ViewIncomeByCustomerComponent, children: [
+          { path: "income-customer-id/:id", component: IncomeCustomerIdComponent } //?
+      ]},
+
+      //Admin-Common
       { path: "view-all-income", component: ViewAllIncomeComponent, children: [
         { path: "income-details-id/:id", component: IncomeDetailsIdComponent } //?
       ]}
   ]},
+
+  //Menu
   { path: "about", component: AboutComponent },
   { path: "login", component: LoginComponent },
   { path: "", redirectTo: "/home", pathMatch: "full" },

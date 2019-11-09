@@ -1,1 +1,24 @@
-<p>view-income-by-customer works!</p>
+<!-- <p>view-income-by-customer works!</p> -->
+
+<div>
+    <form #formInfo="ngForm">
+        <h3>Enter Customer ID to view Income by this Customer</h3>
+    
+        <input #idInfo="ngModel" required type="number" placeholder="Customer ID" [(ngModel)]="income.clientId" name="clientId">
+        <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+        <br><br>
+
+        <button [disabled]="!formInfo.form.valid" (click)="viewIncomeByCustomer()">View Income By Customer ID</button>
+        <br><br>
+        <button [disabled]="!formInfo.form.valid" type="reset" class="button">Reset ID</button>
+    </form>
+    <p class="details">
+        <h3>Income ID: {{income.incomeId}}</h3>
+        <h3>Client ID: {{income.clientId}}</h3> <!--customer.id-->
+        <h3>Client Name: {{income.clientName}}</h3>
+        <h3>Operation Date: {{income.operationDate}}</h3>
+        <h3>Description: {{income.description}}</h3>
+        <h3>Amount: {{income.amount}}</h3>
+        <br>
+        <button class="close" (click)="closeList()">^ Close List ^</button>
+</div>
