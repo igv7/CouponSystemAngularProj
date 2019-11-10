@@ -22,7 +22,9 @@
         <br> -->
         <button class="close" (click)="closeList()">^ Close List ^</button>
 
-        <table>
+        <!-- <img *ngIf="!incomes" src="/assets/images/loadingGifTransparant1.gif"> -->
+
+        <table *ngIf="incomes">
             <tr>
                 <th>Income ID</th>
                 <th>Client ID</th>
