@@ -8,18 +8,18 @@
         <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
         <br><br>
 
-        <button [disabled]="!formInfo.form.valid" (click)="viewIncomeByCompany()">View Income By Company ID</button>
+        <button [disabled]="!formInfo.form.valid" (click)="viewIncomeByCompany(this.income.clientId)">View Income By Company ID</button>
         <br><br>
         <button [disabled]="!formInfo.form.valid" type="reset" class="button">Reset ID</button>
     </form>
-    <p class="details">
+    <!-- <p class="details">
         <h3>Income ID: {{income.incomeId}}</h3>
-        <h3>Client ID: {{income.clientId}}</h3> <!--company.id-->
+        <h3>Client ID: {{income.clientId}}</h3>
         <h3>Client Name: {{income.clientName}}</h3>
         <h3>Operation Date: {{income.operationDate}}</h3>
         <h3>Description: {{income.description}}</h3>
         <h3>Amount: {{income.amount}}</h3>
-        <br>
+        <br> -->
         <button class="close" (click)="closeList()">^ Close List ^</button>
 
         <table>
@@ -31,7 +31,7 @@
                 <th>Description</th>
                 <th>Amount</th>
             </tr>
-            <tr>
+            <tr *ngFor="let income of incomes">
                 <td>{{income.incomeId}}</td>
                 <td>{{income.clientId}}</td>
                 <td>{{income.clientName}}</td>

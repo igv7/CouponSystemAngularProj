@@ -58,8 +58,13 @@ private BASE_URL = "http://localhost:8080/admin/"; //'' ``
     // return this.httpClient.get<Company>("/assets/json/Companies.json"+ id); //, company
   }
 
-  public viewIncomeByCompany(clientId: number): Observable<Income> {
-    return this.httpClient.get<Income>(this.urlsService.getAdminUrl()+"viewIncomeByCompany/"+this.loginService.token+"/"+clientId, {withCredentials: true});//+id
+  // public viewIncomeByCompany(clientId: number): Observable<Income> {
+  //   return this.httpClient.get<Income>(this.urlsService.getAdminUrl()+"viewIncomeByCompany/"+this.loginService.token+"/"+clientId, {withCredentials: true});//+id
+  //   // return this.httpClient.get<Income>(this.BASE_URL+"viewIncomeByCompany/"+this.loginService.token+"/"+clientId, {withCredentials: true});
+  //   // return this.httpClient.get<Income>("http://localhost:8080/admin/viewIncomeByCompany/"+this.loginService.token+"/"+clientId, {withCredentials: true});
+  // }
+  public viewIncomeByCompany(clientId: number): Observable<Income[]> {
+    return this.httpClient.get<Income[]>(this.urlsService.getAdminUrl()+"viewIncomeByCompany/"+this.loginService.token+"/"+clientId, {withCredentials: true});//+id
     // return this.httpClient.get<Income>(this.BASE_URL+"viewIncomeByCompany/"+this.loginService.token+"/"+clientId, {withCredentials: true});
     // return this.httpClient.get<Income>("http://localhost:8080/admin/viewIncomeByCompany/"+this.loginService.token+"/"+clientId, {withCredentials: true});
   }
