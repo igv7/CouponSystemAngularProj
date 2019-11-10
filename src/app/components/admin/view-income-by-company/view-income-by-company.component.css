@@ -41,3 +41,23 @@ div {
     position: relative;
     overflow: auto;
 } */
+
+table {
+    margin: 30px auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th {
+    background-color: lightgreen;
+}
+
+tr:nth-child(even) {
+    background-color: lightyellow;
+}
+
+tr:nth-child(odd) {
+    background-color: lemonchiffon;
+}

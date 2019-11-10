@@ -6,12 +6,16 @@ table, th, td {
     border: 1px solid black;
 }
 
+th {
+    background-color: lightgreen;
+}
+
 tr:nth-child(even) {
-    background-color: lightskyblue;
+    background-color: lightyellow;
 }
 
 tr:nth-child(odd) {
-    background-color: plum;
+    background-color: lemonchiffon;
 }
 
 div {
