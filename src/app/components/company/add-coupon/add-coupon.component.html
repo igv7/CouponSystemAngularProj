@@ -11,11 +11,11 @@
         <span *ngIf="titleInfo.errors?.pattern && titleInfo.touched">Title must start with a capital letter!</span>
         <br><br>
     
-        <input #startDateInfo="ngModel" required type="text" placeholder="StartDate" [(ngModel)]="coupon.startDate" name="startDate">
+        <input #startDateInfo="ngModel" required type="text" placeholder="StartDate (yyyy-MM-dd)" [(ngModel)]="coupon.startDate" name="startDate">
         <span *ngIf="startDateInfo.invalid && startDateInfo.touched">Missing StartDate</span>
         <br><br>
     
-        <input #endDateInfo="ngModel" required type="text" placeholder="EndDate" [(ngModel)]="coupon.endDate" name="endDate">
+        <input #endDateInfo="ngModel" required type="text" placeholder="EndDate (yyyy-MM-dd)" [(ngModel)]="coupon.endDate" name="endDate">
         <span *ngIf="endDateInfo.invalid && endDateInfo.touched">Missing EndDate</span>
         <br><br>
     
