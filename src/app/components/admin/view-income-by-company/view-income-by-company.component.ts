@@ -22,39 +22,14 @@ public company = new Company();
   ngOnInit() {
   }
 
-  // public viewIncomeByCompany():void {
-  //   this.adminService.viewIncomeByCompany(this.income.clientId).subscribe(income => {
-  //     console.log(
-  //       this.income.incomeId = income.incomeId, 
-  //       this.income.clientId = income.clientId, 
-  //       this.income.clientName = income.clientName, 
-  //       this.income.operationDate = income.operationDate,
-  //       this.income.description = income.description,
-  //       this.income.amount = income.amount);
-
-  //       alert(
-  //       income.incomeId + " " +
-  //       income.clientId + " " +
-  //       income.clientName + " " +
-  //       income.operationDate + " " +
-  //       income.description + " " +
-  //       income.amount);
-
-  //     this.router.navigate(["/admin/view-income-by-company/income-company-id/"+this.income.clientId]); //income.clientId
-  //   }, err => {
-  //     alert(`Error on get Income! Wrong Id: ${this.income.clientId}` +` `+ `\n`+err.message);//income.clientId
-  //   });
-    
-  // }
-
   public viewIncomeByCompany(clientId: number): void {
     this.adminService.viewIncomeByCompany(clientId).subscribe((incomes) => {
       // const clientId = +this.activatedRoute.snapshot.params.clientId;
       // this.income = incomes.find(income => income.clientId == this.company.id);
       setTimeout(() => this.incomes = incomes, 500);
-      // this.router.navigate(["/admin/view-income-by-company/income-company-id/"+this.company.id]); //income.clientId
+      // this.router.navigate(["/admin/view-income-by-company/income-company-id/"+this.company.id]);
         }, err => {
-          alert(`Error on get Income! Wrong Id: ${clientId}` +` `+ `\n`+err.message);//income.clientId
+          alert(`Error on get Income! Company Id: ${clientId}` + ` doesn't exist in the system!`+ `\n`+err.message);
         });
   }
 

@@ -92,10 +92,10 @@ const routes: Routes = [
           { path: "company-id/:id", component: CompanyIdComponent }
       ]},
       { path: "view-all-companies", component: ViewAllCompaniesComponent, children: [
-          { path: "company-details/:id", component: CompanyDetailsComponent } //?
+          { path: "company-details/:id", component: CompanyDetailsComponent }
       ]},
       { path: "view-income-by-company", component: ViewIncomeByCompanyComponent, children: [
-          { path: "income-company-id/:id", component: IncomeCompanyIdComponent } //?
+          { path: "income-company-id/:id", component: IncomeCompanyIdComponent } //???
       ]}, 
 
       //Admin-Customer
@@ -106,15 +106,15 @@ const routes: Routes = [
           { path: "customer-id/:id", component: CustomerIdComponent }
       ]},
       { path: "view-all-customers", component: ViewAllCustomersComponent, children: [
-        { path: "customer-details/:id", component: CustomerDetailsComponent } //?
+        { path: "customer-details/:id", component: CustomerDetailsComponent }
       ]},
       { path: "view-income-by-customer", component: ViewIncomeByCustomerComponent, children: [
-          { path: "income-customer-id/:id", component: IncomeCustomerIdComponent } //?
+          { path: "income-customer-id/:id", component: IncomeCustomerIdComponent } //???
       ]},
 
       //Admin-Common
       { path: "view-all-income", component: ViewAllIncomeComponent, children: [
-        { path: "income-details-id/:id", component: IncomeDetailsIdComponent } //?
+        { path: "income-details-id/:id", component: IncomeDetailsIdComponent }
       ]}
   ]},
 
