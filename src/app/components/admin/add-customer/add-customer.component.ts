@@ -25,12 +25,14 @@ export class AddCustomerComponent implements OnInit {
     // `);
 
     this.adminService.addCustomer(this.customer).subscribe(customer => {
+      console.log(`Success on add Customer! `,this.customer = customer);
       alert(`Customer Name: ${this.customer.name} has been succesfully added! ` + 
       // "\nId: " + customer.id +
       // "\nName: " + customer.name +
       "\nPassword: " + customer.password);
       this.router.navigate(["/admin/view-all-customers"])
     }, err => {
+      console.log(`Failed on add Customer! `,this.customer.name + `\n` +err.message);
       alert(`Error on add Customer! This Customer name: ${this.customer.name}` +` `+ 
       `already exists in the system!` +` `+ `\n`+err.message);
     });

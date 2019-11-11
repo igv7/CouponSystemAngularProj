@@ -25,12 +25,14 @@ export class UpdateCustomerComponent implements OnInit {
     // `);
 
     this.adminServise.updateCustomer(this.customer).subscribe(customer => {
+      console.log(`Success on update Customer! `,this.customer = customer);
       alert("Customer has been succesfully updated! " + 
       "\nId: " + customer.id +
       "\nName: " + customer.name +
       "\nPassword: " + customer.password);
       this.router.navigate(["/admin/view-all-customers"])
     }, err => {
+      console.log(`Failed on update Customer Id: `,this.customer.id + `\n` +err.message);
       alert(`Error on update Customer! Wrong Id: ${this.customer.id}` +` `+ `\n`+err.message);
     });
   }

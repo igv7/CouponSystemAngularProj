@@ -4,8 +4,9 @@
     <form #formInfo="ngForm">
         <h3>Enter Company ID to view Income by this Company</h3>
     
-        <input #idInfo="ngModel" required type="number" placeholder="Company ID" [(ngModel)]="income.clientId" name="clientId">
-        <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+        <input #idInfo="ngModel" required min="0" step="1" type="number" placeholder="Company ID" [(ngModel)]="income.clientId" name="clientId">
+        <span *ngIf="idInfo.errors?.required && idInfo.touched">Missing Id</span>
+        <!-- <span *ngIf="idInfo.errors?.pattern && idInfo.touched">Please, use digits only!</span> -->
         <br><br>
 
         <button [disabled]="!formInfo.form.valid" (click)="viewIncomeByCompany(this.income.clientId)">View Income By Company ID</button>

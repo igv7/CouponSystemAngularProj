@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Company } from 'src/app/models/company';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
-import { LoginService } from 'src/app/services/login.service';
-import { ItemsService } from 'src/app/services/items.service';
-import { ResponseCodes } from 'src/app/models/response.codes';
-import { HttpErrorResponse } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-view-company',
@@ -23,19 +20,22 @@ export class ViewCompanyComponent implements OnInit {
 
   public getCompany():void {
     this.adminService.getCompany(this.company.id).subscribe(company => {
-      console.log(
+      console.log(`Success! `,
         this.company.id = company.id, 
         this.company.name = company.name, 
         this.company.password = company.password, 
         this.company.email = company.email);
       this.router.navigate(["/admin/view-company/company-id/"+this.company.id]);
     }, err => {
+      console.log(`Failed on get Company Id: `,this.company.id + `\n` +err.message);
       alert(`Error on get Company! Wrong Id: ${this.company.id}` +` `+ `\n`+err.message);
     });
   }
 
 
 }
+
+
 
 
 // public getCompany():void {

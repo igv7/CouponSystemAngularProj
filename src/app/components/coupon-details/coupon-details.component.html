@@ -2,14 +2,16 @@
 
 <div>
     <h3><a routerLink="/company/view-all-coupons">Back to List</a></h3>
-    <h3>Id: {{coupon.id}}</h3>
-    <h3>Title: {{coupon.title}}</h3>
-    <h3>StartDate: {{coupon.startDate}}</h3>
-    <h3>EndDate: {{coupon.endDate}}</h3>
-    <h3>Amount: {{coupon.amount}}</h3>
-    <h3>Type: {{coupon.type}}</h3>
-    <h3>Message: {{coupon.message}}</h3>
-    <h3>Price: {{coupon.price}}</h3>
-    <img src="/assets/images/coupons/{{coupon.title}}.jpg">
+    <h3>Id: {{coupon?.id}}</h3>
+    <h3>Title: {{coupon?.title}}</h3>
+    <h3>StartDate: {{coupon?.startDate}}</h3>
+    <h3>EndDate: {{coupon?.endDate}}</h3>
+    <h3>Amount: {{coupon?.amount}}</h3>
+    <h3>Type: {{coupon?.type}}</h3>
+    <h3>Message: {{coupon?.message}}</h3>
+    <h3>Price: {{coupon?.price}}</h3>
+    <h3> <img src="/assets/images/coupons/{{coupon?.type}}.jpg"></h3>
+    <!-- <app-thumbnail imageSource="/assets/images/coupons/{{coupon?.type}}.jpg"></app-thumbnail> -->
+    <!-- <img src="/assets/images/coupons/{{coupon?.type}}.jpg"> -->
     <h3><a routerLink="/company/view-all-coupons">Back to List</a></h3> <!--/coupons-->
 </div>

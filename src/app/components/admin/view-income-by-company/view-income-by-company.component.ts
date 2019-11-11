@@ -24,11 +24,10 @@ public company = new Company();
 
   public viewIncomeByCompany(clientId: number): void {
     this.adminService.viewIncomeByCompany(clientId).subscribe((incomes) => {
-      // const clientId = +this.activatedRoute.snapshot.params.clientId;
-      // this.income = incomes.find(income => income.clientId == this.company.id);
+      console.log(`Success! `,this.incomes = incomes);
       setTimeout(() => this.incomes = incomes, 500);
-      // this.router.navigate(["/admin/view-income-by-company/income-company-id/"+this.company.id]);
         }, err => {
+          console.log(`Failed on get all Income by Company Id: `,clientId + `\n` +err.message);
           alert(`Error on get Income! Company Id: ${clientId}` + ` doesn't exist in the system!`+ `\n`+err.message);
         });
   }

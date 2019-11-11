@@ -20,8 +20,10 @@ public incomes: Income[];
 
   public viewIncomeByCustomer(clientId: number): void {
     this.adminService.viewIncomeByCustomer(clientId).subscribe((incomes) => {
+      console.log(`Success! `,this.incomes = incomes);
       setTimeout(() => this.incomes = incomes, 500);
         }, err => {
+          console.log(`Failed on get all Income by Customer Id: `,clientId + `\n` +err.message);
           alert(`Error on get Income! Customer Id: ${clientId}` + ` doesn't exist in the system!`+ `\n`+err.message);
         });
   }

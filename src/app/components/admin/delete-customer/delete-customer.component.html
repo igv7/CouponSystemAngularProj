@@ -4,8 +4,9 @@
     <form #formInfo="ngForm">
         <h3>Enter Customer ID to delete this Customer</h3>
         
-        <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="customer.id" name="id">
+        <input #idInfo="ngModel" required min="0" step="1" type="number" placeholder="Id" [(ngModel)]="customer.id" name="id">
         <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+        <!-- <span *ngIf="idInfo.errors?.pattern && idInfo.touched">Please, use digits only!</span> -->
         <br><br>
 
         <button [disabled]="!formInfo.form.valid" (click)="deleteCustomer()">Delete Customer</button>

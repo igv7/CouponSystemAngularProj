@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Coupon } from 'src/app/models/coupon';
 import { CompanyService } from 'src/app/services/company.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-coupon',
@@ -11,29 +12,46 @@ export class AddCouponComponent implements OnInit {
 
   public coupon = new Coupon();
 
-  public constructor(private companyService: CompanyService) { }
+  public constructor(private companyService: CompanyService, private router: Router) { }
 
   ngOnInit() {
   }
 
   public addCoupon():void {
-    alert(`
-    Id: ${this.coupon.id}
-    Title: ${this.coupon.title}
-    StartDate: ${this.coupon.startDate}
-    EndDate: ${this.coupon.endDate}
-    Amount: ${this.coupon.amount}
-    Type: ${this.coupon.type}
-    Message: ${this.coupon.message}
-    Price: ${this.coupon.price}
-    Image: ${this.coupon.image}
-    `);
+    // alert(`
+    // Id: ${this.coupon.id}
+    // Title: ${this.coupon.title}
+    // StartDate: ${this.coupon.startDate}
+    // EndDate: ${this.coupon.endDate}
+    // Amount: ${this.coupon.amount}
+    // Type: ${this.coupon.type}
+    // Message: ${this.coupon.message}
+    // Price: ${this.coupon.price}
+    // Image: ${this.coupon.image}
+    // `);
 
-    this.companyService.addCoupon(this.coupon).subscribe(c => {
-      alert("Coupon has been succesfully added! Title: " + c.title);
+    this.companyService.addCoupon(this.coupon).subscribe(coupon => {
+      console.log(`Success! `,this.coupon = coupon);
+      alert(`Coupon Title: ${this.coupon.title} has been succesfully added! ` + 
+      "\nId: " + coupon.id +
+      "\nTitle: " + coupon.title +
+      "\nStartDate: " + coupon.startDate +
+      "\nIdEndDate: " + coupon.endDate +
+      "\nTAmount: " + coupon.amount +
+      "\nType: " + coupon.type +
+      "\nMessage: " + coupon.message +
+      "\nPrice: " + coupon.price);
+      // "\nImage: " + coupon.image
+      this.router.navigate(["/company/view-all-coupons"])
     }, err => {
-      alert("Error on add Coupon!" + err);
+      console.log(`Failed on add coupon `,this.coupon.title + `\n` +err.message);
+      alert(`Error on add Coupon! This Coupon title: ${this.coupon.title}` +` `+ 
+      `already exists in the system!` +` `+ `\n`+err.message);
     });
+  }
+
+  public closeList(): void {
+    this.router.navigate(["/company"]);
   }
 
 }

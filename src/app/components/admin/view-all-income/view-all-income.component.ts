@@ -18,9 +18,11 @@ export class ViewAllIncomeComponent implements OnInit {
 
   public ngOnInit(): void {
     this.adminService.viewAllIncome().subscribe((incomes) => {
+      console.log(`Success! `,this.incomes = incomes);
       setTimeout(() => this.incomes = incomes, 500);
     }, err => {
-      alert("Error: " + err.message);
+      console.log(`Failed on get all Income! `+ `\n` +err.message);
+      alert(`Error on get all Income! ` + `\n` +err.message);
     });
   }
 

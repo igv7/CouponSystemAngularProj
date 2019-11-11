@@ -18,8 +18,10 @@ export class CustomerIdComponent implements OnInit {
     this.adminService.getAllCustomers().subscribe(customers => {
       const id = +this.activatedRoute.snapshot.params.id;
       this.customer = customers.find(c => c.id == id);
+      console.log(`Success! `);
     }, err => {
-      alert("Error: " + err.message);
+      console.log(`Failed! ` + `\n` +err.message);
+      alert(`Error! ` + `\n` +err.message);
     });
     
   }

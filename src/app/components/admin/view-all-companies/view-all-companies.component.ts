@@ -18,9 +18,11 @@ export class ViewAllCompaniesComponent implements OnInit {
 
   public ngOnInit(): void {
     this.adminService.getAllCompanies().subscribe((companies) => {
+      console.log(`Success! `,this.companies = companies);
       setTimeout(() => this.companies = companies, 500);
     }, err => {
-      alert("Error: " + err.message);
+      console.log(`Failed on get all Companies! `+ `\n` +err.message);
+      alert(`Error on get all Companyes! ` + `\n` +err.message);
     });
   }
 

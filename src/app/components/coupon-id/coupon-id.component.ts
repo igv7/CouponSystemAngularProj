@@ -21,8 +21,10 @@ export class CouponIdComponent implements OnInit {
     this.companyService.getAllCoupons().subscribe(coupons => {
       const id = +this.activatedRoute.snapshot.params.id;
       this.coupon = coupons.find(c => c.id == id);
+      console.log(`Success! `);
     }, err => {
-      alert("Error: " + err.message);
+      console.log(`Failed! ` + `\n` +err.message);
+      alert(`Error! ` + `\n` +err.message);
     });
     
   }

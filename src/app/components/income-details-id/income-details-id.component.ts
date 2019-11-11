@@ -18,8 +18,10 @@ export class IncomeDetailsIdComponent implements OnInit {
     this.adminService.viewAllIncome().subscribe((incomes) => {
       const id = +this.activatedRoute.snapshot.params.id;
       this.income = incomes.find(i => i.incomeId == id);
+      console.log(`Success on get Income details by incomeId! `);
     }, err => {
-      alert("Error: " + err.message);
+      console.log(`Failed on get Income details by incomeId! ` + `\n` +err.message);
+      alert(`Error on get Income details by incomeId ` + `\n` +err.message);
     });
   }
 

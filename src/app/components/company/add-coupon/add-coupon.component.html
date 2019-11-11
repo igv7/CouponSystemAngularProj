@@ -2,31 +2,52 @@
 
 <div>
     <form #formInfo="ngForm">
-        <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="coupon.id" name="id">
-        <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+        <h3>Enter Coupon Details</h3>
+        <input #idInfo="ngModel" required min="0" step="1" type="number" placeholder="Id" [(ngModel)]="coupon.id" name="id">
+        <span *ngIf="idInfo.errors?.required && idInfo.touched">Missing Id</span>
+        <!-- <span *ngIf="idInfo.errors?.pattern && idInfo.touched">Please, use digits only!</span> -->
         <br><br>
     
         <input #titleInfo="ngModel" required pattern="^[A-Z].*$" type="text" placeholder="Title" [(ngModel)]="coupon.title" name="title">
         <span *ngIf="titleInfo.errors?.required && titleInfo.touched">Missing Title</span>
         <span *ngIf="titleInfo.errors?.pattern && titleInfo.touched">Title must start with a capital letter!</span>
         <br><br>
-    
-        <input #startDateInfo="ngModel" required type="text" placeholder="StartDate (yyyy-MM-dd)" [(ngModel)]="coupon.startDate" name="startDate">
-        <span *ngIf="startDateInfo.invalid && startDateInfo.touched">Missing StartDate</span>
+        
+        Format: "yyyy-MM-dd"<br>
+        <input #startDateInfo="ngModel" required pattern="^(\d{1,4})-(\d{1,2})-(\d{1,2})$" type="text" placeholder="StartDate" [(ngModel)]="coupon.startDate" name="startDate">
+        <span *ngIf="startDateInfo.errors?.required && startDateInfo.touched">Missing StartDate</span>
+        <span *ngIf="startDateInfo.errors?.pattern && startDateInfo.touched">Start Date must contain the following format: "yyyy-MM-dd" </span>
+        <br><br>
+         
+        Format: "yyyy-MM-dd"<br>
+        <input #endDateInfo="ngModel" required pattern="^(\d{1,4})-(\d{1,2})-(\d{1,2})$" type="text" placeholder="EndDate" [(ngModel)]="coupon.endDate" name="endDate">
+        <span *ngIf="endDateInfo.errors?.required && endDateInfo.touched">Missing EndDate</span>
+        <span *ngIf="endDateInfo.errors?.pattern && endDateInfo.touched">End Date must contain the following format: "yyyy-MM-dd"</span>
         <br><br>
     
-        <input #endDateInfo="ngModel" required type="text" placeholder="EndDate (yyyy-MM-dd)" [(ngModel)]="coupon.endDate" name="endDate">
-        <span *ngIf="endDateInfo.invalid && endDateInfo.touched">Missing EndDate</span>
+        <input #amountInfo="ngModel" minlength="1" required min="1" type="number" placeholder="Amount" [(ngModel)]="coupon.amount" name="amount">
+        <span *ngIf="amountInfo.errors?.required && amountInfo.touched">Missing Amount</span>
+        <!-- <span *ngIf="amountInfo.errors?.pattern && amountInfo.touched">Please, use digits only!</span> -->
         <br><br>
     
-        <input #amountInfo="ngModel" minlength="1" required type="number" placeholder="Amount" [(ngModel)]="coupon.amount" name="amount">
-        <span *ngIf="amountInfo.invalid && amountInfo.touched">Missing Amount</span>
-        <br><br>
-    
-        <input #typeInfo="ngModel" required pattern="^[A-Z].*[A-Z]$" type="text" placeholder="Type" [(ngModel)]="coupon.type" name="type">
+        <!-- <input #typeInfo="ngModel" required pattern="^[A-Z].*[A-Z]$" type="text" placeholder="Type" [(ngModel)]="coupon.type" name="type">
         <span *ngIf="typeInfo.errors?.required && typeInfo.touched">Missing Type</span>
         <span *ngIf="typeInfo.errors?.pattern && typeInfo.touched">Type must have minimum two capital letters!</span>
-        <br><br>
+        <br><br> -->
+
+        <label for id="type1">Choose Coupon Type: </label><br>
+          <select id="type" name="type" ngModel>
+            <option selected disabled>Select Coupon Type</option>
+            <option value="SPORTS">SPORTS</option>
+            <option value="DRINKS">DRINKS</option>
+            <option value="HEALTH">HEALTH</option>
+            <option value="FOOD">FOOD</option>
+            <option value="CAMPING">CAMPING</option>
+            <option value="ELECTRICITY">ELECTRICITY</option>
+            <option value="RESTAURANTS">RESTAURANTS</option>
+            <option value="TRAVELING">TRAVELING</option>
+          </select>
+          <br><br>
     
         <input #messageInfo="ngModel" required type="text" placeholder="Message" [(ngModel)]="coupon.message" name="message">
         <span *ngIf="messageInfo.invalid && messageInfo.touched">Missing Message</span>
@@ -36,11 +57,16 @@
         <span *ngIf="priceInfo.invalid && priceInfo.touched">Missing Price</span>
         <br><br>
     
-        <input #imageInfo="ngModel" required type="text" placeholder="Image" [(ngModel)]="coupon.image" name="image">
+        <!-- <input #imageInfo="ngModel" required type="text" placeholder="Image" [(ngModel)]="coupon.image" name="image">
         <span *ngIf="imageInfo.invalid && imageInfo.touched">Missing Image</span>
-        <br><br>
+        <br><br> -->
     
         <button [disabled]="!formInfo.form.valid" (click)="addCoupon()">Add Coupon</button>
+        <br><br>
+        <button type="reset" class="button">Reset</button>
+        <br><br>
+        <button (click)="closeList()">Cancel! Back to Company</button>
+        <br><br>
     
         <!-- <p>Id valid? {{idInfo.valid}}</p>
         <p>Title valid? {{titleInfo.valid}}</p>

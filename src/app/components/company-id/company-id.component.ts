@@ -18,8 +18,10 @@ export class CompanyIdComponent implements OnInit {
     this.adminService.getAllCompanies().subscribe(companies => {
       const id = +this.activatedRoute.snapshot.params.id;
       this.company = companies.find(c => c.id == id);
+      console.log(`Success! `);
     }, err => {
-      alert("Error: " + err.message);
+      console.log(`Failed! ` + `\n` +err.message);
+      alert(`Error! ` + `\n` +err.message);
     });
     
   }

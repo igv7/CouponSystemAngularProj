@@ -11,53 +11,29 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ViewCouponComponent implements OnInit {
 
   public coupon = new Coupon();
-  // coupons: Coupon[];
-  // public coupon: Coupon;
-  // @ViewChild ('formInfo') viewCouponForm : NgForm;
-  // couponId: number;
-  // coupon: Coupon;
-  // viewCouponForm: NgForm;
 
-  public constructor(private companyService: CompanyService, private router: Router, private activatedRoute: ActivatedRoute) { } //, private activatedRoute: ActivatedRoute, private router: Router
+  public constructor(private companyService: CompanyService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  // onSubmit() {
-  //   this.couponId = this.viewCouponForm.value.id;
-  //   console.log(this.couponId);
-  // }
-
   public getCoupon():void {
-    
-    alert(`
-    Id: ${this.coupon.id}
-    Title: ${this.coupon.title}
-    StartDate: ${this.coupon.startDate}
-    EndDate: ${this.coupon.endDate}
-    Amount: ${this.coupon.amount}
-    Type: ${this.coupon.type}
-    Message: ${this.coupon.message}
-    Price: ${this.coupon.price}
-    Image: ${this.coupon.image}
-    `);
-  
-
     this.companyService.getCoupon(this.coupon.id).subscribe(coupon=> {
-      // this.router.navigate(["/company/view-coupon/coupon-id/:id"]);
-      alert("Success on get Coupon! Name: " + coupon.title);
+      console.log(`Success! `,
+        this.coupon.id = coupon.id, 
+        this.coupon.title = coupon.title, 
+        this.coupon.startDate = coupon.startDate,
+        this.coupon.endDate = coupon.endDate, 
+        this.coupon.amount = coupon.amount,
+        this.coupon.type = coupon.type, 
+        this.coupon.message = coupon.message,
+        this.coupon.price = coupon.price, 
+        this.coupon.image = coupon.image);
+      this.router.navigate(["/company/view-coupon/coupon-id/"+this.coupon.id]);
     }, err => {
-      alert("Error on get Coupon!" + err);
+      console.log(`Failed on get Coupon Id: `,this.coupon.id + `\n` +err.message);
+      alert(`Error on get Coupon! Wrong Id: ${this.coupon.id}` +` `+ `\n`+err.message);
     });
   }
-
-  // onSubmit() {
-  //   this.companyService.getAllCoupons().subscribe(coupons => {
-  //     const id = +this.activatedRoute.snapshot.params.id;
-  //     this.coupon = coupons.find(c => c.id == id);
-  //   }, err => {
-  //     alert("Error: " + err.message);
-  //   });
-  // }
 
 }

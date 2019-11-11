@@ -18,9 +18,11 @@ export class ViewAllCustomersComponent implements OnInit {
 
   public ngOnInit(): void {
     this.adminService.getAllCustomers().subscribe((customers) => {
+      console.log(`Success! `,this.customers = customers);
       setTimeout(() => this.customers = customers, 500);
     }, err => {
-      alert("Error: " + err.message);
+      console.log(`Failed on get all Customers! `+ `\n` +err.message);
+      alert(`Error on get all Customers ` + `\n` +err.message);
     });
   }
 

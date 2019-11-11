@@ -26,6 +26,7 @@ export class AddCompanyComponent implements OnInit {
     // `);
 
     this.adminService.addCompany(this.company).subscribe(company => {
+      console.log(`Success on add Company! `,this.company = company);
       alert(`Company Name: ${this.company.name} has been succesfully added! ` + 
       // "\nId: " + company.id +
       // "\nName: " + company.name +
@@ -33,6 +34,7 @@ export class AddCompanyComponent implements OnInit {
       "\nEmail: " + company.email);
       this.router.navigate(["/admin/view-all-companies"])
     }, err => {
+      console.log(`Failed on add Company! `,this.company.name + `\n` +err.message);
       alert(`Error on add Company! This Company name: ${this.company.name}` +` `+ 
       `already exists in the system!` +` `+ `\n`+err.message);
     });

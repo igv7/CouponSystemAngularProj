@@ -2,18 +2,20 @@
 
 <div>
     <form #formInfo="ngForm">
-        Enter Coupon ID to view the Coupon
-        <br>
-        <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="coupon.id" name="id">
-        <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+        <h3>Enter Coupon ID to view this Coupon</h3>
+        
+        <input #idInfo="ngModel" required min="0" step="1" type="number" placeholder="Id" [(ngModel)]="coupon.id" name="id">
+        <span *ngIf="idInfo.errors?.required && idInfo.touched">Missing Id</span>
         <br><br>
 
-        <!-- <button [disabled]="!formInfo.form.valid" (click)="getCoupon()">View Coupon</button> -->
-        <!-- <input type="submit" [disabled]="!formInfo.valid" /> -->
+        <button [disabled]="!formInfo.form.valid" (click)="getCoupon()">View Coupon</button>
+        <br><br>
+        <button [disabled]="!formInfo.form.valid" type="reset" class="button">Reset ID</button>
     </form>
     <p class="details">
-        <h3><a routerLink="/coupon-id/{{coupon.id}}">Id: {{coupon.id}}</a></h3>
-        <!-- <h3>Title: {{coupon.title}}</h3>
+        <!-- <h3><a routerLink="/coupon-id/{{coupon.id}}">Id: {{coupon.id}}</a></h3> -->
+        <h3>Id: {{coupon.id}}</h3>
+        <h3>Title: {{coupon.title}}</h3>
         <h3>StartDate: {{coupon.startDate}}</h3>
         <h3>EndDate: {{coupon.endDate}}</h3>
         <h3>Amount: {{coupon.amount}}</h3>
@@ -21,7 +23,7 @@
         <h3>Message: {{coupon.message}}</h3>
         <h3>Price: {{coupon.price | currency:'ILS':'symbol':'1.1-2'}}</h3>
         <h3>Image:</h3>
-        <img src="/assets/images/coupons/{{coupon.title}}.jpg"> -->
+        <img src="/assets/images/coupons/{{coupon.type}}.jpg">
         <!--<app-thumbnail imageSource="/assets/images/coupons/{{coupon.title}}.jpg"></app-thumbnail> -->
-        <!-- <h3><a routerLink="/admin">Back to Admin</a></h3> -->
+        <h3><a routerLink="/company">Close</a></h3>
 </div>

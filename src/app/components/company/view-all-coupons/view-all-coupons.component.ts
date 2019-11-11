@@ -25,9 +25,11 @@ export class ViewAllCouponsComponent implements OnInit {
 
   public ngOnInit(): void {
     this.companyService.getAllCoupons().subscribe((coupons) => {
+      console.log(`Success! `,this.coupons = coupons);
       setTimeout(() => this.coupons = coupons, 500);
     }, err => {
-      alert("Error: " + err.message);
+      console.log(`Failed on get all coupons! `+ `\n` +err.message);
+      alert(`Error on get all coupons! ` + `\n` +err.message);
     });
   }
 

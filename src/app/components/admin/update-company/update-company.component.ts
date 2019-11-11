@@ -35,7 +35,8 @@ export class UpdateCompanyComponent implements OnInit {
     // Email: ${this.company.email}
     // `);
 
-    this.adminService.updateCompany(this.company).subscribe(company => { //this.company = company;
+    this.adminService.updateCompany(this.company).subscribe(company => {
+      console.log(`Success on update Company! `,this.company = company);
       alert("Company has been succesfully updated! " + 
       "\nId: " + company.id +
       "\nName: " + company.name +
@@ -43,6 +44,7 @@ export class UpdateCompanyComponent implements OnInit {
       "\nEmail: " + company.email);
       this.router.navigate(["/admin/view-all-companies"])
     }, err => {
+      console.log(`Failed on update Company Id: `,this.company.id + `\n` +err.message);
       alert(`Error on update Company! Wrong Id: ${this.company.id}` +` `+ `\n`+err.message);
     });
   }
