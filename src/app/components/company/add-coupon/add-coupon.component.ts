@@ -31,6 +31,12 @@ export class AddCouponComponent implements OnInit {
     // `);
 
     this.companyService.addCoupon(this.coupon).subscribe(coupon => {
+      // if(this.coupon.title === coupon.title) {
+      //   err => {
+      //     alert(`Error on add Coupon! This Coupon title: ${this.coupon.title}` +` `+ 
+      //     `already exists in the system!` +` `+ `\n`+err.message);
+      //   }
+      // }
       console.log(`Success! `,this.coupon = coupon);
       alert(`Coupon Title: ${this.coupon.title} has been succesfully added! ` + 
       "\nId: " + coupon.id +
@@ -41,12 +47,13 @@ export class AddCouponComponent implements OnInit {
       "\nType: " + coupon.type +
       "\nMessage: " + coupon.message +
       "\nPrice: " + coupon.price);
-      // "\nImage: " + coupon.image
+      "\nImage: " + coupon.image
       this.router.navigate(["/company/view-all-coupons"])
     }, err => {
       console.log(`Failed on add coupon `,this.coupon.title + `\n` +err.message);
-      alert(`Error on add Coupon! This Coupon title: ${this.coupon.title}` +` `+ 
-      `already exists in the system!` +` `+ `\n`+err.message);
+      // alert(`Error on add Coupon! This Coupon title: ${this.coupon.title}` +` `+ 
+      // `already exists in the system!` +` `+ `\n`+err.message);
+      alert(`Error on add Coupon! Coupon Title: ${this.coupon.title}` +` `+ `\n`+err.message);
     });
   }
 

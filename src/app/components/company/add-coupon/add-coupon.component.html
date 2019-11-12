@@ -3,10 +3,10 @@
 <div>
     <form #formInfo="ngForm">
         <h3>Enter Coupon Details</h3>
-        <input #idInfo="ngModel" required min="0" step="1" type="number" placeholder="Id" [(ngModel)]="coupon.id" name="id">
-        <span *ngIf="idInfo.errors?.required && idInfo.touched">Missing Id</span>
+        <!-- <input #idInfo="ngModel" required min="0" step="1" type="number" placeholder="Id" [(ngModel)]="coupon.id" name="id" oninput="validity.valid||(value='');">
+        <span *ngIf="idInfo.errors?.required && idInfo.touched">Missing Id</span> -->
         <!-- <span *ngIf="idInfo.errors?.pattern && idInfo.touched">Please, use digits only!</span> -->
-        <br><br>
+        <!-- <br><br> -->
     
         <input #titleInfo="ngModel" required pattern="^[A-Z].*$" type="text" placeholder="Title" [(ngModel)]="coupon.title" name="title">
         <span *ngIf="titleInfo.errors?.required && titleInfo.touched">Missing Title</span>
@@ -25,18 +25,19 @@
         <span *ngIf="endDateInfo.errors?.pattern && endDateInfo.touched">End Date must contain the following format: "yyyy-MM-dd"</span>
         <br><br>
     
-        <input #amountInfo="ngModel" minlength="1" required min="1" type="number" placeholder="Amount" [(ngModel)]="coupon.amount" name="amount">
+        <input #amountInfo="ngModel" minlength="1" required min="1" type="number" placeholder="Amount" [(ngModel)]="coupon.amount" name="amount" oninput="validity.valid||(value='');">
         <span *ngIf="amountInfo.errors?.required && amountInfo.touched">Missing Amount</span>
         <!-- <span *ngIf="amountInfo.errors?.pattern && amountInfo.touched">Please, use digits only!</span> -->
         <br><br>
-    
-        <!-- <input #typeInfo="ngModel" required pattern="^[A-Z].*[A-Z]$" type="text" placeholder="Type" [(ngModel)]="coupon.type" name="type">
+
+        <!-- CAPITAL LETTERS ONLY!<br>
+        <input #typeInfo="ngModel" required pattern="^[A-Z].*[A-Z]$" type="text" placeholder="Type" [(ngModel)]="coupon.type" name="type">
         <span *ngIf="typeInfo.errors?.required && typeInfo.touched">Missing Type</span>
-        <span *ngIf="typeInfo.errors?.pattern && typeInfo.touched">Type must have minimum two capital letters!</span>
+        <span *ngIf="typeInfo.errors?.pattern && typeInfo.touched">Type must have capital letters and contain minimum two letters!</span>
         <br><br> -->
 
         <label for id="type1">Choose Coupon Type: </label><br>
-          <select id="type" name="type" ngModel>
+          <select #typeInfo="ngModel" required type="text" id="type" [(ngModel)]="coupon.type" name="type">
             <option selected disabled>Select Coupon Type</option>
             <option value="SPORTS">SPORTS</option>
             <option value="DRINKS">DRINKS</option>
@@ -47,14 +48,16 @@
             <option value="RESTAURANTS">RESTAURANTS</option>
             <option value="TRAVELING">TRAVELING</option>
           </select>
+          <span *ngIf="typeInfo.errors?.required && typeInfo.touched">Missing Type</span>
           <br><br>
     
         <input #messageInfo="ngModel" required type="text" placeholder="Message" [(ngModel)]="coupon.message" name="message">
         <span *ngIf="messageInfo.invalid && messageInfo.touched">Missing Message</span>
         <br><br>
     
-        <input #priceInfo="ngModel" required min="0" max="1000" type="number" placeholder="Price" [(ngModel)]="coupon.price" name="price">
-        <span *ngIf="priceInfo.invalid && priceInfo.touched">Missing Price</span>
+        <input #priceInfo="ngModel" required min="0" max="1000" type="number" placeholder="Price" [(ngModel)]="coupon.price" name="price" step="0.01" pattern="\d+(\.\d{1,2})?"> <!--pattern="[0-9]+(\.[0-9][0-9]?)?"-->
+        <span *ngIf="priceInfo.errors?.required && priceInfo.touched">Missing Price</span>
+        <span *ngIf="priceInfo.errors?.pattern && priceInfo.touched">Please, enter the correct price!</span>
         <br><br>
     
         <!-- <input #imageInfo="ngModel" required type="text" placeholder="Image" [(ngModel)]="coupon.image" name="image">

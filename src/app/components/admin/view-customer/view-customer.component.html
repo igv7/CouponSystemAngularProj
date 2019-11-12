@@ -4,7 +4,7 @@
     <form #formInfo="ngForm">
         <h3>Enter Customer ID to view this Customer</h3>
         
-        <input #idInfo="ngModel" required min="0" step="1" type="number" placeholder="Customer ID" [(ngModel)]="customer.id" name="id">
+        <input #idInfo="ngModel" required min="0" step="1" type="number" placeholder="Customer ID" [(ngModel)]="customer.id" name="id" oninput="validity.valid||(value='');">
         <span *ngIf="idInfo.errors?.required && idInfo.touched">Missing Id</span>
         <!-- <span *ngIf="idInfo.errors?.pattern && idInfo.touched">Please, use digits only!</span> -->
         <br><br>
