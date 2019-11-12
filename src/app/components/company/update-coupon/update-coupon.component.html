@@ -2,18 +2,29 @@
 
 <div>
     <form #formInfo="ngForm">
-        <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="coupon.id" name="id">
-        <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+        <h3>Enter Coupon ID to update this Coupon</h3>
+
+        <input #idInfo="ngModel" required min="0" step="1" oninput="validity.valid||(value='');" type="number" placeholder="Id" [(ngModel)]="coupon.id" name="id">
+        <span *ngIf="idInfo.errors?.required && idInfo.touched">Missing Id</span>
         <br><br>
 
-        <input #endDateInfo="ngModel" required type="text" placeholder="EndDate" [(ngModel)]="coupon.endDate" name="endDate">
-        <span *ngIf="endDateInfo.invalid && endDateInfo.touched">Missing EndDate</span>
+        <h3>Enter new Coupon EndDate</h3>
+        Format: "yyyy-MM-dd"<br>
+        <input #endDateInfo="ngModel" required pattern="^(\d{1,4})-(\d{1,2})-(\d{1,2})$" type="text" placeholder="EndDate" [(ngModel)]="coupon.endDate" name="endDate">
+        <span *ngIf="endDateInfo.errors?.required && endDateInfo.touched">Missing EndDate</span>
+        <span *ngIf="endDateInfo.errors?.pattern && endDateInfo.touched">End Date must contain the following format: "yyyy-MM-dd"</span>
         <br><br>
 
-        <input #priceInfo="ngModel" required min="0" max="1000" type="number" placeholder="Price" [(ngModel)]="coupon.price" name="price">
-        <span *ngIf="priceInfo.invalid && priceInfo.touched">Missing Price</span>
+        <h3>Enter new Coupon Price</h3>
+        <input #priceInfo="ngModel" required min="0" max="1000" step="0.01" pattern="\d+(\.\d{1,2})?" type="number" placeholder="Price" [(ngModel)]="coupon.price" name="price">
+        <span *ngIf="priceInfo.errors?.required && priceInfo.touched">Missing Price</span>
+        <span *ngIf="priceInfo.errors?.pattern && priceInfo.touched">Please, enter the correct price!</span>
         <br><br>
 
         <button [disabled]="!formInfo.form.valid" (click)="updateCoupon()">Update Coupon</button>
+        <br><br>
+        <button type="reset" class="button">Reset</button>
     </form>
+    
+    <h3><a routerLink="/company">Close</a></h3>
 </div>

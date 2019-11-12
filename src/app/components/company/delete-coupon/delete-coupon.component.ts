@@ -18,15 +18,17 @@ export class DeleteCouponComponent implements OnInit {
   }
 
   public deleteCoupon():void {
-    alert(`
-    Id: ${this.coupon.id}
-    `);
+    // alert(`
+    // Id: ${this.coupon.id}
+    // `);
 
     this.companyService.deleteCoupon(this.coupon.id).subscribe((coupon) => {
-      alert("Coupon has been succesfully deleted! ID: " + coupon.id);
-      this.router.navigate(["/company/view-all-coupons"]);
+      console.log(`Success on delele Coupon Id: `,this.coupon.id = coupon.id);
+        alert(`Coupon Id: ${coupon.id} Title: `+coupon.title+ ` has been succesfully deleted!`);
+        this.router.navigate(["/company/view-all-coupons"]);
     }, err => {
-      alert("Error on delete Coupon!" + err);
+      console.log(`Failed on delele Coupon Id: `,this.coupon.id + `\n` +err.message);
+      alert(`Error on delete Coupon! Wrong Id: ${this.coupon.id}` +` `+ `\n`+err.message);
     });
   }
 

@@ -18,13 +18,8 @@ export class UpdateCouponComponent implements OnInit {
   }
 
   public updateCoupon():void {
-    alert(`
-    Id: ${this.coupon.id}
-    EndDate: ${this.coupon.endDate}
-    Price: ${this.coupon.price}
-    `);
-
-    this.companyService.updateCoupon(this.coupon).subscribe(coupon => { //this.company = company;
+    this.companyService.updateCoupon(this.coupon).subscribe(coupon => {
+      console.log(`Success on update Coupon! `,this.coupon = coupon);
       alert("Coupon has been succesfully updated! " + 
       "\nId: " + coupon.id +
       "\nTitle: " + coupon.title +
@@ -36,7 +31,8 @@ export class UpdateCouponComponent implements OnInit {
       "\nPrice: " + coupon.price);
       this.router.navigate(["/company/view-all-coupons"])
     }, err => {
-      alert("Error on update Coupon!" + err);
+      console.log(`Failed on update Coupon Id: `,this.coupon.id + `\n` +err.message);
+      alert(`Error on update Coupon! Wrong Id: ${this.coupon.id}` +` `+ `\n`+err.message);
     });
   }
 

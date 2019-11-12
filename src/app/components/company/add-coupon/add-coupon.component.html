@@ -61,7 +61,12 @@
         <br><br>
     
         <!-- <input #imageInfo="ngModel" required type="text" placeholder="Image" [(ngModel)]="coupon.image" name="image">
-        <span *ngIf="imageInfo.invalid && imageInfo.touched">Missing Image</span>
+        <span *ngIf="imageInfo.errors?.required && imageInfo.touched">Missing Image</span>
+        <br><br> -->
+        
+        <!-- Choose Image<br>
+        <input #imageInfo="ngModel" type="file" required multiple [(ngModel)]="coupon.image" name="image">
+        <span *ngIf="imageInfo.errors?.required && imageInfo.touched">Missing Image</span>
         <br><br> -->
     
         <button [disabled]="!formInfo.form.valid" (click)="addCoupon()">Add Coupon</button>

@@ -2,14 +2,16 @@
 
 <div>
     <form #formInfo="ngForm">
-        Enter Coupon ID to delete the Coupon
-        <br>
-        <input #idInfo="ngModel" required type="number" placeholder="Id" [(ngModel)]="coupon.id" name="id">
-        <span *ngIf="idInfo.invalid && idInfo.touched">Missing Id</span>
+        <h3>Enter Coupon ID to delete this Coupon</h3>
+        
+        <input #idInfo="ngModel" required min="0" step="1" oninput="validity.valid||(value='');" type="number" placeholder="Id" [(ngModel)]="coupon.id" name="id">
+        <span *ngIf="idInfo.errors?.required && idInfo.touched">Missing Id</span>
         <br><br>
 
         <button [disabled]="!formInfo.form.valid" (click)="deleteCoupon()">Delete Coupon</button>
         <br><br>
         <button [disabled]="!formInfo.form.valid" (click)="cancelDelete()">Cancel! Back to Company</button>
     </form>
+    <br><br><br><br><br><br><br><br><br><br>
+    <h3><a routerLink="/company">Close</a></h3>
 </div>
