@@ -15,11 +15,6 @@ export class CustomerService {
 
   private BASE_URL = "http://localhost:8080/customer/"; //'' ``
 
-  // public purchaseCoupon(id: number): Observable<Coupon> {//(coupon: Coupon)          +coupon.id, coupon,
-  //   return this.httpClient.post<Coupon>("http://localhost:8080/customer/purchaseCoupon/"+id, {withCredentials: true});
-  //   // return this.httpClient.post<Coupon>("/assets/json/Coupons.json", id, coupon);
-  // }
-
   public purchaseCoupon(id: number): Observable<Coupon> {
     return this.httpClient.post<Coupon>(this.urlsService.getCustomerUrl()+"purchaseCoupon/"+this.loginService.token+"/"+id, {withCredentials: true});
     // return this.httpClient.post<Coupon>(this.BASE_URL+"purchaseCoupon/"+this.loginService.token+"/"+id, {withCredentials: true});
