@@ -21,12 +21,12 @@ export class ViewAllCouponsByPriceComponent implements OnInit {
 
   public viewAllCouponsByPrice(price: number): void {
     this.companyService.viewAllCouponsByPrice(price).subscribe((coupons) => {
-      if(this.coupon.price < price) {
-        err => {
-          alert(`Error on get all Coupons by Price! There are no coupons up to the indicated Price: ${price}` + ` `
-          + `\n`+err.message);
-        }
-      }
+      // if(this.coupon.price < price) {
+      //   err => {
+      //     alert(`Error on get all Coupons by Price! There are no coupons up to the indicated Price: ${price}` + ` `
+      //     + `\n`+err.message);
+      //   }
+      // }
       console.log(`Success! `,this.coupons = coupons);
       setTimeout(() => this.coupons = coupons, 500);
         }, err => {

@@ -1,1 +1,51 @@
-<p>view-all-purchased-coupons works!</p>
+<!-- <p>view-all-purchased-coupons works!</p> -->
+
+<div class="mainDiv">
+    <img *ngIf="!coupons" src="/assets/images/loadingGifTransparant1.gif">
+
+    <div *ngIf="coupons">
+            <p>Filter by type:</p>
+            <input type='text' [(ngModel)] = 'listFilter'>
+            <h3>Filtered by: {{listFilter}}</h3>
+            <button class='btn' (click) = "toggleImage()" >
+                {{showImage ? 'Hide': 'Show'}} Image
+            </button>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Message</th>
+                <th>Price</th>
+                <th *ngIf="showImage">Image</th>
+                <!-- <th>
+                    <button class='btn btn-primary' (click) = "toggleImage()" >
+                        <h4>{{showImage ? 'Hide': 'Show'}} Image</h4>
+                    </button>
+                </th> -->
+            </tr>
+            <tr *ngFor="let coupon of coupons | couponTypeFilter: listFilter">
+                <td>{{coupon.id}}</td>
+                <td>
+                    <!-- <a routerLink="../view-all-coupons/coupon-details/{{coupon.id}}"> -->
+                        {{coupon.title}}
+                    <!-- </a> -->
+                </td>
+                <td>{{coupon.startDate}}</td>
+                <td>{{coupon.endDate}}</td>
+                <td>{{coupon.amount}}</td>
+                <td>{{coupon.type}}</td>
+                <td>{{coupon.message}}</td>
+                <td>{{coupon.price}}</td>
+                <td *ngIf="showImage">
+                    <app-thumbnail imageSource="/assets/images/coupons/{{coupon.type}}.jpg"></app-thumbnail>
+                    <!-- <img src="/assets/images/coupons/{{coupon.type}}.jpg"> -->
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- <router-outlet></router-outlet> -->

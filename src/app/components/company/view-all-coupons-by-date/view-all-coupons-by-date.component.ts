@@ -21,12 +21,12 @@ export class ViewAllCouponsByDateComponent implements OnInit {
 
   public viewAllCouponsByDate(endDate: string): void {
     this.companyService.viewAllCouponsByDate(endDate).subscribe((coupons) => {
-      if(this.coupon.endDate < endDate) {
-        err => {
-          alert(`Error on get all Coupons by Date! There are no coupons up to the indicated Date: ${endDate}` + ` `
-          + `\n`+err.message);
-        }
-      }
+      // if(this.coupon.endDate < endDate) {
+      //   err => {
+      //     alert(`Error on get all Coupons by Date! There are no coupons up to the indicated Date: ${endDate}` + ` `
+      //     + `\n`+err.message);
+      //   }
+      // }
       console.log(`Success! `,this.coupons = coupons);
       setTimeout(() => this.coupons = coupons, 500);
         }, err => {

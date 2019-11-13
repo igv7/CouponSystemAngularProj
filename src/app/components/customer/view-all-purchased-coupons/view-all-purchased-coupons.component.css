@@ -1,0 +1,63 @@
+input, button {
+    width: 300px;
+    font-size: x-large;
+    /* margin: 10px; */
+}
+
+form {
+    margin-top: 30px;
+}
+
+span {
+    color: darkred;
+    margin: 10px;
+    position: absolute;
+    font-size: x-large;
+}
+
+.mainDiv {
+    margin-top: 20px;
+    border: 1px solid black;
+    background-color: lightsteelblue;
+    height: 70%;
+    position: absolute;
+    overflow: auto;
+    top: 15%;
+    left: 40%;
+    width: 50%;
+}
+
+.close {
+    width: 130px;
+    position: fixed;
+    /* right: 17%; */
+    left: 61%;
+    bottom: 8%;
+    font-size: large;
+    background-color: lightsteelblue;
+}
+
+/* .details {
+    position: relative;
+    overflow: auto;
+} */
+
+table {
+    margin: 30px auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th {
+    background-color: lightgreen;
+}
+
+tr:nth-child(even) {
+    background-color: lightyellow;
+}
+
+tr:nth-child(odd) {
+    background-color: lemonchiffon;
+}
