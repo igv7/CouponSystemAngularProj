@@ -13,9 +13,7 @@ import { Income } from 'src/app/models/income';
 export class ViewIncomeByCompanyComponent implements OnInit {
 
 public income = new Income();
-
 public incomes: Income[];
-public company = new Company();
 
   constructor(private adminService: AdminService, private router: Router, private activatedRoute: ActivatedRoute) { }
 

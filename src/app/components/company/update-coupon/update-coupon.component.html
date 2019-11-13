@@ -10,9 +10,10 @@
 
         <h3>Enter new Coupon EndDate</h3>
         Format: "yyyy-MM-dd"<br>
-        <input #endDateInfo="ngModel" required pattern="^(\d{1,4})-(\d{1,2})-(\d{1,2})$" type="text" placeholder="EndDate" [(ngModel)]="coupon.endDate" name="endDate">
+        <input #endDateInfo="ngModel" required pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" type="text" placeholder="EndDate" [(ngModel)]="coupon.endDate" name="endDate"> <!-- pattern="^(\d{1,4})-(\d{1,2})-(\d{1,2})$"     pattern="^\d{4}-\d{2}-\d{2}$"-->
         <span *ngIf="endDateInfo.errors?.required && endDateInfo.touched">Missing EndDate</span>
-        <span *ngIf="endDateInfo.errors?.pattern && endDateInfo.touched">End Date must contain the following format: "yyyy-MM-dd"</span>
+        <!-- <span *ngIf="endDateInfo.errors?.pattern && endDateInfo.touched">End Date must contain the following format: "yyyy-MM-dd"</span> -->
+        <span *ngIf="endDateInfo.errors?.pattern && endDateInfo.touched">Wrong Date! Please, check your date or format.</span>
         <br><br>
 
         <h3>Enter new Coupon Price</h3>

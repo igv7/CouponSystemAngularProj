@@ -1,1 +1,61 @@
-<p>view-all-coupons-by-type works!</p>
+<!-- <p>view-all-coupons-by-type works!</p> -->
+
+<div>
+    <form #formInfo="ngForm">
+    <h3>Choose Coupon TYPE to view All these Coupons by type</h3>
+
+    <!-- <label for id="type1">Choose Coupon Type: </label><br> -->
+        <select #typeInfo="ngModel" required type="text" id="type" [(ngModel)]="coupon.type" name="type">
+            <option selected disabled>Select Coupon Type</option>
+            <option value="SPORTS">SPORTS</option>
+            <option value="DRINKS">DRINKS</option>
+            <option value="HEALTH">HEALTH</option>
+            <option value="FOOD">FOOD</option>
+            <option value="CAMPING">CAMPING</option>
+            <option value="ELECTRICITY">ELECTRICITY</option>
+            <option value="RESTAURANTS">RESTAURANTS</option>
+            <option value="TRAVELING">TRAVELING</option>
+        </select>
+        <span *ngIf="typeInfo.errors?.required && typeInfo.touched">Missing Type</span>
+        <br><br>
+
+        <button [disabled]="!formInfo.form.valid" (click)="viewAllCouponsByType(this.coupon.type)">View All Coupons By Type</button>
+        <br><br>
+        <button [disabled]="!formInfo.form.valid" type="reset" class="button">Reset</button>
+    </form>
+        <button class="close" (click)="closeList()">^ Close List ^</button>
+        <br><br>
+        <!-- <img *ngIf="!coupons" src="/assets/images/loadingGifTransparant1.gif"> -->
+
+        <button [disabled]="!formInfo.form.valid" class='btn' (click) = "toggleImage()" >
+                {{showImage ? 'Hide': 'Show'}} Image
+            </button>
+
+        <table *ngIf="coupons">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Message</th>
+                <th>Price</th>
+                <th *ngIf="showImage">Image</th>
+            </tr>
+            <tr *ngFor="let coupon of coupons">
+                <td>{{coupon.id}}</td>
+                <td>{{coupon.title}}</td>
+                <td>{{coupon.startDate}}</td>
+                <td>{{coupon.endDate}}</td>
+                <td>{{coupon.amount}}</td>
+                <td>{{coupon.type}}</td>
+                <td>{{coupon.message}}</td>
+                <td>{{coupon.price}}</td>
+                <td *ngIf="showImage">
+                        <app-thumbnail imageSource="/assets/images/coupons/{{coupon.type}}.jpg"></app-thumbnail>
+                        <!-- <img src="/assets/images/coupons/{{coupon.type}}.jpg"> -->
+                    </td>
+            </tr>
+        </table>
+    </div>
