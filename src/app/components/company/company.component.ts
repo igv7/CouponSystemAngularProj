@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import { Observable } from 'rxjs';
 import { ComponentCanDeactivate } from 'src/app/services/exit-company-guard.service';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-company',

@@ -50,7 +50,9 @@ export class LoginComponent implements OnInit {
       err => {
         let error: HttpErrorResponse = err;
         if (error.error === ResponseCodes.UNAUTHORIZED) { console.log("unautorized!!!") }
-        else { console.log(error.error) }
+        else { console.log(error.error);
+              alert(`Wrong details! Check Your Login form!`);
+        }
       });
   }
 
