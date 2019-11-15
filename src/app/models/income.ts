@@ -5,5 +5,6 @@ export class Income {
         public clientName?: string,
         public operationDate?: string,
         public description?: string,
-        public amount?: number) {}
+        public amount?: number,
+        public totalAmount?: number) {}
 }
