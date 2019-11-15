@@ -33,6 +33,7 @@
                 <th>Operation Date</th>
                 <th>Description</th>
                 <th>Amount</th>
+                <th>Total Amount</th>
             </tr>
             <tr *ngFor="let income of incomes">
                 <td>{{income.incomeId}}</td>
@@ -41,6 +42,7 @@
                 <td>{{income.operationDate}}</td>
                 <td>{{income.description}}</td>
                 <td>{{income.amount}}</td>
+                <td>{{income.totalAmount}}</td>
             </tr>
         </table>
 </div>
