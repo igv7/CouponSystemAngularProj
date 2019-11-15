@@ -17,6 +17,7 @@
                 <th>Description</th>
                 <th>Amount</th>
                 <th>Total Amount</th>
+                <th>Total Common Amount</th>
             </tr>
             <tr *ngFor="let i of incomes | incomeFilter: listFilter">
                 <td>{{i.incomeId}}</td>
@@ -30,6 +31,7 @@
                 <td>{{i.description}}</td>
                 <td>{{i.amount}}</td>
                 <td>{{i.totalAmount}}</td>
+                <td>{{i.totalCommonAmount}}</td>
             </tr>
         </table>
     </div>

@@ -13,12 +13,12 @@
         <span *ngIf="titleInfo.errors?.pattern && titleInfo.touched">Title must start with a capital letter!</span>
         <br><br>
         
-        Format: "yyyy-MM-dd"<br>
-        <input #startDateInfo="ngModel" required pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" type="text" placeholder="StartDate" [(ngModel)]="coupon.startDate" name="startDate"> <!-- pattern="^(\d{1,4})-(\d{1,2})-(\d{1,2})$"     pattern="^\d{4}-\d{2}-\d{2}$"-->
+        <!-- Format: "yyyy-MM-dd"<br>
+        <input #startDateInfo="ngModel" required pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" type="text" placeholder="StartDate" [(ngModel)]="coupon.startDate" name="startDate">
         <span *ngIf="startDateInfo.errors?.required && startDateInfo.touched">Missing StartDate</span>
-        <!-- <span *ngIf="startDateInfo.errors?.pattern && startDateInfo.touched">Start Date must contain the following format: "yyyy-MM-dd" </span> -->
         <span *ngIf="startDateInfo.errors?.pattern && startDateInfo.touched">Wrong Date! Please, check your date or format.</span>
-        <br><br>
+        <br><br> -->
+        <!-- <span *ngIf="startDateInfo.errors?.pattern && startDateInfo.touched">Start Date must contain the following format: "yyyy-MM-dd" </span> -->
          
         Format: "yyyy-MM-dd"<br>
         <input #endDateInfo="ngModel" required pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" type="text" placeholder="EndDate" [(ngModel)]="coupon.endDate" name="endDate">  <!-- pattern="^(\d{1,4})-(\d{1,2})-(\d{1,2})$"     pattern="^\d{4}-\d{2}-\d{2}$"-->
@@ -66,10 +66,10 @@
         <span *ngIf="imageInfo.errors?.required && imageInfo.touched">Missing Image</span>
         <br><br> -->
         
-        <!-- Choose Image<br>
+        Choose Image<br>
         <input #imageInfo="ngModel" type="file" required multiple [(ngModel)]="coupon.image" name="image">
         <span *ngIf="imageInfo.errors?.required && imageInfo.touched">Missing Image</span>
-        <br><br> -->
+        <br><br>
     
         <button [disabled]="!formInfo.form.valid" (click)="addCoupon()">Add Coupon</button>
         <br><br>

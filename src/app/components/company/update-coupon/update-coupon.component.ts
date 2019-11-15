@@ -28,7 +28,8 @@ export class UpdateCouponComponent implements OnInit {
       "\nAmount: " + coupon.amount +
       "\nType: " + coupon.type +
       "\nMessage: " + coupon.message +
-      "\nPrice: " + coupon.price);
+      "\nPrice: " + coupon.price + 
+      "\nImage: " + coupon.image);
       this.router.navigate(["/company/view-all-coupons"])
     }, err => {
       console.log(`Failed on update Coupon Id: `,this.coupon.id + `\n` +err.message);

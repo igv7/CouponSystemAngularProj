@@ -43,11 +43,11 @@ export class AddCouponComponent implements OnInit {
       "\nTitle: " + coupon.title +
       "\nStartDate: " + coupon.startDate +
       "\nIdEndDate: " + coupon.endDate +
-      "\nTAmount: " + coupon.amount +
+      "\nAmount: " + coupon.amount +
       "\nType: " + coupon.type +
       "\nMessage: " + coupon.message +
-      "\nPrice: " + coupon.price);
-      "\nImage: " + coupon.image
+      "\nPrice: " + coupon.price +
+      "\nImage: " + coupon.image);
       this.router.navigate(["/company/view-all-coupons"])
     }, err => {
       console.log(`Failed on add coupon `,this.coupon.title + `\n` +err.message);

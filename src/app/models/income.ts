@@ -6,5 +6,6 @@ export class Income {
         public operationDate?: string,
         public description?: string,
         public amount?: number,
-        public totalAmount?: number) {}
+        public totalAmount?: number,
+        public totalCommonAmount?: number) {}
 }

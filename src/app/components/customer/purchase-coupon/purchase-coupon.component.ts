@@ -31,11 +31,11 @@ export class PurchaseCouponComponent implements OnInit {
       "\nTitle: " + coupon.title +
       "\nStartDate: " + coupon.startDate +
       "\nIdEndDate: " + coupon.endDate +
-      "\nTAmount: " + coupon.amount +
+      "\nAmount: " + coupon.amount +
       "\nType: " + coupon.type +
       "\nMessage: " + coupon.message +
-      "\nPrice: " + coupon.price);
-      "\nImage: " + coupon.image
+      "\nPrice: " + coupon.price + 
+      "\nImage: " + coupon.image);
       this.router.navigate(["/customer/view-all-purchased-coupons"])
     }, err => {
       console.log(`Failed on purchase coupon `,this.coupon.id + `\n` +err.message);
