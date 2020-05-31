@@ -42,7 +42,7 @@ export class AddCouponComponent implements OnInit {
       "\nId: " + coupon.id +
       "\nTitle: " + coupon.title +
       "\nStartDate: " + coupon.startDate +
-      "\nIdEndDate: " + coupon.endDate +
+      "\nEndDate: " + coupon.endDate +
       "\nAmount: " + coupon.amount +
       "\nType: " + coupon.type +
       "\nMessage: " + coupon.message +
